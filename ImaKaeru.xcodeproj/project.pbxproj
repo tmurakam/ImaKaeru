@@ -14,12 +14,12 @@
 		3E0112EB14237ED50003B868 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112EA14237ED50003B868 /* main.m */; };
 		3E0112EF14237ED50003B868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112EE14237ED50003B868 /* AppDelegate.m */; };
 		3E0112F214237ED50003B868 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112F114237ED50003B868 /* MainViewController.m */; };
-		3E0112F514237ED50003B868 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0112F314237ED50003B868 /* MainViewController.xib */; };
 		3E0112FD14237ED60003B868 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112FC14237ED60003B868 /* SenTestingKit.framework */; };
 		3E0112FE14237ED60003B868 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112DE14237ED50003B868 /* UIKit.framework */; };
 		3E0112FF14237ED60003B868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E014237ED50003B868 /* Foundation.framework */; };
 		3E01130714237ED60003B868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E01130514237ED60003B868 /* InfoPlist.strings */; };
 		3E01130A14237ED60003B868 /* ImaKaeruTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01130914237ED60003B868 /* ImaKaeruTests.m */; };
+		3E0113151423806E0003B868 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0113141423806E0003B868 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,15 +43,15 @@
 		3E0112EC14237ED50003B868 /* ImaKaeru-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImaKaeru-Prefix.pch"; sourceTree = "<group>"; };
 		3E0112ED14237ED50003B868 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E0112EE14237ED50003B868 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3E0112F014237ED50003B868 /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		3E0112F014237ED50003B868 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3E0112F114237ED50003B868 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		3E0112F414237ED50003B868 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		3E0112FB14237ED60003B868 /* ImaKaeruTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImaKaeruTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0112FC14237ED60003B868 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3E01130414237ED60003B868 /* ImaKaeruTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImaKaeruTests-Info.plist"; sourceTree = "<group>"; };
 		3E01130614237ED60003B868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E01130814237ED60003B868 /* ImaKaeruTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImaKaeruTests.h; sourceTree = "<group>"; };
 		3E01130914237ED60003B868 /* ImaKaeruTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImaKaeruTests.m; sourceTree = "<group>"; };
+		3E0113141423806E0003B868 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 				3E0112EE14237ED50003B868 /* AppDelegate.m */,
 				3E0112F014237ED50003B868 /* MainViewController.h */,
 				3E0112F114237ED50003B868 /* MainViewController.m */,
-				3E0112F314237ED50003B868 /* MainViewController.xib */,
+				3E011313142380240003B868 /* Resources */,
 				3E0112E514237ED50003B868 /* Supporting Files */,
 			);
 			path = ImaKaeru;
@@ -149,6 +149,14 @@
 				3E01130514237ED60003B868 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E011313142380240003B868 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3E0113141423806E0003B868 /* MainViewController.xib */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0112E914237ED50003B868 /* InfoPlist.strings in Resources */,
-				3E0112F514237ED50003B868 /* MainViewController.xib in Resources */,
+				3E0113151423806E0003B868 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,14 +296,6 @@
 				3E0112E814237ED50003B868 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3E0112F314237ED50003B868 /* MainViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E0112F414237ED50003B868 /* en */,
-			);
-			name = MainViewController.xib;
 			sourceTree = "<group>";
 		};
 		3E01130514237ED60003B868 /* InfoPlist.strings */ = {
