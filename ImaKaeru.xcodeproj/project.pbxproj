@@ -13,8 +13,8 @@
 		3E0112E914237ED50003B868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E0112E714237ED50003B868 /* InfoPlist.strings */; };
 		3E0112EB14237ED50003B868 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112EA14237ED50003B868 /* main.m */; };
 		3E0112EF14237ED50003B868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112EE14237ED50003B868 /* AppDelegate.m */; };
-		3E0112F214237ED50003B868 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112F114237ED50003B868 /* ViewController.m */; };
-		3E0112F514237ED50003B868 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0112F314237ED50003B868 /* ViewController.xib */; };
+		3E0112F214237ED50003B868 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112F114237ED50003B868 /* MainViewController.m */; };
+		3E0112F514237ED50003B868 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0112F314237ED50003B868 /* MainViewController.xib */; };
 		3E0112FD14237ED60003B868 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112FC14237ED60003B868 /* SenTestingKit.framework */; };
 		3E0112FE14237ED60003B868 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112DE14237ED50003B868 /* UIKit.framework */; };
 		3E0112FF14237ED60003B868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E014237ED50003B868 /* Foundation.framework */; };
@@ -37,20 +37,20 @@
 		3E0112DE14237ED50003B868 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3E0112E014237ED50003B868 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3E0112E214237ED50003B868 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3E0112E614237ED50003B868 /* ImaKaeru-Info.plist */ = {isa = PBXFileReference; path = "ImaKaeru-Info.plist"; sourceTree = "<group>"; };
+		3E0112E614237ED50003B868 /* ImaKaeru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImaKaeru-Info.plist"; sourceTree = "<group>"; };
 		3E0112E814237ED50003B868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E0112EA14237ED50003B868 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3E0112EC14237ED50003B868 /* ImaKaeru-Prefix.pch */ = {isa = PBXFileReference; path = "ImaKaeru-Prefix.pch"; sourceTree = "<group>"; };
-		3E0112ED14237ED50003B868 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		3E0112EC14237ED50003B868 /* ImaKaeru-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImaKaeru-Prefix.pch"; sourceTree = "<group>"; };
+		3E0112ED14237ED50003B868 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E0112EE14237ED50003B868 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3E0112F014237ED50003B868 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
-		3E0112F114237ED50003B868 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3E0112F014237ED50003B868 /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
+		3E0112F114237ED50003B868 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3E0112F414237ED50003B868 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		3E0112FB14237ED60003B868 /* ImaKaeruTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImaKaeruTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0112FC14237ED60003B868 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		3E01130414237ED60003B868 /* ImaKaeruTests-Info.plist */ = {isa = PBXFileReference; path = "ImaKaeruTests-Info.plist"; sourceTree = "<group>"; };
+		3E01130414237ED60003B868 /* ImaKaeruTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImaKaeruTests-Info.plist"; sourceTree = "<group>"; };
 		3E01130614237ED60003B868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3E01130814237ED60003B868 /* ImaKaeruTests.h */ = {isa = PBXFileReference; path = ImaKaeruTests.h; sourceTree = "<group>"; };
+		3E01130814237ED60003B868 /* ImaKaeruTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImaKaeruTests.h; sourceTree = "<group>"; };
 		3E01130914237ED60003B868 /* ImaKaeruTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImaKaeruTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,9 +113,9 @@
 			children = (
 				3E0112ED14237ED50003B868 /* AppDelegate.h */,
 				3E0112EE14237ED50003B868 /* AppDelegate.m */,
-				3E0112F014237ED50003B868 /* ViewController.h */,
-				3E0112F114237ED50003B868 /* ViewController.m */,
-				3E0112F314237ED50003B868 /* ViewController.xib */,
+				3E0112F014237ED50003B868 /* MainViewController.h */,
+				3E0112F114237ED50003B868 /* MainViewController.m */,
+				3E0112F314237ED50003B868 /* MainViewController.xib */,
 				3E0112E514237ED50003B868 /* Supporting Files */,
 			);
 			path = ImaKaeru;
@@ -222,7 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0112E914237ED50003B868 /* InfoPlist.strings in Resources */,
-				3E0112F514237ED50003B868 /* ViewController.xib in Resources */,
+				3E0112F514237ED50003B868 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +259,7 @@
 			files = (
 				3E0112EB14237ED50003B868 /* main.m in Sources */,
 				3E0112EF14237ED50003B868 /* AppDelegate.m in Sources */,
-				3E0112F214237ED50003B868 /* ViewController.m in Sources */,
+				3E0112F214237ED50003B868 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +290,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3E0112F314237ED50003B868 /* ViewController.xib */ = {
+		3E0112F314237ED50003B868 /* MainViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3E0112F414237ED50003B868 /* en */,
 			);
-			name = ViewController.xib;
+			name = MainViewController.xib;
 			sourceTree = "<group>";
 		};
 		3E01130514237ED60003B868 /* InfoPlist.strings */ = {
@@ -360,6 +360,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -371,6 +372,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

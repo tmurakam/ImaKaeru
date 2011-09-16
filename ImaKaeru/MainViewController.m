@@ -6,9 +6,9 @@
 //  Copyright (c) 2011年 __MyCompanyName__. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 
-@implementation ViewController
+@implementation MainViewController
 
 - (void)didReceiveMemoryWarning
 {
