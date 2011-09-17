@@ -22,6 +22,7 @@
 		3E0113151423806E0003B868 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0113141423806E0003B868 /* MainViewController.xib */; };
 		3E01131714242CAD0003B868 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E01131614242CAD0003B868 /* iAd.framework */; };
 		3E01131A14242E0B0003B868 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01131914242E0B0003B868 /* Config.m */; };
+		3E011334142435990003B868 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E011333142435990003B868 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		3E01131614242CAD0003B868 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		3E01131814242E0B0003B868 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		3E01131914242E0B0003B868 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		3E011333142435990003B868 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E011334142435990003B868 /* MessageUI.framework in Frameworks */,
 				3E01131714242CAD0003B868 /* iAd.framework in Frameworks */,
 				3E0112DF14237ED50003B868 /* UIKit.framework in Frameworks */,
 				3E0112E114237ED50003B868 /* Foundation.framework in Frameworks */,
@@ -87,6 +90,7 @@
 		3E0112CF14237ED50003B868 = {
 			isa = PBXGroup;
 			children = (
+				3E011333142435990003B868 /* MessageUI.framework */,
 				3E01131614242CAD0003B868 /* iAd.framework */,
 				3E0112E414237ED50003B868 /* ImaKaeru */,
 				3E01130214237ED60003B868 /* ImaKaeruTests */,

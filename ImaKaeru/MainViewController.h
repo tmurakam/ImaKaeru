@@ -7,11 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface MainViewController : UIViewController
+#import "Config.h"
+
+@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate>
+{
+    Config *mConfig;
+    
+    IBOutlet UIButton *mSendButton1;
+    IBOutlet UIButton *mSendButton2;
+    IBOutlet UIButton *mSendButton3;
+}
 
 - (IBAction)onPushSendMessage:(id)sender;
 - (IBAction)showConfigViewController:(id)sender;
 - (IBAction)showInfoViewController:(id)sender;
+
+- (void)sendEmail:(NSString *)message;
+//- (void)sendTwitter;
 
 @end
