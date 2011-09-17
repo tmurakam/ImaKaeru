@@ -22,6 +22,7 @@
 
 @interface ConfigViewController ()
 - (void)doneAction:(id)sender;
+- (UITableViewCell *)getPlainCell:(NSString *)label;
 - (CellWithSwitch *)getCellWithSwitch:(int)identifier label:(NSString *)label on:(BOOL)on;
 - (CellWithSwitch *)getCellWithText:(int)identifier label:(NSString *)label placeholder:(NSString *)placeholder text:(NSString *)text;
 @end
@@ -124,7 +125,7 @@
         case 1:
             return 2;
         case 2:
-            return 3;
+            return 4;
     }
     return 0;
 }
@@ -158,7 +159,7 @@
                     break;
                     
                 case 1:
-                    cell = [self getCellWithText:K_EMAIL_ADDRESS label:@"メールアドレス" placeholder:@"example.gmail.com" text:mConfig.emailAddress];
+                    cell = [self getCellWithText:K_EMAIL_ADDRESS label:@"送信先" placeholder:@"example.gmail.com" text:mConfig.emailAddress];
                     break;
             }
             break;
@@ -178,25 +179,36 @@
                     
                 case 2:
                     // address
-                    cell = [self getCellWithText:K_TWITTER_ADDRESS label:@"送信先ユーザ" placeholder:@"twitter account" text:mConfig.twitterAddress];
+                    cell = [self getCellWithText:K_TWITTER_ADDRESS label:@"送信先" placeholder:@"twitter account" text:mConfig.twitterAddress];
+                    break;
+                case 3:
+                    // twitter account
+                    cell = [self getPlainCell:@"アカウント設定"];
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                     break;
             }
             break;
     }
     
     /*
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // Configure the cell...
     
     return cell;
      */
     
+    return cell;
+}
+
+- (UITableViewCell *)getPlainCell:(NSString *)text
+{
+    static NSString *CellIdentifier = @"PlainCell";
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    //cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+    cell.textLabel.text = text;
     return cell;
 }
 
