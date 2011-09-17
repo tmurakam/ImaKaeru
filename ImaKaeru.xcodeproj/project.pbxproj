@@ -31,6 +31,7 @@
 		3EDE02F614249D8F00490D47 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02F114249D8F00490D47 /* NSData+Base64.m */; };
 		3EDE02F714249D8F00490D47 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02F314249D8F00490D47 /* OAuth+Additions.m */; };
 		3EDE02F814249D8F00490D47 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02F514249D8F00490D47 /* OAuthCore.m */; };
+		3EDE02FB1424A1D700490D47 /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02FA1424A1D700490D47 /* Twitter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		3EDE02F314249D8F00490D47 /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
 		3EDE02F414249D8F00490D47 /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
 		3EDE02F514249D8F00490D47 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
+		3EDE02F91424A1D700490D47 /* Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Twitter.h; sourceTree = "<group>"; };
+		3EDE02FA1424A1D700490D47 /* Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Twitter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				3E011338142442640003B868 /* CellWithSwitch.m */,
 				3EDE02E8142468E800490D47 /* CellWithText.h */,
 				3EDE02E9142468E800490D47 /* CellWithText.m */,
+				3EDE02F91424A1D700490D47 /* Twitter.h */,
+				3EDE02FA1424A1D700490D47 /* Twitter.m */,
 				3E011313142380240003B868 /* Resources */,
 				3EDE02EF14249D6700490D47 /* OAuthCore */,
 				3E0112E514237ED50003B868 /* Supporting Files */,
@@ -334,6 +339,7 @@
 				3EDE02F614249D8F00490D47 /* NSData+Base64.m in Sources */,
 				3EDE02F714249D8F00490D47 /* OAuth+Additions.m in Sources */,
 				3EDE02F814249D8F00490D47 /* OAuthCore.m in Sources */,
+				3EDE02FB1424A1D700490D47 /* Twitter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

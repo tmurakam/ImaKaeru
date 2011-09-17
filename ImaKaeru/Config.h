@@ -23,6 +23,9 @@
     BOOL mIsUseTwitter;
     BOOL mIsUseDirectMessage;
     NSString *mTwitterAddress;
+    
+    NSString *mTwitterOAuthToken;
+    NSString *mTwitterOAuthSecret;
 }
 
 @property(nonatomic, strong) NSString *message1;
@@ -35,6 +38,9 @@
 @property(nonatomic) BOOL isUseTwitter;
 @property(nonatomic) BOOL isUseDirectMessage;
 @property(nonatomic, strong) NSString *twitterAddress;
+
+@property(nonatomic, strong) NSString *twitterOAuthToken;
+@property(nonatomic, strong) NSString *twitterOAuthSecret;
 
 + (Config *)instance;
 - (void)save;

@@ -28,6 +28,9 @@
 @synthesize isUseDirectMessage = mIsUseDirectMessage;
 @synthesize twitterAddress = mTwitterAddress;
 
+@synthesize twitterOAuthToken = mTwitterOAuthToken;
+@synthesize twitterOAuthSecret = mTwitterOAuthSecret;
+
 static Config *theInstance = nil;
 
 + (Config *)instance
@@ -87,6 +90,9 @@ static Config *theInstance = nil;
     mIsUseTwitter = [defaults boolForKey:@"IsUseTwitter"];
     mIsUseDirectMessage = [defaults boolForKey:@"IsUseDirectMessage"];
     mTwitterAddress = [defaults stringForKey:@"TwitterAddress"];
+    
+    mTwitterOAuthToken = [defaults stringForKey:@"TwitterOAuthToken"];
+    mTwitterOAuthSecret = [defaults stringForKey:@"TwitterOAuthSecret"];
 }
 
 - (void)save
@@ -103,6 +109,9 @@ static Config *theInstance = nil;
     [defaults setBool:mIsUseTwitter forKey:@"IsUseTwitter"];
     [defaults setBool:mIsUseDirectMessage forKey:@"IsUseDirectMessage"];
     [defaults setObject:mTwitterAddress forKey:@"TwitterAddress"];
+    
+    [defaults setObject:mTwitterOAuthToken forKey:@"TwitterOAuthToken"];
+    [defaults setObject:mTwitterOAuthSecret forKey:@"TwitterOAuthSecret"];
     
     // save current version
     [defaults setObject:[self currentVersion] forKey:@"LastLaunchedVersion"];
