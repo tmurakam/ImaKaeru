@@ -57,4 +57,11 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark - UI Handlers
+
+- (IBAction)onPushSendMessage:(id)sender
+{
+    
+}
+
 @end

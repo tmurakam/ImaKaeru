@@ -10,4 +10,8 @@
 
 @interface MainViewController : UIViewController
 
+- (IBAction)onPushSendMessage:(id)sender;
+- (IBAction)showConfigViewController:(id)sender;
+- (IBAction)showInfoViewController:(id)sender;
+
 @end
