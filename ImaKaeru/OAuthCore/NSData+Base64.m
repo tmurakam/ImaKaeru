@@ -253,7 +253,7 @@ static inline void output64Chunk( int c1, int c2, int c3, int pads, NSMutableDat
 		}
 	}
     
-    return [[NSString new] initWithData:buffer encoding:NSASCIIStringEncoding];
+    return [[NSString alloc] initWithData:buffer encoding:NSASCIIStringEncoding];
 }
 
 @end

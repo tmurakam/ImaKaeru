@@ -27,7 +27,9 @@
                                                 username, password] dataUsingEncoding:NSUTF8StringEncoding]
                                   oauth_token:@""
                            oauth_token_secret:@""];
-    NSDictionary *dict = [NSURL ab_parseURLQueryString:[[NSString alloc] initWithData:xauth_response encoding:NSUTF8StringEncoding]];
+    NSString *res = [[NSString alloc] initWithData:xauth_response encoding:NSUTF8StringEncoding];
+    NSLog(@"xAuth res: %@", res);
+    NSDictionary *dict = [NSURL ab_parseURLQueryString:res];
     
     NSString *oauth_token = [dict objectForKey:@"oauth_token"];
     NSString *oauth_token_secret = [dict objectForKey:@"oauth_token_secret"];

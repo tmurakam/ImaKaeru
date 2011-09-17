@@ -7,6 +7,7 @@
 //
 
 #import "ConfigViewController.h"
+#import "TwitterConfigViewController.h"
 
 #define K_MSG1 0
 #define K_MSG2 1
@@ -242,6 +243,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 2 && indexPath.row == 3) {
+        // setup twitter account
+        TwitterConfigViewController *vc = [[TwitterConfigViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark - Data changed
