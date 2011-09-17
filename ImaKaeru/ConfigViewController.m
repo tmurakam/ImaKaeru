@@ -303,7 +303,7 @@
 #pragma mark - Twitter
 - (void)authTwitter
 {
-    SA_OAuthTwitterEngine *engine = [[SA_OAuthTwitterEngine alloc] initWithDelegate:self];
+    SA_OAuthTwitterEngine *engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
     engine.consumerKey = CONSUMER_KEY;
     engine.consumerSecret = CONSUMER_SECRET;
     
