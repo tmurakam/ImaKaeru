@@ -12,6 +12,7 @@
 - (void)firstStartup;
 - (void)load;
 - (void)save;
+- (NSString *)currentVersion;
 @end
 
 @implementation Config
@@ -22,6 +23,10 @@
 
 @synthesize isUseEmail = mIsUseEmail;
 @synthesize emailAddress = mEmailAddress;
+
+@synthesize isUseTwitter = mIsUseTwitter;
+@synthesize isUseDirectMessage = mIsUseDirectMessage;
+@synthesize twitterAddress = mTwitterAddress;
 
 static Config *theInstance = nil;
 
@@ -58,9 +63,12 @@ static Config *theInstance = nil;
     mMessage3 = @"遅くなるかも";
     
     mIsUseEmail = YES;
+    mIsUseTwitter = YES;
+    mIsUseDirectMessage = YES;
     
     // FOR INTERNAL TEST
     mEmailAddress = @"tmurakam@tmurakam.org";
+    mTwitterAddress = @"tmurakam99";
     
     [self save];
 }
@@ -69,8 +77,16 @@ static Config *theInstance = nil;
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    mMessage1 = [defaults stringForKey:@"Message1"];
+    mMessage2 = [defaults stringForKey:@"Message2"];
+    mMessage3 = [defaults stringForKey:@"Message3"];
+    
     mIsUseEmail = [defaults boolForKey:@"IsUseEmail"];
     mEmailAddress = [defaults stringForKey:@"EmailAddress"];
+    
+    mIsUseTwitter = [defaults boolForKey:@"IsUseTwitter"];
+    mIsUseDirectMessage = [defaults boolForKey:@"IsUseDirectMessage"];
+    mTwitterAddress = [defaults stringForKey:@"TwitterAddress"];
 }
 
 - (void)save
@@ -84,10 +100,20 @@ static Config *theInstance = nil;
     [defaults setBool:mIsUseEmail forKey:@"IsUseEmail"];
     [defaults setObject:mEmailAddress forKey:@"EmailAddress"];
     
-    // TODO: save current version
-    //[defaults setObject:@"1.0" forKey:@"LastLaunchedVersion"];
+    [defaults setBool:mIsUseTwitter forKey:@"IsUseTwitter"];
+    [defaults setBool:mIsUseDirectMessage forKey:@"IsUseDirectMessage"];
+    [defaults setObject:mTwitterAddress forKey:@"TwitterAddress"];
+    
+    // save current version
+    [defaults setObject:[self currentVersion] forKey:@"LastLaunchedVersion"];
 
     [defaults synchronize];
+}
+
+- (NSString *)currentVersion
+{
+    NSString *ver = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
+    return ver;
 }
 
 @end

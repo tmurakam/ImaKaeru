@@ -21,14 +21,20 @@
     NSString *mEmailAddress;
     
     BOOL mIsUseTwitter;
+    BOOL mIsUseDirectMessage;
     NSString *mTwitterAddress;
 }
 
 @property(nonatomic, retain) NSString *message1;
 @property(nonatomic, retain) NSString *message2;
 @property(nonatomic, retain) NSString *message3;
+
 @property(nonatomic, assign) BOOL isUseEmail;
 @property(nonatomic, retain) NSString *emailAddress;
+
+@property(nonatomic, assign) BOOL isUseTwitter;
+@property(nonatomic, assign) BOOL isUseDirectMessage;
+@property(nonatomic, retain) NSString *twitterAddress;
 
 + (Config *)instance;
 - (void)save;
