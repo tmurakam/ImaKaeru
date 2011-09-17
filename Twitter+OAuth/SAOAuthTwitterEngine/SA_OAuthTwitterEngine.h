@@ -42,8 +42,8 @@
 @property (nonatomic, readwrite, retain) NSURL *requestTokenURL, *accessTokenURL, *authorizeURL;				//you shouldn't need to touch these. Just in case...
 @property (nonatomic, readonly) BOOL OAuthSetup;
 
-+ (SA_OAuthTwitterEngine *) OAuthTwitterEngineWithDelegate: (NSObject *) delegate;
-- (SA_OAuthTwitterEngine *) initOAuthWithDelegate: (NSObject *) delegate;
++ (SA_OAuthTwitterEngine *) OAuthTwitterEngineWithDelegate: (NSObject<MGTwitterEngineDelegate> *) delegate;
+- (SA_OAuthTwitterEngine *) initOAuthWithDelegate: (NSObject<MGTwitterEngineDelegate> *) delegate;
 - (BOOL) isAuthorized;
 
 

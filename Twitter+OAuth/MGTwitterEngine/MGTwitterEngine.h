@@ -12,7 +12,7 @@
 #import "MGTwitterParserDelegate.h"
 
 @interface MGTwitterEngine : NSObject <MGTwitterParserDelegate> {
-    __unsafe_unretained NSObject <MGTwitterEngineDelegate> *_delegate;
+    __unsafe_unretained NSObject<MGTwitterEngineDelegate> *_delegate;
     NSString *_username;
     NSString *_password;
     NSMutableDictionary *_connections;   // MGTwitterHTTPURLConnection objects
@@ -34,8 +34,8 @@
 #pragma mark Class management
 
 // Constructors
-+ (MGTwitterEngine *)twitterEngineWithDelegate:(NSObject *)delegate;
-- (MGTwitterEngine *)initWithDelegate:(NSObject *)delegate;
++ (MGTwitterEngine *)twitterEngineWithDelegate:(NSObject<MGTwitterEngineDelegate> *)delegate;
+- (MGTwitterEngine *)initWithDelegate:(NSObject<MGTwitterEngineDelegate> *)delegate;
 
 // Configuration and Accessors
 + (NSString *)version; // returns the version of MGTwitterEngine

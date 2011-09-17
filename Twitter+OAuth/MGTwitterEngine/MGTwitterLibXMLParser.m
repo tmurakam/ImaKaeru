@@ -17,7 +17,7 @@
 #pragma mark Creation and Destruction
 
 
-+ (id)parserWithXML:(NSData *)theXML delegate:(NSObject *)theDelegate 
++ (id)parserWithXML:(NSData *)theXML delegate:(id<MGTwitterParserDelegate>)theDelegate 
 connectionIdentifier:(NSString *)identifier requestType:(MGTwitterRequestType)reqType 
 	   responseType:(MGTwitterResponseType)respType URL:(NSURL *)URL
 {
@@ -28,21 +28,21 @@ connectionIdentifier:(NSString *)identifier requestType:(MGTwitterRequestType)re
 			responseType:respType
 			URL:URL];
 
-	return [parser autorelease];
+	return parser;
 }
 
 
-- (id)initWithXML:(NSData *)theXML delegate:(NSObject *)theDelegate 
+- (id)initWithXML:(NSData *)theXML delegate:(id<MGTwitterParserDelegate>)theDelegate 
 connectionIdentifier:(NSString *)theIdentifier requestType:(MGTwitterRequestType)reqType 
 	 responseType:(MGTwitterResponseType)respType URL:(NSURL *)theURL
 {
 	if (self = [super init])
 	{
-		xml = [theXML retain];
-		identifier = [theIdentifier retain];
+		xml = theXML;
+		identifier = theIdentifier;
 		requestType = reqType;
 		responseType = respType;
-		URL = [theURL retain];
+		URL = theURL;
 		delegate = theDelegate;
 		parsedObjects = [[NSMutableArray alloc] initWithCapacity:0];
 
@@ -69,13 +69,7 @@ connectionIdentifier:(NSString *)theIdentifier requestType:(MGTwitterRequestType
 
 - (void)dealloc
 {
-	[parsedObjects release];
-	[xml release];
-	[identifier release];
-	[URL release];
-	
 	delegate = nil;
-	[super dealloc];
 }
 
 - (void)parse

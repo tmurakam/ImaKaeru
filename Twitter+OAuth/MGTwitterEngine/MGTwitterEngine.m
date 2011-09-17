@@ -89,16 +89,16 @@
 #pragma mark Constructors
 
 
-+ (MGTwitterEngine *)twitterEngineWithDelegate:(NSObject *)theDelegate
++ (MGTwitterEngine *)twitterEngineWithDelegate:(NSObject<MGTwitterEngineDelegate> *)theDelegate
 {
     return [[MGTwitterEngine alloc] initWithDelegate:theDelegate];
 }
 
 
-- (MGTwitterEngine *)initWithDelegate:(NSObject *)newDelegate
+- (MGTwitterEngine *)initWithDelegate:(NSObject<MGTwitterEngineDelegate> *)newDelegate
 {
     if (self = [super init]) {
-        _delegate = newDelegate; // deliberately weak reference
+        _delegate = newDelegate; // deliberately weak reference // ###
         _connections = [[NSMutableDictionary alloc] initWithCapacity:0];
         _clientName = DEFAULT_CLIENT_NAME;
         _clientVersion = DEFAULT_CLIENT_VERSION;
@@ -380,7 +380,7 @@
 
 - (NSString *)_encodeString:(NSString *)string
 {
-    NSString *result = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, 
+    NSString *result = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, 
                                                                  (__bridge CFStringRef)string, 
                                                                  NULL, 
                                                                  (CFStringRef)@";/?:@&=$+{}<>,",

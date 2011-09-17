@@ -15,7 +15,7 @@
 #pragma mark Creation and Destruction
 
 
-+ (id)parserWithXML:(NSData *)theXML delegate:(NSObject *)theDelegate 
++ (id)parserWithXML:(NSData *)theXML delegate:(id<MGTwitterParserDelegate>)theDelegate 
 connectionIdentifier:(NSString *)identifier requestType:(MGTwitterRequestType)reqType 
        responseType:(MGTwitterResponseType)respType
 {
@@ -24,20 +24,20 @@ connectionIdentifier:(NSString *)identifier requestType:(MGTwitterRequestType)re
                      connectionIdentifier:identifier 
                               requestType:reqType
                              responseType:respType];
-    return [parser autorelease];
+    return parser;
 }
 
 
-- (id)initWithXML:(NSData *)theXML delegate:(NSObject *)theDelegate 
+- (id)initWithXML:(NSData *)theXML delegate:(id<MGTwitterParserDelegate>)theDelegate 
 connectionIdentifier:(NSString *)theIdentifier requestType:(MGTwitterRequestType)reqType 
      responseType:(MGTwitterResponseType)respType
 {
     if (self = [super init]) {
-        xml = [theXML retain];
-        identifier = [theIdentifier retain];
+        xml = theXML;
+        identifier = theIdentifier ;
         requestType = reqType;
         responseType = respType;
-        delegate = theDelegate;
+        delegate = theDelegate; // ###
         parsedObjects = [[NSMutableArray alloc] initWithCapacity:0];
         
         // Set up the parser object.
@@ -57,12 +57,7 @@ connectionIdentifier:(NSString *)theIdentifier requestType:(MGTwitterRequestType
 
 - (void)dealloc
 {
-    [parser release];
-    [parsedObjects release];
-    [xml release];
-    [identifier release];
     delegate = nil;
-    [super dealloc];
 }
 
 
@@ -146,13 +141,12 @@ connectionIdentifier:(NSString *)theIdentifier requestType:(MGTwitterRequestType
 
 
 - (NSString *)lastOpenedElement {
-    return [[lastOpenedElement retain] autorelease];
+    return lastOpenedElement;
 }
 
 
 - (void)setLastOpenedElement:(NSString *)value {
     if (lastOpenedElement != value) {
-        [lastOpenedElement release];
         lastOpenedElement = [value copy];
     }
 }
