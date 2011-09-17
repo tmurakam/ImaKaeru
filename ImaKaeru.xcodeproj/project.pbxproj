@@ -28,6 +28,9 @@
 		3E01133C142447350003B868 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01133B142447350003B868 /* ConfigViewController.m */; };
 		3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE02E5142468AD00490D47 /* CellWithText.xib */; };
 		3EDE02EA142468E800490D47 /* CellWithText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02E9142468E800490D47 /* CellWithText.m */; };
+		3EDE02F614249D8F00490D47 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02F114249D8F00490D47 /* NSData+Base64.m */; };
+		3EDE02F714249D8F00490D47 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02F314249D8F00490D47 /* OAuth+Additions.m */; };
+		3EDE02F814249D8F00490D47 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02F514249D8F00490D47 /* OAuthCore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,12 @@
 		3EDE02E5142468AD00490D47 /* CellWithText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellWithText.xib; sourceTree = "<group>"; };
 		3EDE02E8142468E800490D47 /* CellWithText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWithText.h; sourceTree = "<group>"; };
 		3EDE02E9142468E800490D47 /* CellWithText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWithText.m; sourceTree = "<group>"; };
+		3EDE02F014249D8F00490D47 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		3EDE02F114249D8F00490D47 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		3EDE02F214249D8F00490D47 /* OAuth+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAuth+Additions.h"; sourceTree = "<group>"; };
+		3EDE02F314249D8F00490D47 /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
+		3EDE02F414249D8F00490D47 /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
+		3EDE02F514249D8F00490D47 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +157,7 @@
 				3EDE02E8142468E800490D47 /* CellWithText.h */,
 				3EDE02E9142468E800490D47 /* CellWithText.m */,
 				3E011313142380240003B868 /* Resources */,
+				3EDE02EF14249D6700490D47 /* OAuthCore */,
 				3E0112E514237ED50003B868 /* Supporting Files */,
 			);
 			path = ImaKaeru;
@@ -191,6 +201,19 @@
 				3E011335142441800003B868 /* CellWithSwitch.xib */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3EDE02EF14249D6700490D47 /* OAuthCore */ = {
+			isa = PBXGroup;
+			children = (
+				3EDE02F014249D8F00490D47 /* NSData+Base64.h */,
+				3EDE02F114249D8F00490D47 /* NSData+Base64.m */,
+				3EDE02F214249D8F00490D47 /* OAuth+Additions.h */,
+				3EDE02F314249D8F00490D47 /* OAuth+Additions.m */,
+				3EDE02F414249D8F00490D47 /* OAuthCore.h */,
+				3EDE02F514249D8F00490D47 /* OAuthCore.m */,
+			);
+			path = OAuthCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +331,9 @@
 				3E011339142442640003B868 /* CellWithSwitch.m in Sources */,
 				3E01133C142447350003B868 /* ConfigViewController.m in Sources */,
 				3EDE02EA142468E800490D47 /* CellWithText.m in Sources */,
+				3EDE02F614249D8F00490D47 /* NSData+Base64.m in Sources */,
+				3EDE02F714249D8F00490D47 /* OAuth+Additions.m in Sources */,
+				3EDE02F814249D8F00490D47 /* OAuthCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
