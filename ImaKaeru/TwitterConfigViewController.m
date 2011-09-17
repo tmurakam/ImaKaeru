@@ -52,10 +52,10 @@
 
 - (void)doneAction:(id)sender
 {
-    // authenticate
-    if (![Twitter authenticate:mAccount password:mPassword]) {
-        // TBD: auth failed
-    }
+    // twitter authenticate
+    SA_OAuthTwitterEngine *engine = [[SA_OAuthTwitterEngine alloc] initWithOAuthWithDelegate:self];
+    engine.consumerKey = CONSUMER_KEY;
+    engine.consumerSecret = CONSUMER_SECRET;
     
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }

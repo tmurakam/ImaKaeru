@@ -47,8 +47,6 @@
 		3EDE02F614249D8F00490D47 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02F114249D8F00490D47 /* NSData+Base64.m */; };
 		3EDE02F714249D8F00490D47 /* OAuth+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02F314249D8F00490D47 /* OAuth+Additions.m */; };
 		3EDE02F814249D8F00490D47 /* OAuthCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02F514249D8F00490D47 /* OAuthCore.m */; };
-		3EDE02FB1424A1D700490D47 /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02FA1424A1D700490D47 /* Twitter.m */; };
-		3EDE02FF1424A69100490D47 /* TwitterConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02FD1424A69000490D47 /* TwitterConfigViewController.m */; };
 		3EE690BE1424D13300215A36 /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE690BB1424D13300215A36 /* libOAuth.a */; };
 		3EE691011424DAF100215A36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691001424DAF100215A36 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
@@ -137,10 +135,6 @@
 		3EDE02F314249D8F00490D47 /* OAuth+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAuth+Additions.m"; sourceTree = "<group>"; };
 		3EDE02F414249D8F00490D47 /* OAuthCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthCore.h; sourceTree = "<group>"; };
 		3EDE02F514249D8F00490D47 /* OAuthCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthCore.m; sourceTree = "<group>"; };
-		3EDE02F91424A1D700490D47 /* Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Twitter.h; sourceTree = "<group>"; };
-		3EDE02FA1424A1D700490D47 /* Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Twitter.m; sourceTree = "<group>"; };
-		3EDE02FC1424A69000490D47 /* TwitterConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterConfigViewController.h; sourceTree = "<group>"; };
-		3EDE02FD1424A69000490D47 /* TwitterConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterConfigViewController.m; sourceTree = "<group>"; };
 		3EDE02FE1424A69100490D47 /* TwitterSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSecret.h; sourceTree = "<group>"; };
 		3EE690AA1424D12500215A36 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		3EE690AB1424D12500215A36 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -238,10 +232,6 @@
 				3E011338142442640003B868 /* CellWithSwitch.m */,
 				3EDE02E8142468E800490D47 /* CellWithText.h */,
 				3EDE02E9142468E800490D47 /* CellWithText.m */,
-				3EDE02F91424A1D700490D47 /* Twitter.h */,
-				3EDE02FA1424A1D700490D47 /* Twitter.m */,
-				3EDE02FC1424A69000490D47 /* TwitterConfigViewController.h */,
-				3EDE02FD1424A69000490D47 /* TwitterConfigViewController.m */,
 				3EDE02FE1424A69100490D47 /* TwitterSecret.h */,
 				3E011313142380240003B868 /* Resources */,
 				3EDE02EF14249D6700490D47 /* OAuthCore */,
@@ -512,8 +502,6 @@
 				3EDE02F614249D8F00490D47 /* NSData+Base64.m in Sources */,
 				3EDE02F714249D8F00490D47 /* OAuth+Additions.m in Sources */,
 				3EDE02F814249D8F00490D47 /* OAuthCore.m in Sources */,
-				3EDE02FB1424A1D700490D47 /* Twitter.m in Sources */,
-				3EDE02FF1424A69100490D47 /* TwitterConfigViewController.m in Sources */,
 				3E418C0E1424D1B4001F37B0 /* SA_OAuthTwitterController.m in Sources */,
 				3E418C0F1424D1B4001F37B0 /* SA_OAuthTwitterEngine.m in Sources */,
 				3E418C311424D1DB001F37B0 /* MGTwitterEngine.m in Sources */,

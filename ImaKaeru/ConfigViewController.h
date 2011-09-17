@@ -11,7 +11,10 @@
 #import "CellWithText.h"
 #import "Config.h"
 
-@interface ConfigViewController : UITableViewController <CellWithSwitchDelegate, CellWithTextDelegate>
+#import "SA_OAuthTwitterEngine.h"
+#import "SA_OAuthTwitterController.h"
+
+@interface ConfigViewController : UITableViewController <CellWithSwitchDelegate, CellWithTextDelegate, SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate>
 {
     Config *mConfig;
 }

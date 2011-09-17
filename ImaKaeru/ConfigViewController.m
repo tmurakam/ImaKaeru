@@ -7,7 +7,9 @@
 //
 
 #import "ConfigViewController.h"
-#import "TwitterConfigViewController.h"
+//#import "TwitterConfigViewController.h"
+
+#import "TwitterSecret.h"
 
 #define K_MSG1 0
 #define K_MSG2 1
@@ -26,6 +28,7 @@
 - (UITableViewCell *)getPlainCell:(NSString *)label;
 - (CellWithSwitch *)getCellWithSwitch:(int)identifier label:(NSString *)label on:(BOOL)on;
 - (CellWithSwitch *)getCellWithText:(int)identifier label:(NSString *)label placeholder:(NSString *)placeholder text:(NSString *)text;
+- (void)authTwitter;
 @end
 
 @implementation ConfigViewController
@@ -246,8 +249,7 @@
     
     if (indexPath.section == 2 && indexPath.row == 3) {
         // setup twitter account
-        TwitterConfigViewController *vc = [[TwitterConfigViewController alloc] initWithStyle:UITableViewStyleGrouped];
-        [self.navigationController pushViewController:vc animated:YES];
+        [self authTwitter];
     }
 }
 
@@ -294,6 +296,57 @@
             break;
     }
     [mConfig save];
+}
+
+
+//=============================================================================================================================
+#pragma mark - Twitter
+- (void)authTwitter
+{
+    SA_OAuthTwitterEngine *engine = [[SA_OAuthTwitterEngine alloc] initWithDelegate:self];
+    engine.consumerKey = CONSUMER_KEY;
+    engine.consumerSecret = CONSUMER_SECRET;
+    
+    UIViewController *vc = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:engine delegate:self];
+    if (vc) {
+        [self.navigationController presentModalViewController:vc animated:YES];
+    } else {
+        // TODO:
+    }
+}
+
+#pragma mark SA_OAuthTwitterEngineDelegate
+- (void) storeCachedTwitterOAuthData: (NSString *) data forUsername: (NSString *) username {
+	NSUserDefaults			*defaults = [NSUserDefaults standardUserDefaults];
+    
+	[defaults setObject: data forKey: @"authData"];
+	[defaults synchronize];
+}
+
+- (NSString *) cachedTwitterOAuthDataForUsername: (NSString *) username {
+	return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];
+}
+
+#pragma mark SA_OAuthTwitterControllerDelegate
+- (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
+	NSLog(@"Authenicated for %@", username);
+}
+
+- (void) OAuthTwitterControllerFailed: (SA_OAuthTwitterController *) controller {
+	NSLog(@"Authentication Failed!");
+}
+
+- (void) OAuthTwitterControllerCanceled: (SA_OAuthTwitterController *) controller {
+	NSLog(@"Authentication Canceled.");
+}
+
+#pragma mark TwitterEngineDelegate
+- (void) requestSucceeded: (NSString *) requestIdentifier {
+	NSLog(@"Request %@ succeeded", requestIdentifier);
+}
+
+- (void) requestFailed: (NSString *) requestIdentifier withError: (NSError *) error {
+	NSLog(@"Request %@ failed with error: %@", requestIdentifier, error);
 }
 
 @end
