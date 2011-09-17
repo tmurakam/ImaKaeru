@@ -26,6 +26,8 @@
 		3E011336142441800003B868 /* CellWithSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E011335142441800003B868 /* CellWithSwitch.xib */; };
 		3E011339142442640003B868 /* CellWithSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E011338142442640003B868 /* CellWithSwitch.m */; };
 		3E01133C142447350003B868 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01133B142447350003B868 /* ConfigViewController.m */; };
+		3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE02E5142468AD00490D47 /* CellWithText.xib */; };
+		3EDE02EA142468E800490D47 /* CellWithText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02E9142468E800490D47 /* CellWithText.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		3E011338142442640003B868 /* CellWithSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWithSwitch.m; sourceTree = "<group>"; };
 		3E01133A142447350003B868 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		3E01133B142447350003B868 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		3EDE02E5142468AD00490D47 /* CellWithText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellWithText.xib; sourceTree = "<group>"; };
+		3EDE02E8142468E800490D47 /* CellWithText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWithText.h; sourceTree = "<group>"; };
+		3EDE02E9142468E800490D47 /* CellWithText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWithText.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +103,6 @@
 		3E0112CF14237ED50003B868 = {
 			isa = PBXGroup;
 			children = (
-				3E011333142435990003B868 /* MessageUI.framework */,
-				3E01131614242CAD0003B868 /* iAd.framework */,
 				3E0112E414237ED50003B868 /* ImaKaeru */,
 				3E01130214237ED60003B868 /* ImaKaeruTests */,
 				3E0112DD14237ED50003B868 /* Frameworks */,
@@ -119,6 +122,8 @@
 		3E0112DD14237ED50003B868 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E011333142435990003B868 /* MessageUI.framework */,
+				3E01131614242CAD0003B868 /* iAd.framework */,
 				3E0112DE14237ED50003B868 /* UIKit.framework */,
 				3E0112E014237ED50003B868 /* Foundation.framework */,
 				3E0112E214237ED50003B868 /* CoreGraphics.framework */,
@@ -140,6 +145,8 @@
 				3E01131914242E0B0003B868 /* Config.m */,
 				3E011337142442640003B868 /* CellWithSwitch.h */,
 				3E011338142442640003B868 /* CellWithSwitch.m */,
+				3EDE02E8142468E800490D47 /* CellWithText.h */,
+				3EDE02E9142468E800490D47 /* CellWithText.m */,
 				3E011313142380240003B868 /* Resources */,
 				3E0112E514237ED50003B868 /* Supporting Files */,
 			);
@@ -179,6 +186,7 @@
 		3E011313142380240003B868 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3EDE02E5142468AD00490D47 /* CellWithText.xib */,
 				3E0113141423806E0003B868 /* MainViewController.xib */,
 				3E011335142441800003B868 /* CellWithSwitch.xib */,
 			);
@@ -258,6 +266,7 @@
 				3E0112E914237ED50003B868 /* InfoPlist.strings in Resources */,
 				3E0113151423806E0003B868 /* MainViewController.xib in Resources */,
 				3E011336142441800003B868 /* CellWithSwitch.xib in Resources */,
+				3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +307,7 @@
 				3E01131A14242E0B0003B868 /* Config.m in Sources */,
 				3E011339142442640003B868 /* CellWithSwitch.m in Sources */,
 				3E01133C142447350003B868 /* ConfigViewController.m in Sources */,
+				3EDE02EA142468E800490D47 /* CellWithText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +471,7 @@
 				3E01130F14237ED60003B868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E01131014237ED60003B868 /* Build configuration list for PBXNativeTarget "ImaKaeruTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +480,7 @@
 				3E01131214237ED60003B868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

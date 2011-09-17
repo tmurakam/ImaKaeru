@@ -9,9 +9,16 @@
 #import "ConfigViewController.h"
 
 #define K_IS_USE_EMAIL  0
+#define K_EMAIL_ADDRESS 1
+
+#define K_IS_USE_TWITTER 10
+#define K_IS_USE_DIRECT_MESSAGE 11
+#define K_TWITTER_ADDRESS 12
+
 
 @interface ConfigViewController ()
 - (void)doneAction:(id)sender;
+- (CellWithSwitch *)getCellWithSwitch:(int)identifier label:(NSString *)label on:(BOOL)on;
 @end
 
 @implementation ConfigViewController
@@ -86,33 +93,60 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return @"Eメール設定";
+        case 1:
+            return @"Twitter設定";
+    }
+    return nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    switch (section) {
+        case 0:
+            return 1;
+        case 1:
+            return 2;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
-    CellWithSwitch *cellSwitch;
-    
+
     switch (indexPath.section) {
         case 0:
             // Email settings
             switch (indexPath.row) {
                 case 0:
                     // Email on/off
-                    cellSwitch = [CellWithSwitch getCell:self.tableView];
-                    [cellSwitch setLabel:@"Eメール送信"];
-                    cellSwitch.identifier = K_IS_USE_EMAIL;
-                    cellSwitch.on = mConfig.isUseEmail;
-                    cellSwitch.delegate = self;
-                    cell = cellSwitch;
+                    cell = [self getCellWithSwitch:K_IS_USE_EMAIL label:@"Eメール送信" on:mConfig.isUseEmail];
                     break;
             }
+            break;
+            
+        case 1:
+            // Twitter settings
+            switch (indexPath.row) {
+                case 0:
+                    // Twitter on/off
+                    cell = [self getCellWithSwitch:K_IS_USE_TWITTER label:@"Twitter送信" on:mConfig.isUseTwitter];
+                    break;
+
+                case 1:
+                    // direct message
+                    cell = [self getCellWithSwitch:K_IS_USE_DIRECT_MESSAGE label:@"ダイレクトメッセージ" on:mConfig.isUseDirectMessage];
+                    break;
+            }
+            break;
     }
     
     /*
@@ -131,6 +165,18 @@
     return cell;
 }
 
+- (CellWithSwitch *)getCellWithSwitch:(int)identifier label:(NSString *)label on:(BOOL)on
+{
+    CellWithSwitch *cell;
+    
+    cell = [CellWithSwitch getCell:self.tableView];
+    [cell setLabel:label];
+    cell.identifier = K_IS_USE_DIRECT_MESSAGE;
+    cell.on = on;
+    cell.delegate = self;
+    return cell;
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -143,6 +189,14 @@
     switch (cell.identifier) {
         case K_IS_USE_EMAIL:
             mConfig.isUseEmail = cell.on;
+            break;
+            
+        case K_IS_USE_TWITTER:
+            mConfig.isUseTwitter = cell.on;
+            break;
+            
+        case K_IS_USE_DIRECT_MESSAGE:
+            mConfig.isUseDirectMessage = cell.on;
             break;
     }
     [mConfig save];
