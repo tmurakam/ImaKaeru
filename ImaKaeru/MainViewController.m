@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 #import "ConfigViewController.h"
 
+#import "TwitterSecret.h"
+
 @implementation MainViewController
 
 - (void)didReceiveMemoryWarning
@@ -82,6 +84,9 @@
     if (mConfig.isUseEmail) {
         [self sendEmail:message];
     }
+    if (mConfig.isUseTwitter) {
+        [self sendTwitter:message];
+    }
 }
 
 - (IBAction)showConfigViewController:(id)sender
@@ -122,6 +127,70 @@
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [controller dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - Twitter
+- (void)sendTwitter:(NSString *)message
+{
+    if (mConfig.twitterAddress == nil || [mConfig.twitterAddress length] == 0) {
+        // TODO: 宛先なし
+        return;
+    }
+    
+    SA_OAuthTwitterEngine *engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
+    engine.consumerKey = CONSUMER_KEY;
+    engine.consumerSecret = CONSUMER_SECRET;
+    
+    UIViewController *vc = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:engine delegate:self];
+    if (vc) {
+        // 認証されていない
+        [self presentModalViewController:vc animated:YES];
+    } else {
+        NSString *msg;
+        if (mConfig.isUseDirectMessage) {
+            msg = [NSString stringWithFormat:@"%@ #ImaKaeru http://iphone.tmurakam.org/ImaKaeru", message];
+            [engine sendDirectMessage:msg to:mConfig.twitterAddress];
+        } else {
+            // mention
+            msg = [NSString stringWithFormat:@"%@ @%@ #ImaKaeru http://iphone.tmurakam.org/ImaKaeru", message, mConfig.twitterAddress];
+           [engine sendUpdate:msg];
+        }
+    }
+}
+
+#pragma mark SA_OAuthTwitterEngineDelegate
+- (void) storeCachedTwitterOAuthData: (NSString *)data forUsername: (NSString *)username {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+	[defaults setObject:data forKey: @"authData"];
+	[defaults synchronize];
+}
+
+- (NSString *)cachedTwitterOAuthDataForUsername:(NSString *)username
+{
+	return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];
+}
+
+#pragma mark SA_OAuthTwitterControllerDelegate
+- (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
+	NSLog(@"Authenicated for %@", username);
+}
+
+- (void) OAuthTwitterControllerFailed: (SA_OAuthTwitterController *) controller {
+	NSLog(@"Authentication Failed!");
+}
+
+- (void) OAuthTwitterControllerCanceled: (SA_OAuthTwitterController *) controller {
+	NSLog(@"Authentication Canceled.");
+}
+
+#pragma mark TwitterEngineDelegate
+- (void) requestSucceeded: (NSString *) requestIdentifier {
+	NSLog(@"Request %@ succeeded", requestIdentifier);
+}
+
+- (void) requestFailed: (NSString *) requestIdentifier withError: (NSError *) error {
+	NSLog(@"Request %@ failed with error: %@", requestIdentifier, error);
 }
 
 #pragma mark - ADBannerViewDelegate

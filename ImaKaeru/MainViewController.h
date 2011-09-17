@@ -11,9 +11,12 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import <iAd/iAd.h>
 
+#import "SA_OAuthTwitterEngine.h"
+#import "SA_OAuthTwitterController.h"
+
 #import "Config.h"
 
-@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate>
+@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate, SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate>
 {
     Config *mConfig;
     
@@ -27,6 +30,6 @@
 - (IBAction)showInfoViewController:(id)sender;
 
 - (void)sendEmail:(NSString *)message;
-//- (void)sendTwitter;
+- (void)sendTwitter:(NSString *)message;
 
 @end
