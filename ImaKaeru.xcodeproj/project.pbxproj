@@ -25,6 +25,7 @@
 		3E011334142435990003B868 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E011333142435990003B868 /* MessageUI.framework */; };
 		3E011336142441800003B868 /* CellWithSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E011335142441800003B868 /* CellWithSwitch.xib */; };
 		3E011339142442640003B868 /* CellWithSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E011338142442640003B868 /* CellWithSwitch.m */; };
+		3E01133C142447350003B868 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01133B142447350003B868 /* ConfigViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		3E011335142441800003B868 /* CellWithSwitch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellWithSwitch.xib; sourceTree = "<group>"; };
 		3E011337142442640003B868 /* CellWithSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWithSwitch.h; sourceTree = "<group>"; };
 		3E011338142442640003B868 /* CellWithSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWithSwitch.m; sourceTree = "<group>"; };
+		3E01133A142447350003B868 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		3E01133B142447350003B868 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				3E0112EE14237ED50003B868 /* AppDelegate.m */,
 				3E0112F014237ED50003B868 /* MainViewController.h */,
 				3E0112F114237ED50003B868 /* MainViewController.m */,
+				3E01133A142447350003B868 /* ConfigViewController.h */,
+				3E01133B142447350003B868 /* ConfigViewController.m */,
 				3E01131814242E0B0003B868 /* Config.h */,
 				3E01131914242E0B0003B868 /* Config.m */,
 				3E011337142442640003B868 /* CellWithSwitch.h */,
@@ -292,6 +297,7 @@
 				3E0112F214237ED50003B868 /* MainViewController.m in Sources */,
 				3E01131A14242E0B0003B868 /* Config.m in Sources */,
 				3E011339142442640003B868 /* CellWithSwitch.m in Sources */,
+				3E01133C142447350003B868 /* ConfigViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

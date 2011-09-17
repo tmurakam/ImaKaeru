@@ -9,11 +9,13 @@
 #import "CellWithSwitch.h"
 
 @interface CellWithSwitch ()
+- (void)setUp;
 - (void)switchChanged:(id)sender;
 @end
 
 @implementation CellWithSwitch
 
+@synthesize identifier = mIdentifier;
 @synthesize delegate = mDelegate;
 
 #define CELL_ID @"CellWithSwitch"
@@ -25,28 +27,40 @@
         UINib *nib = [UINib nibWithNibName:@"CellWithSwitch" bundle:nil];
         NSArray *array = [nib instantiateWithOwner:nil options:nil];
         cell = [array objectAtIndex:0];
+        
+        [cell setUp];
     }
-    
     return cell;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        [mSwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
     return self;
 }
 
-- (void)switchChanged:(id)sender {
-    [mDelegate cellWithSwitchChanged:self];
+- (void)setUp
+{
+    [mSwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)setLabel:(NSString *)label
+{
+    [mLabel setText:label];
+}
+
+- (void)setOn:(BOOL)on
+{
+    mSwitch.on = on;
 }
 
 - (BOOL)on
 {
     return mSwitch.on;
+}
+
+- (void)switchChanged:(id)sender {
+    [mDelegate cellWithSwitchChanged:self];
 }
 
 #if 0

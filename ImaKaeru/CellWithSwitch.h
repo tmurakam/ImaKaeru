@@ -19,11 +19,17 @@
     IBOutlet UILabel *mLabel;
     IBOutlet UISwitch *mSwitch;
     
+    int mIdentifier;
+    
     id<CellWithSwitchDelegate> __unsafe_unretained mDelegate;
 }
 
+@property(nonatomic) int identifier;
+
 @property(nonatomic,unsafe_unretained) id<CellWithSwitchDelegate> delegate;
-@property(nonatomic,readonly) BOOL on;
+@property(nonatomic) BOOL on;
 
 + (CellWithSwitch *)getCell:(UITableView *)tableView;
+- (void)setLabel:(NSString *)label;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "ConfigViewController.h"
 
 @implementation MainViewController
 
@@ -84,7 +85,10 @@
 
 - (IBAction)showConfigViewController:(id)sender
 {
-    // TBD
+    ConfigViewController *vc = [[ConfigViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self presentModalViewController:nv animated:YES];
 }
 
 - (IBAction)showInfoViewController:(id)sender
