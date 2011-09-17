@@ -36,7 +36,7 @@
 	const char *p = [self UTF8String];
 	unsigned char c;
 	
-	for(; c = *p; p++)
+	for(; (c = *p) != 0; p++)
 	{
 		switch(c)
 		{
@@ -61,7 +61,7 @@
 	CFUUIDRef u = CFUUIDCreate(kCFAllocatorDefault);
 	CFStringRef s = CFUUIDCreateString(kCFAllocatorDefault, u);
 	CFRelease(u);
-	return [(NSString *)s autorelease];
+	return (__bridge_transfer NSString *)s;
 }
 
 @end
