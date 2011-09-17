@@ -10,13 +10,15 @@
 #import "TwitterSecret.h"
 #import "Config.h"
 
+// following code is based on http://d.hatena.ne.jp/sugyan/20100819/1282156751
+
 @interface Twitter ()
 + (NSData *)request:(NSURL *)url method:(NSString *)method body:(NSData *)body oauth_token:(NSString *)oauth_token oauth_token_secret:(NSString *)oauth_token_secret;
 @end
 
 @implementation Twitter
 
-+ (void)authenticate:(NSString *)username password:(NSString *)password
++ (BOOL)authenticate:(NSString *)username password:(NSString *)password
 {
     // xAuth
     NSData *xauth_response = [Twitter request:[NSURL URLWithString:@"https://api.twitter.com/oauth/access_token"]
@@ -31,20 +33,33 @@
     NSString *oauth_token_secret = [dict objectForKey:@"oauth_token_secret"];
     
     // save oauth token
+    Config *config = [Config instance];
+    config.twitterOAuthToken = oauth_token;
+    config.twitterOAuthSecret = oauth_token_secret;
+    [config save];
+    
+    return YES;
 }
 
-/*
-+ (void)tweet:(NSString *)status
++ (BOOL)tweet:(NSString *)status
 {
-    // xAuthで得たtokenを利用してTweet
-    NSData *tweet_response = [Hoge request:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/update.json"]
-                                    method:@"POST"
-                                      body:[[NSString stringWithFormat:@"status=%@", status] dataUsingEncoding:NSUTF8StringEncoding]
-                               oauth_token:oauth_token
-                        oauth_token_secret:oauth_token_secret];
-    NSLog(@"response: %@", [[[NSString alloc] initWithData:tweet_response encoding:NSUTF8StringEncoding] autorelease]);
+    Config *config = [Config instance];
+
+    NSString *oauth_token = config.twitterOAuthToken;
+    NSString *oauth_secret = config.twitterOAuthSecret;
+    
+    if (oauth_token == nil || oauth_secret) {
+        return NO;
+    }
+    
+    NSData *tweet_response = [Twitter request:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/update.json"]
+                                       method:@"POST"
+                                         body:[[NSString stringWithFormat:@"status=%@", status] dataUsingEncoding:NSUTF8StringEncoding]
+                                  oauth_token:oauth_token
+                           oauth_token_secret:oauth_secret];
+    NSLog(@"response: %@", [[NSString alloc] initWithData:tweet_response encoding:NSUTF8StringEncoding] );
+    return YES;
 }
-*/
 
 + (NSData *)request:(NSURL *)url method:(NSString *)method body:(NSData *)body oauth_token:(NSString *)oauth_token oauth_token_secret:(NSString *)oauth_token_secret
 {
@@ -53,8 +68,11 @@
     [request setHTTPMethod:method];
     [request setValue:header forHTTPHeaderField:@"Authorization"];
     [request setHTTPBody:body];
+
     NSURLResponse *response = nil;
     NSError       *error    = nil;
-    return [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSData *res = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+
+    return res;
 }
 @end

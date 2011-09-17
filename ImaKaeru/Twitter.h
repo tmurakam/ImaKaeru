@@ -12,5 +12,7 @@
 
 @interface Twitter : NSObject
 
++ (BOOL)authenticate:(NSString *)username password:(NSString *)password;
++ (BOOL)tweet:(NSString *)status;
 
 @end
