@@ -42,24 +42,24 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 					  cachePolicy:NSURLRequestReloadIgnoringCacheData
 				  timeoutInterval:10.0])
 	{    
-		consumer = [aConsumer retain];
+		consumer = aConsumer;
 		
 		// empty token for Unauthorized Request Token transaction
 		if (aToken == nil)
 			token = [[OAToken alloc] init];
 		else
-			token = [aToken retain];
+			token = aToken;
 		
 		if (aRealm == nil)
 			realm = [[NSString alloc] initWithString:@""];
 		else 
-			realm = [aRealm retain];
+			realm = aRealm;
 		
 		// default to HMAC-SHA1
 		if (aProvider == nil)
 			signatureProvider = [[OAHMAC_SHA1SignatureProvider alloc] init];
 		else 
-			signatureProvider = [aProvider retain];
+			signatureProvider = aProvider;
 		
 		[self _generateTimestamp];
 		[self _generateNonce];
@@ -81,40 +81,33 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 					  cachePolicy:NSURLRequestReloadIgnoringCacheData
 				  timeoutInterval:10.0])
 	{    
-		consumer = [aConsumer retain];
+		consumer = aConsumer;
 		
 		// empty token for Unauthorized Request Token transaction
 		if (aToken == nil)
 			token = [[OAToken alloc] init];
 		else
-			token = [aToken retain];
+			token = aToken;
 		
 		if (aRealm == nil)
 			realm = [[NSString alloc] initWithString:@""];
 		else 
-			realm = [aRealm retain];
+			realm = aRealm;
 		
 		// default to HMAC-SHA1
 		if (aProvider == nil)
 			signatureProvider = [[OAHMAC_SHA1SignatureProvider alloc] init];
 		else 
-			signatureProvider = [aProvider retain];
+			signatureProvider = aProvider;
 		
-		timestamp = [aTimestamp retain];
-		nonce = [aNonce retain];
+		timestamp = aTimestamp;
+		nonce = aNonce;
 	}
     return self;
 }
 
 - (void)dealloc
 {
-	[consumer release];
-	[token release];
-	[realm release];
-	[signatureProvider release];
-	[timestamp release];
-	[nonce release];
-	[super dealloc];
 }
 
 #pragma mark -
@@ -161,7 +154,7 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 
 - (void)_generateTimestamp 
 {
-    timestamp = [[NSString stringWithFormat:@"%d", time(NULL)] retain];
+    timestamp = [NSString stringWithFormat:@"%d", time(NULL)];
 }
 
 - (void)_generateNonce 
@@ -169,7 +162,7 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
     CFUUIDRef theUUID = CFUUIDCreate(NULL);
     CFStringRef string = CFUUIDCreateString(NULL, theUUID);
     CFRelease(theUUID);
-    nonce = (NSString *)string;
+    nonce = (__bridge NSString *)string;
 }
 
 - (NSString *)_signatureBaseString 
@@ -217,14 +210,12 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 - (NSArray *)parameters 
 {
     NSString *encodedParameters;
-	BOOL shouldfree = NO;
     
     if ([[self HTTPMethod] isEqualToString:@"GET"] || [[self HTTPMethod] isEqualToString:@"DELETE"]) 
         encodedParameters = [[self URL] query];
 	else 
 	{
         // POST, PUT
-		shouldfree = YES;
         encodedParameters = [[NSString alloc] initWithData:[self HTTPBody] encoding:NSASCIIStringEncoding];
     }
     
@@ -241,12 +232,8 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 																			   value:[self URLEncodedString: [encodedPairElements objectAtIndex:1]]];
         [requestParameters addObject:parameter];
     }
-    
-	// Cleanup
-	if (shouldfree)
-		[encodedParameters release];
 	
-    return [requestParameters autorelease];
+    return requestParameters;
 }
 
 - (void)setParameters:(NSArray *)parameters 
@@ -277,13 +264,12 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 
 
 - (NSString *) URLEncodedString: (NSString *) string {
-	CFStringRef preprocessedString = CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault, (CFStringRef) string, CFSTR(""), kCFStringEncodingUTF8);
-    NSString *result = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+	CFStringRef preprocessedString = CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault, (__bridge CFStringRef) string, CFSTR(""), kCFStringEncodingUTF8);
+    NSString *result = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
                                                                            preprocessedString,
                                                                            NULL,
 																		   CFSTR("!*'();:@&=+$,/?%#[]"),
                                                                            kCFStringEncodingUTF8);
-    [result autorelease];
 	CFRelease(preprocessedString);
 	return result;	
 }

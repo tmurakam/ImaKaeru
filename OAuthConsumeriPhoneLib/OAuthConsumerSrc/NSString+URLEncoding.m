@@ -30,22 +30,20 @@
 
 - (NSString *)URLEncodedString 
 {
-    NSString *result = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                                           (CFStringRef)self,
+    NSString *result = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                                           (__bridge CFStringRef)self,
                                                                            NULL,
 																		   CFSTR("!*'();:@&=+$,/?%#[]"),
                                                                            kCFStringEncodingUTF8);
-    [result autorelease];
 	return result;
 }
 
 - (NSString*)URLDecodedString
 {
-	NSString *result = (NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
-																						   (CFStringRef)self,
+	NSString *result = (__bridge NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
+																						   (__bridge CFStringRef)self,
 																						   CFSTR(""),
 																						   kCFStringEncodingUTF8);
-    [result autorelease];
 	return result;	
 }
 

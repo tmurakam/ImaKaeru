@@ -30,14 +30,14 @@
 
 + (id)asynchronousFetcherWithRequest:(OAMutableURLRequest *)aRequest delegate:(id)aDelegate didFinishSelector:(SEL)finishSelector didFailSelector:(SEL)failSelector
 {
-	return [[[OAAsynchronousDataFetcher alloc] initWithRequest:aRequest delegate:aDelegate didFinishSelector:finishSelector didFailSelector:failSelector] autorelease];
+	return [[OAAsynchronousDataFetcher alloc] initWithRequest:aRequest delegate:aDelegate didFinishSelector:finishSelector didFailSelector:failSelector];
 }
 
 - (id)initWithRequest:(OAMutableURLRequest *)aRequest delegate:(id)aDelegate didFinishSelector:(SEL)finishSelector didFailSelector:(SEL)failSelector
 {
 	if (self = [super init])
 	{
-		request = [aRequest retain];
+		request = aRequest;
 		delegate = aDelegate;
 		didFinishSelector = finishSelector;
 		didFailSelector = failSelector;	
@@ -49,16 +49,11 @@
 {    
     [request prepare];
 	
-	if (connection)
-		[connection release];
-	
 	connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
 	if (connection)
 	{
-		if (responseData)
-			[responseData release];
-		responseData = [[NSMutableData data] retain];
+		responseData = [NSMutableData data];
 	}
 	else
 	{
@@ -68,7 +63,6 @@
         [delegate performSelector:didFailSelector
                        withObject:ticket
                        withObject:nil];
-		[ticket release];
 	}
 }
 
@@ -77,18 +71,12 @@
 	if (connection)
 	{
 		[connection cancel];
-		[connection release];
 		connection = nil;
 	}
 }
 
 - (void)dealloc
 {
-	if (request) [request release];
-	if (connection) [connection release];
-	if (response) [response release];
-	if (responseData) [responseData release];
-	[super dealloc];
 }
 
 #pragma mark -
@@ -96,9 +84,7 @@
 
 - (void)connection:(NSURLConnection *)aConnection didReceiveResponse:(NSURLResponse *)aResponse
 {
-	if (response)
-		[response release];
-	response = [aResponse retain];
+	response = aResponse;
 	[responseData setLength:0];
 }
 
@@ -115,8 +101,6 @@
 	[delegate performSelector:didFailSelector
 				   withObject:ticket
 				   withObject:error];
-	
-	[ticket release];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)aConnection
@@ -127,8 +111,6 @@
 	[delegate performSelector:didFinishSelector
 				   withObject:ticket
 				   withObject:responseData];
-	
-	[ticket release];
 }
 
 @end

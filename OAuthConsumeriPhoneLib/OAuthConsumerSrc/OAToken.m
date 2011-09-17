@@ -88,13 +88,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	[key release];
-	[secret release];
-	[super dealloc];
-}
-
 #pragma mark -
 
 - (int)storeInUserDefaultsWithServiceProviderName:(NSString *)provider prefix:(NSString *)prefix
