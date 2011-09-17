@@ -25,16 +25,16 @@
     NSString *mTwitterAddress;
 }
 
-@property(nonatomic, retain) NSString *message1;
-@property(nonatomic, retain) NSString *message2;
-@property(nonatomic, retain) NSString *message3;
+@property(nonatomic, strong) NSString *message1;
+@property(nonatomic, strong) NSString *message2;
+@property(nonatomic, strong) NSString *message3;
 
-@property(nonatomic, assign) BOOL isUseEmail;
-@property(nonatomic, retain) NSString *emailAddress;
+@property(nonatomic) BOOL isUseEmail;
+@property(nonatomic, strong) NSString *emailAddress;
 
-@property(nonatomic, assign) BOOL isUseTwitter;
-@property(nonatomic, assign) BOOL isUseDirectMessage;
-@property(nonatomic, retain) NSString *twitterAddress;
+@property(nonatomic) BOOL isUseTwitter;
+@property(nonatomic) BOOL isUseDirectMessage;
+@property(nonatomic, strong) NSString *twitterAddress;
 
 + (Config *)instance;
 - (void)save;

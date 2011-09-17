@@ -27,8 +27,8 @@
 @property(nonatomic) int identifier;
 
 @property(nonatomic,unsafe_unretained) id<CellWithTextDelegate> delegate;
-@property(nonatomic,retain) NSString *placeholder;
-@property(nonatomic,retain) NSString *text;
+@property(nonatomic,strong) NSString *placeholder;
+@property(nonatomic,strong) NSString *text;
 
 + (CellWithText *)getCell:(UITableView *)tableView;
 - (void)setLabel:(NSString *)label;
