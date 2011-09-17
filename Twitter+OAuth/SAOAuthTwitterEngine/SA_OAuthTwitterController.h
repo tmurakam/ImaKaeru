@@ -28,7 +28,7 @@
 	UINavigationBar								*_navBar;
 	UIImageView									*_backgroundView;
 	
-	id <SA_OAuthTwitterControllerDelegate>		_delegate;
+	__unsafe_unretained id <SA_OAuthTwitterControllerDelegate>		_delegate;
 	UIView										*_blockerView;
 
 	UIInterfaceOrientation                      _orientation;
@@ -37,7 +37,7 @@
 }
 
 
-@property (nonatomic, readwrite, retain) SA_OAuthTwitterEngine *engine;
+@property (nonatomic, readwrite, strong) SA_OAuthTwitterEngine *engine;
 @property (nonatomic, readwrite, assign) id <SA_OAuthTwitterControllerDelegate> delegate;
 @property (nonatomic, readonly) UINavigationBar *navigationBar;
 
