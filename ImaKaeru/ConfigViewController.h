@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "CellWithSwitch.h"
+#import "CellWithText.h"
 #import "Config.h"
 
-@interface ConfigViewController : UITableViewController <CellWithSwitchDelegate>
+@interface ConfigViewController : UITableViewController <CellWithSwitchDelegate, CellWithTextDelegate>
 {
     Config *mConfig;
 }

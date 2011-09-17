@@ -41,12 +41,22 @@
 
 - (void)setUp
 {
-    [mTextField addTarget:self action:@selector(textChanged:) forControlEvents:UIControlEventValueChanged];
+    [mTextField addTarget:self action:@selector(textChanged:) forControlEvents:UIControlEventEditingChanged];
 }
 
 - (void)setLabel:(NSString *)label
 {
     [mLabel setText:label];
+}
+
+- (void)setPlaceholder:(NSString *)text
+{
+    [mTextField setPlaceholder:text];
+}
+
+- (NSString *)placeholder
+{
+    return [mTextField placeholder];
 }
 
 - (void)setText:(NSString *)text

@@ -24,9 +24,6 @@
     [super viewDidLoad];
 
     mConfig = [Config instance];
-    [mSendButton1 setTitle:mConfig.message1 forState:UIControlStateNormal];
-    [mSendButton2 setTitle:mConfig.message2 forState:UIControlStateNormal];
-    [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];
 }
 
 - (void)viewDidUnload
@@ -39,6 +36,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
+    [mSendButton1 setTitle:mConfig.message1 forState:UIControlStateNormal];
+    [mSendButton2 setTitle:mConfig.message2 forState:UIControlStateNormal];
+    [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -123,5 +124,16 @@
     [controller dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark - ADBannerViewDelegate
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    NSLog(@"iAd loaded");
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    NSLog(@"iAd load failed");
+}
 
 @end

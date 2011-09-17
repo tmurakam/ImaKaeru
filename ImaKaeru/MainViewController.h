@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import <iAd/iAd.h>
 
 #import "Config.h"
 
-@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate>
 {
     Config *mConfig;
     
