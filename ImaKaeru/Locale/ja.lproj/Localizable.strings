@@ -26,6 +26,7 @@
 "error_no_dest" = "送信先が設定されていません";
 "error_no_email_dest" = "Eメール送信先が設定されていません";
 "error_no_twitter_dest" = "Twitter送信先が設定されていません";
+"error_setup_twitter_account" = "Twitterアカウントが設定されていません";
 
 /* ConfigViewController */
 "message" = "メッセージ";
