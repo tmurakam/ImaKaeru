@@ -11,9 +11,6 @@
 		3E0112E114237ED50003B868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E014237ED50003B868 /* Foundation.framework */; };
 		3E0112E314237ED50003B868 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E214237ED50003B868 /* CoreGraphics.framework */; };
 		3E0112E914237ED50003B868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E0112E714237ED50003B868 /* InfoPlist.strings */; };
-		3E0112EB14237ED50003B868 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112EA14237ED50003B868 /* main.m */; };
-		3E0112EF14237ED50003B868 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112EE14237ED50003B868 /* AppDelegate.m */; };
-		3E0112F214237ED50003B868 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0112F114237ED50003B868 /* MainViewController.m */; };
 		3E0112FD14237ED60003B868 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112FC14237ED60003B868 /* SenTestingKit.framework */; };
 		3E0112FE14237ED60003B868 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112DE14237ED50003B868 /* UIKit.framework */; };
 		3E0112FF14237ED60003B868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E014237ED50003B868 /* Foundation.framework */; };
@@ -21,11 +18,8 @@
 		3E01130A14237ED60003B868 /* ImaKaeruTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01130914237ED60003B868 /* ImaKaeruTests.m */; };
 		3E0113151423806E0003B868 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0113141423806E0003B868 /* MainViewController.xib */; };
 		3E01131714242CAD0003B868 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E01131614242CAD0003B868 /* iAd.framework */; };
-		3E01131A14242E0B0003B868 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01131914242E0B0003B868 /* Config.m */; };
 		3E011334142435990003B868 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E011333142435990003B868 /* MessageUI.framework */; };
 		3E011336142441800003B868 /* CellWithSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E011335142441800003B868 /* CellWithSwitch.xib */; };
-		3E011339142442640003B868 /* CellWithSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E011338142442640003B868 /* CellWithSwitch.m */; };
-		3E01133C142447350003B868 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01133B142447350003B868 /* ConfigViewController.m */; };
 		3E418C0E1424D1B4001F37B0 /* SA_OAuthTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E418C0B1424D1B4001F37B0 /* SA_OAuthTwitterController.m */; };
 		3E418C0F1424D1B4001F37B0 /* SA_OAuthTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E418C0D1424D1B4001F37B0 /* SA_OAuthTwitterEngine.m */; };
 		3E418C311424D1DB001F37B0 /* MGTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E418C121424D1DB001F37B0 /* MGTwitterEngine.m */; };
@@ -42,8 +36,14 @@
 		3E418C3C1424D1DB001F37B0 /* MGTwitterXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E418C2C1424D1DB001F37B0 /* MGTwitterXMLParser.m */; };
 		3E418C3D1424D1DB001F37B0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E418C2E1424D1DB001F37B0 /* NSData+Base64.m */; };
 		3E418C3E1424D1DB001F37B0 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E418C301424D1DB001F37B0 /* NSString+UUID.m */; };
+		3E50588F142592F700D2FFB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505882142592F700D2FFB8 /* AppDelegate.m */; };
+		3E505890142592F700D2FFB8 /* CellWithSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505884142592F700D2FFB8 /* CellWithSwitch.m */; };
+		3E505891142592F700D2FFB8 /* CellWithText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505886142592F700D2FFB8 /* CellWithText.m */; };
+		3E505892142592F700D2FFB8 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505888142592F700D2FFB8 /* Config.m */; };
+		3E505893142592F700D2FFB8 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588A142592F700D2FFB8 /* ConfigViewController.m */; };
+		3E505894142592F700D2FFB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588B142592F700D2FFB8 /* main.m */; };
+		3E505895142592F700D2FFB8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588D142592F700D2FFB8 /* MainViewController.m */; };
 		3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE02E5142468AD00490D47 /* CellWithText.xib */; };
-		3EDE02EA142468E800490D47 /* CellWithText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDE02E9142468E800490D47 /* CellWithText.m */; };
 		3EE691011424DAF100215A36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691001424DAF100215A36 /* libxml2.dylib */; };
 		3EE6911F1424E1A500215A36 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE691041424E1A500215A36 /* NSMutableURLRequest+Parameters.m */; };
 		3EE691201424E1A500215A36 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE691061424E1A500215A36 /* NSString+URLEncoding.m */; };
@@ -80,12 +80,7 @@
 		3E0112E214237ED50003B868 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3E0112E614237ED50003B868 /* ImaKaeru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImaKaeru-Info.plist"; sourceTree = "<group>"; };
 		3E0112E814237ED50003B868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3E0112EA14237ED50003B868 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E0112EC14237ED50003B868 /* ImaKaeru-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImaKaeru-Prefix.pch"; sourceTree = "<group>"; };
-		3E0112ED14237ED50003B868 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3E0112EE14237ED50003B868 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3E0112F014237ED50003B868 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		3E0112F114237ED50003B868 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3E0112FB14237ED60003B868 /* ImaKaeruTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImaKaeruTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0112FC14237ED60003B868 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3E01130414237ED60003B868 /* ImaKaeruTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImaKaeruTests-Info.plist"; sourceTree = "<group>"; };
@@ -94,14 +89,8 @@
 		3E01130914237ED60003B868 /* ImaKaeruTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImaKaeruTests.m; sourceTree = "<group>"; };
 		3E0113141423806E0003B868 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		3E01131614242CAD0003B868 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		3E01131814242E0B0003B868 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		3E01131914242E0B0003B868 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		3E011333142435990003B868 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3E011335142441800003B868 /* CellWithSwitch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellWithSwitch.xib; sourceTree = "<group>"; };
-		3E011337142442640003B868 /* CellWithSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWithSwitch.h; sourceTree = "<group>"; };
-		3E011338142442640003B868 /* CellWithSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWithSwitch.m; sourceTree = "<group>"; };
-		3E01133A142447350003B868 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
-		3E01133B142447350003B868 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		3E418C0A1424D1B4001F37B0 /* SA_OAuthTwitterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SA_OAuthTwitterController.h; sourceTree = "<group>"; };
 		3E418C0B1424D1B4001F37B0 /* SA_OAuthTwitterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SA_OAuthTwitterController.m; sourceTree = "<group>"; };
 		3E418C0C1424D1B4001F37B0 /* SA_OAuthTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SA_OAuthTwitterEngine.h; sourceTree = "<group>"; };
@@ -138,10 +127,21 @@
 		3E418C2E1424D1DB001F37B0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		3E418C2F1424D1DB001F37B0 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUID.h"; sourceTree = "<group>"; };
 		3E418C301424D1DB001F37B0 /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUID.m"; sourceTree = "<group>"; };
+		3E505881142592F700D2FFB8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3E505882142592F700D2FFB8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3E505883142592F700D2FFB8 /* CellWithSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWithSwitch.h; sourceTree = "<group>"; };
+		3E505884142592F700D2FFB8 /* CellWithSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWithSwitch.m; sourceTree = "<group>"; };
+		3E505885142592F700D2FFB8 /* CellWithText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWithText.h; sourceTree = "<group>"; };
+		3E505886142592F700D2FFB8 /* CellWithText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWithText.m; sourceTree = "<group>"; };
+		3E505887142592F700D2FFB8 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		3E505888142592F700D2FFB8 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		3E505889142592F700D2FFB8 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		3E50588A142592F700D2FFB8 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		3E50588B142592F700D2FFB8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
+		3E50588C142592F700D2FFB8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3E50588D142592F700D2FFB8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3E50588E142592F700D2FFB8 /* TwitterSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSecret.h; sourceTree = "<group>"; };
 		3EDE02E5142468AD00490D47 /* CellWithText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellWithText.xib; sourceTree = "<group>"; };
-		3EDE02E8142468E800490D47 /* CellWithText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWithText.h; sourceTree = "<group>"; };
-		3EDE02E9142468E800490D47 /* CellWithText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWithText.m; sourceTree = "<group>"; };
-		3EDE02FE1424A69100490D47 /* TwitterSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSecret.h; sourceTree = "<group>"; };
 		3EE691001424DAF100215A36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EE691031424E1A500215A36 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		3EE691041424E1A500215A36 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
@@ -245,20 +245,9 @@
 		3E0112E414237ED50003B868 /* ImaKaeru */ = {
 			isa = PBXGroup;
 			children = (
-				3E0112ED14237ED50003B868 /* AppDelegate.h */,
-				3E0112EE14237ED50003B868 /* AppDelegate.m */,
-				3E0112F014237ED50003B868 /* MainViewController.h */,
-				3E0112F114237ED50003B868 /* MainViewController.m */,
-				3E01133A142447350003B868 /* ConfigViewController.h */,
-				3E01133B142447350003B868 /* ConfigViewController.m */,
-				3E01131814242E0B0003B868 /* Config.h */,
-				3E01131914242E0B0003B868 /* Config.m */,
-				3E011337142442640003B868 /* CellWithSwitch.h */,
-				3E011338142442640003B868 /* CellWithSwitch.m */,
-				3EDE02E8142468E800490D47 /* CellWithText.h */,
-				3EDE02E9142468E800490D47 /* CellWithText.m */,
-				3EDE02FE1424A69100490D47 /* TwitterSecret.h */,
+				3E50587E1425922D00D2FFB8 /* Classes */,
 				3E011313142380240003B868 /* Resources */,
+				3E50587F1425924400D2FFB8 /* Locale */,
 				3E0112E514237ED50003B868 /* Supporting Files */,
 			);
 			path = ImaKaeru;
@@ -269,7 +258,7 @@
 			children = (
 				3E0112E614237ED50003B868 /* ImaKaeru-Info.plist */,
 				3E0112E714237ED50003B868 /* InfoPlist.strings */,
-				3E0112EA14237ED50003B868 /* main.m */,
+				3E50588B142592F700D2FFB8 /* main.m */,
 				3E0112EC14237ED50003B868 /* ImaKaeru-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -352,6 +341,33 @@
 				3E418C301424D1DB001F37B0 /* NSString+UUID.m */,
 			);
 			path = MGTwitterEngine;
+			sourceTree = "<group>";
+		};
+		3E50587E1425922D00D2FFB8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3E505881142592F700D2FFB8 /* AppDelegate.h */,
+				3E505882142592F700D2FFB8 /* AppDelegate.m */,
+				3E505883142592F700D2FFB8 /* CellWithSwitch.h */,
+				3E505884142592F700D2FFB8 /* CellWithSwitch.m */,
+				3E505885142592F700D2FFB8 /* CellWithText.h */,
+				3E505886142592F700D2FFB8 /* CellWithText.m */,
+				3E505887142592F700D2FFB8 /* Config.h */,
+				3E505888142592F700D2FFB8 /* Config.m */,
+				3E505889142592F700D2FFB8 /* ConfigViewController.h */,
+				3E50588A142592F700D2FFB8 /* ConfigViewController.m */,
+				3E50588C142592F700D2FFB8 /* MainViewController.h */,
+				3E50588D142592F700D2FFB8 /* MainViewController.m */,
+				3E50588E142592F700D2FFB8 /* TwitterSecret.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3E50587F1425924400D2FFB8 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Locale;
 			sourceTree = "<group>";
 		};
 		3EE690A61424D0CF00215A36 /* Twitter+OAuth */ = {
@@ -519,13 +535,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0112EB14237ED50003B868 /* main.m in Sources */,
-				3E0112EF14237ED50003B868 /* AppDelegate.m in Sources */,
-				3E0112F214237ED50003B868 /* MainViewController.m in Sources */,
-				3E01131A14242E0B0003B868 /* Config.m in Sources */,
-				3E011339142442640003B868 /* CellWithSwitch.m in Sources */,
-				3E01133C142447350003B868 /* ConfigViewController.m in Sources */,
-				3EDE02EA142468E800490D47 /* CellWithText.m in Sources */,
 				3E418C0E1424D1B4001F37B0 /* SA_OAuthTwitterController.m in Sources */,
 				3E418C0F1424D1B4001F37B0 /* SA_OAuthTwitterEngine.m in Sources */,
 				3E418C311424D1DB001F37B0 /* MGTwitterEngine.m in Sources */,
@@ -557,6 +566,13 @@
 				3EE691331424E1CA00215A36 /* Base64Transcoder.c in Sources */,
 				3EE691341424E1CA00215A36 /* hmac.c in Sources */,
 				3EE691351424E1CA00215A36 /* sha1.c in Sources */,
+				3E50588F142592F700D2FFB8 /* AppDelegate.m in Sources */,
+				3E505890142592F700D2FFB8 /* CellWithSwitch.m in Sources */,
+				3E505891142592F700D2FFB8 /* CellWithText.m in Sources */,
+				3E505892142592F700D2FFB8 /* Config.m in Sources */,
+				3E505893142592F700D2FFB8 /* ConfigViewController.m in Sources */,
+				3E505894142592F700D2FFB8 /* main.m in Sources */,
+				3E505895142592F700D2FFB8 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +637,7 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 			};
 			name = Debug;
 		};
@@ -641,6 +658,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
