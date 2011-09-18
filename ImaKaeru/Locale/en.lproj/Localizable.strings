@@ -5,3 +5,8 @@
   Created by 村上 卓弥 on 11/09/18.
   Copyright (c) 2011年 __MyCompanyName__. All rights reserved.
 */
+
+/* messages */
+"im_on_my_way" = "I'm on my way.";
+"ill_on_my_way_later" = "I'll on my way a little later.";
+"ill_be_late" = "I'll be late.";

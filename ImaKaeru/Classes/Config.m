@@ -61,17 +61,13 @@ static Config *theInstance = nil;
 
 - (void)firstStartup
 {
-    mMessage1 = @"今からかえります";
-    mMessage2 = @"もう少ししたら帰ります";
-    mMessage3 = @"遅くなるかも";
+    mMessage1 = _L(@"im_on_my_way");
+    mMessage2 = _L(@"ill_on_my_way_later");
+    mMessage3 = _L(@"ill_be_late");
     
     mIsUseEmail = YES;
     mIsUseTwitter = YES;
     mIsUseDirectMessage = YES;
-    
-    // FOR INTERNAL TEST
-    mEmailAddress = @"tmurakam@tmurakam.org";
-    mTwitterAddress = @"tmurakam99";
     
     [self save];
 }
