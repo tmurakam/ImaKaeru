@@ -152,7 +152,7 @@
             [engine sendDirectMessage:msg to:mConfig.twitterAddress];
         } else {
             // mention
-            msg = [NSString stringWithFormat:@"%@ @%@ #ImaKaeru http://iphone.tmurakam.org/ImaKaeru", message, mConfig.twitterAddress];
+            msg = [NSString stringWithFormat:@"@%@ %@ #ImaKaeru http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, message];
            [engine sendUpdate:msg];
         }
     }

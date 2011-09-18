@@ -21,13 +21,13 @@
     
     int mIdentifier;
     
-    id<CellWithSwitchDelegate> __unsafe_unretained mDelegate;
+    __unsafe_unretained id<CellWithSwitchDelegate> mDelegate;
 }
 
-@property(nonatomic) int identifier;
+@property int identifier;
 
-@property(nonatomic,unsafe_unretained) id<CellWithSwitchDelegate> delegate;
-@property(nonatomic) BOOL on;
+@property(unsafe_unretained) id<CellWithSwitchDelegate> delegate;
+@property BOOL on;
 
 + (CellWithSwitch *)getCell:(UITableView *)tableView;
 - (void)setLabel:(NSString *)label;

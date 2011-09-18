@@ -21,14 +21,14 @@
     
     int mIdentifier;
     
-    id<CellWithTextDelegate> __unsafe_unretained mDelegate;
+    __unsafe_unretained id<CellWithTextDelegate> mDelegate;
 }
 
-@property(nonatomic) int identifier;
+@property int identifier;
 
-@property(nonatomic,unsafe_unretained) id<CellWithTextDelegate> delegate;
-@property(nonatomic,strong) NSString *placeholder;
-@property(nonatomic,strong) NSString *text;
+@property(unsafe_unretained) id<CellWithTextDelegate> delegate;
+@property(strong) NSString *placeholder;
+@property(strong) NSString *text;
 
 + (CellWithText *)getCell:(UITableView *)tableView;
 - (void)setLabel:(NSString *)label;
