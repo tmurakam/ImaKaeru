@@ -7,6 +7,8 @@
 //
 
 #import "ConfigViewController.h"
+#import "InfoViewController.h"
+
 #import "Common.h"
 #import "TwitterSecret.h"
 
@@ -104,7 +106,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -116,6 +118,8 @@
             return _L(@"email_config");
         case 2:
             return _L(@"twitter_config");
+        case 3:
+            return _L(@"info");
     }
     return nil;
 }
@@ -129,6 +133,8 @@
             return 2;
         case 2:
             return 4;
+        case 3:
+            return 1;
     }
     return 0;
 }
@@ -193,6 +199,11 @@
                     break;
             }
             break;
+        case 3:
+            // info
+            cell = [self getPlainCell:_L(@"info")];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            break;
     }
     
     /*
@@ -251,6 +262,11 @@
     if (indexPath.section == 2 && indexPath.row == 3) {
         // setup twitter account
         [self authTwitter];
+    }
+    else if (indexPath.section == 3 && indexPath.row == 0) {
+        // info
+        InfoViewController *vc = [[InfoViewController alloc] initWithNibName:@"InfoView" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

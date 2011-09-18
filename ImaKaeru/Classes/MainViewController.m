@@ -45,7 +45,6 @@
     [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];
     
     [mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
-    [mInfoButton setTitle:_L(@"info") forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -113,11 +112,6 @@
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     
     [self presentModalViewController:nv animated:YES];
-}
-
-- (IBAction)showInfoViewController:(id)sender
-{
-    // TBD
 }
 
 - (void)showMessage:(NSString *)message title:(NSString *)title

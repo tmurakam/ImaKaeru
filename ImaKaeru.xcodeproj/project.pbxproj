@@ -36,6 +36,8 @@
 		3E418C3C1424D1DB001F37B0 /* MGTwitterXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E418C2C1424D1DB001F37B0 /* MGTwitterXMLParser.m */; };
 		3E418C3D1424D1DB001F37B0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E418C2E1424D1DB001F37B0 /* NSData+Base64.m */; };
 		3E418C3E1424D1DB001F37B0 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E418C301424D1DB001F37B0 /* NSString+UUID.m */; };
+		3E4198461426006000EE2CFA /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E4198451426006000EE2CFA /* InfoView.xib */; };
+		3E41984A1426181A00EE2CFA /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4198491426181A00EE2CFA /* InfoViewController.m */; };
 		3E50588F142592F700D2FFB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505882142592F700D2FFB8 /* AppDelegate.m */; };
 		3E505890142592F700D2FFB8 /* CellWithSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505884142592F700D2FFB8 /* CellWithSwitch.m */; };
 		3E505891142592F700D2FFB8 /* CellWithText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505886142592F700D2FFB8 /* CellWithText.m */; };
@@ -128,6 +130,9 @@
 		3E418C2E1424D1DB001F37B0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		3E418C2F1424D1DB001F37B0 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUID.h"; sourceTree = "<group>"; };
 		3E418C301424D1DB001F37B0 /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUID.m"; sourceTree = "<group>"; };
+		3E4198451426006000EE2CFA /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		3E4198481426181A00EE2CFA /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		3E4198491426181A00EE2CFA /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		3E505881142592F700D2FFB8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E505882142592F700D2FFB8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3E505883142592F700D2FFB8 /* CellWithSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWithSwitch.h; sourceTree = "<group>"; };
@@ -294,6 +299,7 @@
 				3EDE02E5142468AD00490D47 /* CellWithText.xib */,
 				3E0113141423806E0003B868 /* MainViewController.xib */,
 				3E011335142441800003B868 /* CellWithSwitch.xib */,
+				3E4198451426006000EE2CFA /* InfoView.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -365,6 +371,8 @@
 				3E50588D142592F700D2FFB8 /* MainViewController.m */,
 				3E50588E142592F700D2FFB8 /* TwitterSecret.h */,
 				3E5058AB1425952200D2FFB8 /* Common.h */,
+				3E4198481426181A00EE2CFA /* InfoViewController.h */,
+				3E4198491426181A00EE2CFA /* InfoViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -510,6 +518,7 @@
 				3E011336142441800003B868 /* CellWithSwitch.xib in Resources */,
 				3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */,
 				3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */,
+				3E4198461426006000EE2CFA /* InfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +591,7 @@
 				3E505893142592F700D2FFB8 /* ConfigViewController.m in Sources */,
 				3E505894142592F700D2FFB8 /* main.m in Sources */,
 				3E505895142592F700D2FFB8 /* MainViewController.m in Sources */,
+				3E41984A1426181A00EE2CFA /* InfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
