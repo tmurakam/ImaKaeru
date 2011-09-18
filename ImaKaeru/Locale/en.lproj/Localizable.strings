@@ -10,3 +10,15 @@
 "im_on_my_way" = "I'm on my way.";
 "ill_on_my_way_later" = "I'll on my way a little later.";
 "ill_be_late" = "I'll be late.";
+
+/* ConfigViewController */
+"config" = "Config";
+"message" = "Message";
+"messages_config" = "Messages";
+"email_config" = "E-mail";
+"twitter_config" = "Twitter";
+"send_email" = "Send E-mail";
+"send_twitter" = "Send Twitter";
+"direct_message" = "Direct Message";
+"destination" = "Destination";
+"account" = "Account";

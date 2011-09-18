@@ -9,3 +9,15 @@
 "im_on_my_way" = "今から帰るよ!";
 "ill_on_my_way_later" = "もう少ししたら帰ります";
 "ill_be_late" = "遅くなりそうです";
+
+/* ConfigViewController */
+"config" = "設定";
+"message" = "メッセージ";
+"messages_config" = "メッセージ設定";
+"email_config" = "Eメール設定";
+"twitter_config" = "Twitter設定";
+"send_email" = "Eメール送信";
+"send_twitter" = "Twitter送信";
+"direct_message" = "ダイレクトメッセージ";
+"destination" = "送信先";
+"account" = "アカウント";

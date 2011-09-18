@@ -7,8 +7,7 @@
 //
 
 #import "ConfigViewController.h"
-//#import "TwitterConfigViewController.h"
-
+#import "Common.h"
 #import "TwitterSecret.h"
 
 #define K_MSG1 0
@@ -57,7 +56,7 @@
 {
     [super viewDidLoad];
 
-    self.title = @"設定";
+    self.title = _L(@"config");
     
     self.navigationItem.rightBarButtonItem = 
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
@@ -112,11 +111,11 @@
 {
     switch (section) {
         case 0:
-            return @"メッセージ設定";
+            return _L(@"messages_config");
         case 1:
-            return @"Eメール設定";
+            return _L(@"email_config");
         case 2:
-            return @"Twitter設定";
+            return _L(@"twitter_config");
     }
     return nil;
 }
@@ -137,19 +136,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
+    NSString *label;
 
     switch (indexPath.section) {
         case 0:
             // Message settings
+            label = [NSString stringWithFormat:@"%@%d", _L(@"message"), indexPath.row + 1];
             switch (indexPath.row) {
                 case 0:
-                    cell = [self getCellWithText:K_MSG1 label:@"メッセージ1" placeholder:@"Message" text:mConfig.message1];
+                    cell = [self getCellWithText:K_MSG1 label:label placeholder:@"Message" text:mConfig.message1];
                     break;
                 case 1:
-                    cell = [self getCellWithText:K_MSG2 label:@"メッセージ2" placeholder:@"Message" text:mConfig.message2];
+                    cell = [self getCellWithText:K_MSG2 label:label placeholder:@"Message" text:mConfig.message2];
                     break;
                 case 2:
-                    cell = [self getCellWithText:K_MSG3 label:@"メッセージ3" placeholder:@"Message" text:mConfig.message3];
+                    cell = [self getCellWithText:K_MSG3 label:label placeholder:@"Message" text:mConfig.message3];
                     break;
             }
             break;
@@ -159,11 +160,11 @@
             switch (indexPath.row) {
                 case 0:
                     // Email on/off
-                    cell = [self getCellWithSwitch:K_IS_USE_EMAIL label:@"Eメール送信" on:mConfig.isUseEmail];
+                    cell = [self getCellWithSwitch:K_IS_USE_EMAIL label:_L(@"send_email") on:mConfig.isUseEmail];
                     break;
                     
                 case 1:
-                    cell = [self getCellWithText:K_EMAIL_ADDRESS label:@"送信先" placeholder:@"example.gmail.com" text:mConfig.emailAddress];
+                    cell = [self getCellWithText:K_EMAIL_ADDRESS label:@"To:" placeholder:@"example.gmail.com" text:mConfig.emailAddress];
                     break;
             }
             break;
@@ -173,21 +174,21 @@
             switch (indexPath.row) {
                 case 0:
                     // Twitter on/off
-                    cell = [self getCellWithSwitch:K_IS_USE_TWITTER label:@"Twitter送信" on:mConfig.isUseTwitter];
+                    cell = [self getCellWithSwitch:K_IS_USE_TWITTER label:_L(@"send_twitter") on:mConfig.isUseTwitter];
                     break;
 
                 case 1:
                     // direct message
-                    cell = [self getCellWithSwitch:K_IS_USE_DIRECT_MESSAGE label:@"ダイレクトメッセージ" on:mConfig.isUseDirectMessage];
+                    cell = [self getCellWithSwitch:K_IS_USE_DIRECT_MESSAGE label:_L(@"direct_message") on:mConfig.isUseDirectMessage];
                     break;
                     
                 case 2:
                     // address
-                    cell = [self getCellWithText:K_TWITTER_ADDRESS label:@"送信先" placeholder:@"twitter account" text:mConfig.twitterAddress];
+                    cell = [self getCellWithText:K_TWITTER_ADDRESS label:_L(@"destination") placeholder:@"twitter account" text:mConfig.twitterAddress];
                     break;
                 case 3:
                     // twitter account
-                    cell = [self getPlainCell:@"アカウント設定"];
+                    cell = [self getPlainCell:_L(@"account")];
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                     break;
             }
@@ -307,11 +308,13 @@
     engine.consumerKey = CONSUMER_KEY;
     engine.consumerSecret = CONSUMER_SECRET;
     
+    [engine clearAccessToken];
+    
     UIViewController *vc = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:engine delegate:self];
     if (vc) {
         [self.navigationController presentModalViewController:vc animated:YES];
     } else {
-        // TODO:
+        // Oops!
     }
 }
 
