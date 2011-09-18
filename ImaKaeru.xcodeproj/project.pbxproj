@@ -43,6 +43,7 @@
 		3E505893142592F700D2FFB8 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588A142592F700D2FFB8 /* ConfigViewController.m */; };
 		3E505894142592F700D2FFB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588B142592F700D2FFB8 /* main.m */; };
 		3E505895142592F700D2FFB8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588D142592F700D2FFB8 /* MainViewController.m */; };
+		3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E50589F1425939E00D2FFB8 /* Localizable.strings */; };
 		3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE02E5142468AD00490D47 /* CellWithText.xib */; };
 		3EE691011424DAF100215A36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691001424DAF100215A36 /* libxml2.dylib */; };
 		3EE6911F1424E1A500215A36 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE691041424E1A500215A36 /* NSMutableURLRequest+Parameters.m */; };
@@ -141,6 +142,9 @@
 		3E50588C142592F700D2FFB8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3E50588D142592F700D2FFB8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3E50588E142592F700D2FFB8 /* TwitterSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSecret.h; sourceTree = "<group>"; };
+		3E50589E1425939E00D2FFB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E5058A0142593A800D2FFB8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E5058AA1425949300D2FFB8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3EDE02E5142468AD00490D47 /* CellWithText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellWithText.xib; sourceTree = "<group>"; };
 		3EE691001424DAF100215A36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EE691031424E1A500215A36 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
@@ -366,8 +370,9 @@
 		3E50587F1425924400D2FFB8 /* Locale */ = {
 			isa = PBXGroup;
 			children = (
+				3E50589F1425939E00D2FFB8 /* Localizable.strings */,
 			);
-			name = Locale;
+			path = Locale;
 			sourceTree = "<group>";
 		};
 		3EE690A61424D0CF00215A36 /* Twitter+OAuth */ = {
@@ -480,6 +485,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = 3E0112CF14237ED50003B868;
 			productRefGroup = 3E0112DB14237ED50003B868 /* Products */;
@@ -501,6 +507,7 @@
 				3E0113151423806E0003B868 /* MainViewController.xib in Resources */,
 				3E011336142441800003B868 /* CellWithSwitch.xib in Resources */,
 				3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */,
+				3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +606,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3E0112E814237ED50003B868 /* en */,
+				3E5058AA1425949300D2FFB8 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -609,6 +617,15 @@
 				3E01130614237ED60003B868 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3E50589F1425939E00D2FFB8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E50589E1425939E00D2FFB8 /* en */,
+				3E5058A0142593A800D2FFB8 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
