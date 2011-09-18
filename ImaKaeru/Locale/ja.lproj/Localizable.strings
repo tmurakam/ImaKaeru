@@ -17,6 +17,9 @@
 "config" = "設定";
 "info" = "情報";
 "hash_tag" = "#ImaKaeru";
+"tweet_completed" = "送信完了";
+"tweet_failed" = "送信失敗";
+
 "error" = "エラー";
 "dismiss" = "閉じる";
 

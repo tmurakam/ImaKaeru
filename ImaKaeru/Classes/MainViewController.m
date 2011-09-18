@@ -97,11 +97,13 @@
         mMessageToSend = mConfig.message3;
     }
     
-    if (mConfig.isUseEmail) {
-        [self sendEmail];
-    }
+    // 送信する
+    // Twitter とメール同時送信の場合は、Twitter送信が完了してからメール送信する
     if (mConfig.isUseTwitter) {
         [self sendTwitter];
+    }
+    else if (mConfig.isUseEmail) {
+        [self sendEmail];
     }
 }
 
@@ -118,10 +120,15 @@
     // TBD
 }
 
+- (void)showMessage:(NSString *)message title:(NSString *)title
+{
+    UIAlertView *v = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:_L(@"dismiss") otherButtonTitles:nil];
+    [v show];
+}
+
 - (void)showError:(NSString *)message
 {
-    UIAlertView *v = [[UIAlertView alloc] initWithTitle:_L(@"error") message:message delegate:nil cancelButtonTitle:_L(@"dismiss") otherButtonTitles:nil];
-    [v show];
+    [self showMessage:message title:_L(@"error")];
 }
 
 #pragma mark - Email
@@ -140,7 +147,7 @@
     
     NSMutableString *body = [NSMutableString stringWithString:mMessageToSend];
     [body appendString:@"\n\n"];
-    [body appendFormat:@"Sent from @%\nhttp://iphone.tmurakam.org/ImaKaeru", _L(@"app_name")];
+    [body appendFormat:@"Sent from %@\nhttp://iphone.tmurakam.org/ImaKaeru", _L(@"app_name")];
     [vc setMessageBody:body isHTML:NO];
     
     [self presentModalViewController:vc animated:YES];
@@ -209,10 +216,17 @@
 #pragma mark TwitterEngineDelegate
 - (void) requestSucceeded: (NSString *) requestIdentifier {
 	NSLog(@"Request %@ succeeded", requestIdentifier);
+
+    if (mConfig.isUseEmail) {
+        [self sendEmail];
+    } else {
+        [self showMessage:_L(@"tweet_completed") title:@"Twitter"];
+    }
 }
 
 - (void) requestFailed: (NSString *) requestIdentifier withError: (NSError *) error {
 	NSLog(@"Request %@ failed with error: %@", requestIdentifier, error);
+    [self showError:_L(@"tweet_failed")];
 }
 
 #pragma mark - ADBannerViewDelegate

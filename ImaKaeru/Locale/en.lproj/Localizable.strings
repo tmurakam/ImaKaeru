@@ -17,6 +17,9 @@
 "config" = "Config";
 "info" = "Info";
 "hash_tag" = "#NowOnMyWay";
+"tweet_completed" = "Tweet completed";
+"tweet_failed" = "Tweet failed";
+
 "error" = "Error";
 "dismiss" = "Dismiss";
 

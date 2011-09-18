@@ -37,6 +37,7 @@
 - (void)sendEmail;
 - (void)sendTwitter;
 
+- (void)showMessage:(NSString *)message title:(NSString *)title;
 - (void)showError:(NSString *)message;
 
 @end
