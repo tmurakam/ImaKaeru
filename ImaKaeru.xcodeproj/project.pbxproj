@@ -142,21 +142,6 @@
 		3EDE02E8142468E800490D47 /* CellWithText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellWithText.h; sourceTree = "<group>"; };
 		3EDE02E9142468E800490D47 /* CellWithText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellWithText.m; sourceTree = "<group>"; };
 		3EDE02FE1424A69100490D47 /* TwitterSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSecret.h; sourceTree = "<group>"; };
-		3EE690AA1424D12500215A36 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
-		3EE690AB1424D12500215A36 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
-		3EE690AC1424D12500215A36 /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Base.h"; sourceTree = "<group>"; };
-		3EE690AD1424D12500215A36 /* OAAsynchronousDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAAsynchronousDataFetcher.h; sourceTree = "<group>"; };
-		3EE690AE1424D12500215A36 /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAConsumer.h; sourceTree = "<group>"; };
-		3EE690AF1424D12500215A36 /* OADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OADataFetcher.h; sourceTree = "<group>"; };
-		3EE690B01424D12500215A36 /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAHMAC_SHA1SignatureProvider.h; sourceTree = "<group>"; };
-		3EE690B11424D12500215A36 /* OAMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAMutableURLRequest.h; sourceTree = "<group>"; };
-		3EE690B21424D12500215A36 /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAPlaintextSignatureProvider.h; sourceTree = "<group>"; };
-		3EE690B31424D12500215A36 /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OARequestParameter.h; sourceTree = "<group>"; };
-		3EE690B41424D12500215A36 /* OAServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAServiceTicket.h; sourceTree = "<group>"; };
-		3EE690B51424D12500215A36 /* OASignatureProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OASignatureProviding.h; sourceTree = "<group>"; };
-		3EE690B61424D12500215A36 /* OAToken_KeychainExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken_KeychainExtensions.h; sourceTree = "<group>"; };
-		3EE690B71424D12500215A36 /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken.h; sourceTree = "<group>"; };
-		3EE690B81424D12500215A36 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
 		3EE691001424DAF100215A36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EE691031424E1A500215A36 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		3EE691041424E1A500215A36 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
@@ -373,40 +358,9 @@
 			isa = PBXGroup;
 			children = (
 				3E418C091424D192001F37B0 /* SAOAuthTwitterEngine */,
-				3EE690A81424D0E800215A36 /* Libraries & Headers */,
 				3E418C101424D1BD001F37B0 /* MGTwitterEngine */,
 			);
 			path = "Twitter+OAuth";
-			sourceTree = "<group>";
-		};
-		3EE690A81424D0E800215A36 /* Libraries & Headers */ = {
-			isa = PBXGroup;
-			children = (
-				3EE690A91424D10700215A36 /* OAuthConsumer */,
-			);
-			path = "Libraries & Headers";
-			sourceTree = "<group>";
-		};
-		3EE690A91424D10700215A36 /* OAuthConsumer */ = {
-			isa = PBXGroup;
-			children = (
-				3EE690AA1424D12500215A36 /* NSMutableURLRequest+Parameters.h */,
-				3EE690AB1424D12500215A36 /* NSString+URLEncoding.h */,
-				3EE690AC1424D12500215A36 /* NSURL+Base.h */,
-				3EE690AD1424D12500215A36 /* OAAsynchronousDataFetcher.h */,
-				3EE690AE1424D12500215A36 /* OAConsumer.h */,
-				3EE690AF1424D12500215A36 /* OADataFetcher.h */,
-				3EE690B01424D12500215A36 /* OAHMAC_SHA1SignatureProvider.h */,
-				3EE690B11424D12500215A36 /* OAMutableURLRequest.h */,
-				3EE690B21424D12500215A36 /* OAPlaintextSignatureProvider.h */,
-				3EE690B31424D12500215A36 /* OARequestParameter.h */,
-				3EE690B41424D12500215A36 /* OAServiceTicket.h */,
-				3EE690B51424D12500215A36 /* OASignatureProviding.h */,
-				3EE690B61424D12500215A36 /* OAToken_KeychainExtensions.h */,
-				3EE690B71424D12500215A36 /* OAToken.h */,
-				3EE690B81424D12500215A36 /* OAuthConsumer.h */,
-			);
-			path = OAuthConsumer;
 			sourceTree = "<group>";
 		};
 		3EE691021424E18400215A36 /* OAuthConsumer */ = {
