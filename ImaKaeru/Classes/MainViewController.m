@@ -73,23 +73,35 @@
 
 - (IBAction)onPushSendMessage:(id)sender
 {
-    NSString *message = nil;
+    // sanity check
+    if (!mConfig.isUseEmail && !mConfig.isUseTwitter) {
+        [self showError:_L(@"error_no_dest")];
+        return;
+    }
+    else if (mConfig.isUseEmail && (mConfig.emailAddress == nil || [mConfig.emailAddress length] == 0)) {
+        [self showError:_L(@"error_no_email_dest")];
+        return;
+    }
+    if (mConfig.isUseTwitter && (mConfig.twitterAddress == nil || [mConfig.twitterAddress length] == 0)) {
+        [self showError:_L(@"error_no_twitter_dest")];
+        return;
+    }
     
     if (sender == mSendButton1) {
-        message = mConfig.message1;
+        mMessageToSend = mConfig.message1;
     }
     else if (sender == mSendButton2) {
-        message = mConfig.message2;
+        mMessageToSend = mConfig.message2;
     }
     else if (sender == mSendButton3) {
-        message = mConfig.message3;
+        mMessageToSend = mConfig.message3;
     }
     
     if (mConfig.isUseEmail) {
-        [self sendEmail:message];
+        [self sendEmail];
     }
     if (mConfig.isUseTwitter) {
-        [self sendTwitter:message];
+        [self sendTwitter];
     }
 }
 
@@ -106,8 +118,14 @@
     // TBD
 }
 
+- (void)showError:(NSString *)message
+{
+    UIAlertView *v = [[UIAlertView alloc] initWithTitle:_L(@"error") message:message delegate:nil cancelButtonTitle:_L(@"dismiss") otherButtonTitles:nil];
+    [v show];
+}
+
 #pragma mark - Email
-- (void)sendEmail:(NSString *)message
+- (void)sendEmail
 {
     if (![MFMailComposeViewController canSendMail]) {
         // TBD
@@ -118,9 +136,9 @@
     vc.mailComposeDelegate = self;
     
     [vc setToRecipients:[NSArray arrayWithObject:mConfig.emailAddress]];
-    [vc setSubject:message]; // TBD
+    [vc setSubject:mMessageToSend]; // TBD
     
-    NSMutableString *body = [NSMutableString stringWithString:message];
+    NSMutableString *body = [NSMutableString stringWithString:mMessageToSend];
     [body appendString:@"\n\n"];
     [body appendFormat:@"Sent from @%\nhttp://iphone.tmurakam.org/ImaKaeru", _L(@"app_name")];
     [vc setMessageBody:body isHTML:NO];
@@ -134,7 +152,7 @@
 }
 
 #pragma mark - Twitter
-- (void)sendTwitter:(NSString *)message
+- (void)sendTwitter
 {
     if (mConfig.twitterAddress == nil || [mConfig.twitterAddress length] == 0) {
         // TODO: 宛先なし
@@ -152,11 +170,11 @@
     } else {
         NSString *msg;
         if (mConfig.isUseDirectMessage) {
-            msg = [NSString stringWithFormat:@"%@ %@ http://iphone.tmurakam.org/ImaKaeru", message, _L(@"hash_tag")];
+            msg = [NSString stringWithFormat:@"%@ %@ http://iphone.tmurakam.org/ImaKaeru", mMessageToSend, _L(@"hash_tag")];
             [engine sendDirectMessage:msg to:mConfig.twitterAddress];
         } else {
             // mention
-            msg = [NSString stringWithFormat:@"@%@ %@ %@ http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, message, _L(@"hash_tag")];
+            msg = [NSString stringWithFormat:@"@%@ %@ %@ http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag")];
            [engine sendUpdate:msg];
         }
     }

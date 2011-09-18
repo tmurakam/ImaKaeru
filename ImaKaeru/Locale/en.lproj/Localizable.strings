@@ -17,6 +17,12 @@
 "config" = "Config";
 "info" = "Info";
 "hash_tag" = "#NowOnMyWay";
+"error" = "Error";
+"dismiss" = "Dismiss";
+
+"error_no_dest" = "Please setup destination settings.";
+"error_no_email_dest" = "Please setup e-mail destination address.";
+"error_no_twitter_dest" = "Please setup twitter destination address.";
 
 /* ConfigViewController */
 "message" = "Message";

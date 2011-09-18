@@ -17,6 +17,12 @@
 "config" = "設定";
 "info" = "情報";
 "hash_tag" = "#ImaKaeru";
+"error" = "エラー";
+"dismiss" = "閉じる";
+
+"error_no_dest" = "送信先が設定されていません";
+"error_no_email_dest" = "Eメール送信先が設定されていません";
+"error_no_twitter_dest" = "Twitter送信先が設定されていません";
 
 /* ConfigViewController */
 "message" = "メッセージ";

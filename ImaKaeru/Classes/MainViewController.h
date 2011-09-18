@@ -26,13 +26,17 @@
     
     IBOutlet UIButton *mConfigButton;
     IBOutlet UIButton *mInfoButton;
+    
+    NSString *mMessageToSend;
 }
 
 - (IBAction)onPushSendMessage:(id)sender;
 - (IBAction)showConfigViewController:(id)sender;
 - (IBAction)showInfoViewController:(id)sender;
 
-- (void)sendEmail:(NSString *)message;
-- (void)sendTwitter:(NSString *)message;
+- (void)sendEmail;
+- (void)sendTwitter;
+
+- (void)showError:(NSString *)message;
 
 @end
