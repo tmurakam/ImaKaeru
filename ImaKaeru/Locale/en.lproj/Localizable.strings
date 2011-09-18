@@ -6,13 +6,19 @@
   Copyright (c) 2011年 __MyCompanyName__. All rights reserved.
 */
 
+"app_name" = "NowOnMyWay";
+
 /* messages */
 "im_on_my_way" = "I'm on my way.";
 "ill_on_my_way_later" = "I'll on my way a little later.";
 "ill_be_late" = "I'll be late.";
 
-/* ConfigViewController */
+/* MainViewController */
 "config" = "Config";
+"info" = "Info";
+"hash_tag" = "#NowOnMyWay";
+
+/* ConfigViewController */
 "message" = "Message";
 "messages_config" = "Messages";
 "email_config" = "E-mail";

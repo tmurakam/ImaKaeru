@@ -5,13 +5,20 @@
   Created by 村上 卓弥 on 11/09/18.
   Copyright (c) 2011年 __MyCompanyName__. All rights reserved.
 */
+
+"app_name" = "いまカエル";
+
 /* messages */
 "im_on_my_way" = "今から帰るよ!";
 "ill_on_my_way_later" = "もう少ししたら帰ります";
 "ill_be_late" = "遅くなりそうです";
 
-/* ConfigViewController */
+/* MainViewController */
 "config" = "設定";
+"info" = "情報";
+"hash_tag" = "#ImaKaeru";
+
+/* ConfigViewController */
 "message" = "メッセージ";
 "messages_config" = "メッセージ設定";
 "email_config" = "Eメール設定";

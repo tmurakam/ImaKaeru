@@ -23,6 +23,9 @@
     IBOutlet UIButton *mSendButton1;
     IBOutlet UIButton *mSendButton2;
     IBOutlet UIButton *mSendButton3;
+    
+    IBOutlet UIButton *mConfigButton;
+    IBOutlet UIButton *mInfoButton;
 }
 
 - (IBAction)onPushSendMessage:(id)sender;

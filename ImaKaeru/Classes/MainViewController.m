@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "ConfigViewController.h"
+#import "Common.h"
 
 #import "TwitterSecret.h"
 
@@ -42,6 +43,9 @@
     [mSendButton1 setTitle:mConfig.message1 forState:UIControlStateNormal];
     [mSendButton2 setTitle:mConfig.message2 forState:UIControlStateNormal];
     [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];
+    
+    [mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
+    [mInfoButton setTitle:_L(@"info") forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -118,7 +122,7 @@
     
     NSMutableString *body = [NSMutableString stringWithString:message];
     [body appendString:@"\n\n"];
-    [body appendString:@"Sent from いまカエル\nhttp://iphone.tmurakam.org/ImaKaeru"];
+    [body appendFormat:@"Sent from @%\nhttp://iphone.tmurakam.org/ImaKaeru", _L(@"app_name")];
     [vc setMessageBody:body isHTML:NO];
     
     [self presentModalViewController:vc animated:YES];
@@ -143,16 +147,16 @@
     
     UIViewController *vc = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:engine delegate:self];
     if (vc) {
-        // 認証されていない
+        // TODO: 認証されていない
         [self presentModalViewController:vc animated:YES];
     } else {
         NSString *msg;
         if (mConfig.isUseDirectMessage) {
-            msg = [NSString stringWithFormat:@"%@ #ImaKaeru http://iphone.tmurakam.org/ImaKaeru", message];
+            msg = [NSString stringWithFormat:@"%@ %@ http://iphone.tmurakam.org/ImaKaeru", message, _L(@"hash_tag")];
             [engine sendDirectMessage:msg to:mConfig.twitterAddress];
         } else {
             // mention
-            msg = [NSString stringWithFormat:@"@%@ %@ #ImaKaeru http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, message];
+            msg = [NSString stringWithFormat:@"@%@ %@ %@ http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, message, _L(@"hash_tag")];
            [engine sendUpdate:msg];
         }
     }
