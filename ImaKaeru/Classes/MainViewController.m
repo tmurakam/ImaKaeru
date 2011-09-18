@@ -173,7 +173,7 @@
     UIViewController *vc = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:engine delegate:self];
     if (vc) {
         // TODO: 認証されていない
-        [self showError:@"error_setup_twitter_account"];
+        [self showError:_L(@"error_setup_twitter_account")];
     } else {
         NSString *msg;
         if (mConfig.isUseDirectMessage) {
