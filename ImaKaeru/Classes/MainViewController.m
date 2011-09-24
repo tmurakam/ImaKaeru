@@ -36,40 +36,22 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
     [self updateButtonStates];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - UI Handlers
 
+// ボタン状態を更新する
 - (void)updateButtonStates
 {
     mConfig = [Config instance];
@@ -80,10 +62,19 @@
     
     [mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
     
+    BOOL sendEnabled = YES;
+    if (!mConfig.isUseEmail && !mConfig.isUseTwitter) {
+        sendEnabled = NO;
+    }
+    mSendButton1.enabled = sendEnabled;
+    mSendButton2.enabled = sendEnabled;
+    mSendButton3.enabled = sendEnabled;
+    
     mEmailButton.selected = mConfig.isUseEmail;
     mTwitterButton.selected = mConfig.isUseTwitter;    
 }
 
+// メッセージ送信
 - (IBAction)onPushSendMessage:(id)sender
 {
     // sanity check
@@ -131,19 +122,21 @@
 - (IBAction)onToggleTwitterButton:(id)sender
 {
     UIButton *button = (UIButton *)sender;
-    button.selected = !button.selected;
     
-    mConfig.isUseTwitter = button.selected;
+    mConfig.isUseTwitter = !button.selected;
     [mConfig save];
+    
+    [self updateButtonStates];
 }
 
 - (IBAction)onToggleEmailButton:(id)sender
 {
     UIButton *button = (UIButton *)sender;
-    button.selected = !button.selected;
     
-    mConfig.isUseEmail = button.selected;
+    mConfig.isUseEmail = !button.selected;
     [mConfig save];
+    
+    [self updateButtonStates];
 }
 
 - (void)showMessage:(NSString *)message title:(NSString *)title

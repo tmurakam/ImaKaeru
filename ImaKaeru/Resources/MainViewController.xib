@@ -39,7 +39,7 @@
 					<object class="IBUIButton" id="78141313">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{211, 359}, {89, 37}}</string>
+						<string key="NSFrame">{{240, 341}, {60, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="745793501"/>
@@ -49,7 +49,6 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">設定</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="1030414760">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -62,6 +61,11 @@
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
+						<object class="NSCustomResource" key="IBUIHighlightedImage" id="807390865">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">gear.png</string>
+						</object>
+						<reference key="IBUINormalImage" ref="807390865"/>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="554526337">
 							<int key="type">2</int>
 							<double key="pointSize">15</double>
@@ -150,7 +154,7 @@
 						<string key="NSFrame">{{20, 198}, {280, 81}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="129266061"/>
+						<reference key="NSNextKeyView" ref="171754950"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -170,7 +174,7 @@
 					<object class="IBUIButton" id="818187202">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{240, 302}, {60, 36}}</string>
+						<string key="NSFrame">{{88, 341}, {60, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="78141313"/>
@@ -197,10 +201,10 @@
 						<reference key="IBUIFontDescription" ref="554526337"/>
 						<reference key="IBUIFont" ref="831306464"/>
 					</object>
-					<object class="IBUIButton" id="129266061">
+					<object class="IBUIButton" id="171754950">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{172, 302}, {60, 36}}</string>
+						<string key="NSFrame">{{20, 341}, {60, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="818187202"/>
@@ -216,6 +220,14 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="826175019"/>
+						<object class="NSCustomResource" key="IBUISelectedBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">EmailButtonOn.png</string>
+						</object>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">EmailButtonOff.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="554526337"/>
 						<reference key="IBUIFont" ref="831306464"/>
 					</object>
@@ -298,7 +310,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">mEmailButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="129266061"/>
+						<reference key="destination" ref="171754950"/>
 					</object>
 					<int key="connectionID">37</int>
 				</object>
@@ -358,7 +370,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">onToggleEmailButton:</string>
-						<reference key="source" ref="129266061"/>
+						<reference key="source" ref="171754950"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -392,9 +404,9 @@
 							<reference ref="312953543"/>
 							<reference ref="723829564"/>
 							<reference ref="31278783"/>
-							<reference ref="78141313"/>
+							<reference ref="171754950"/>
 							<reference ref="818187202"/>
-							<reference ref="129266061"/>
+							<reference ref="78141313"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -430,7 +442,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">36</int>
-						<reference key="object" ref="129266061"/>
+						<reference key="object" ref="171754950"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>
@@ -442,14 +454,17 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="0.0" key="12.IBUIButtonInspectorSelectedEdgeInsetMetadataKey"/>
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="31.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="31.IBUIButtonInspectorSelectedEdgeInsetMetadataKey"/>
 				<real value="2" key="31.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="0.0" key="36.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="0.0" key="9.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
@@ -538,7 +553,10 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="ButtonTwitterOn.png">{120, 72}</string>
+			<string key="EmailButtonOff.png">{120, 72}</string>
+			<string key="EmailButtonOn.png">{120, 72}</string>
 			<string key="TwitterButtonOff.png">{120, 72}</string>
+			<string key="gear.png">{26, 28}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">931</string>
 	</data>

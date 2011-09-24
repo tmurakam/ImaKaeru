@@ -66,6 +66,9 @@
 		3EE691371424E43100215A36 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691361424E43100215A36 /* Security.framework */; };
 		3EF8BC12142DD16D004D3FFC /* ButtonTwitterOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC11142DD16D004D3FFC /* ButtonTwitterOn.png */; };
 		3EF8BC15142DD2D1004D3FFC /* TwitterButtonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC14142DD2D1004D3FFC /* TwitterButtonOff.png */; };
+		3EF8BC19142DD9B3004D3FFC /* EmailButtonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC17142DD9B2004D3FFC /* EmailButtonOff.png */; };
+		3EF8BC1A142DD9B3004D3FFC /* EmailButtonOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC18142DD9B2004D3FFC /* EmailButtonOn.png */; };
+		3EF8BC1C142DE075004D3FFC /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC1B142DE075004D3FFC /* gear.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +193,9 @@
 		3EE691361424E43100215A36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3EF8BC11142DD16D004D3FFC /* ButtonTwitterOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonTwitterOn.png; path = ImaKaeru/Images/ButtonTwitterOn.png; sourceTree = SOURCE_ROOT; };
 		3EF8BC14142DD2D1004D3FFC /* TwitterButtonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TwitterButtonOff.png; path = ImaKaeru/Images/TwitterButtonOff.png; sourceTree = SOURCE_ROOT; };
+		3EF8BC17142DD9B2004D3FFC /* EmailButtonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButtonOff.png; sourceTree = "<group>"; };
+		3EF8BC18142DD9B2004D3FFC /* EmailButtonOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButtonOn.png; sourceTree = "<group>"; };
+		3EF8BC1B142DE075004D3FFC /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +456,9 @@
 		3EF8BC16142DD4DB004D3FFC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3EF8BC1B142DE075004D3FFC /* gear.png */,
+				3EF8BC17142DD9B2004D3FFC /* EmailButtonOff.png */,
+				3EF8BC18142DD9B2004D3FFC /* EmailButtonOn.png */,
 				3EF8BC11142DD16D004D3FFC /* ButtonTwitterOn.png */,
 				3EF8BC14142DD2D1004D3FFC /* TwitterButtonOff.png */,
 			);
@@ -535,6 +544,9 @@
 				3E4198461426006000EE2CFA /* InfoView.xib in Resources */,
 				3EF8BC12142DD16D004D3FFC /* ButtonTwitterOn.png in Resources */,
 				3EF8BC15142DD2D1004D3FFC /* TwitterButtonOff.png in Resources */,
+				3EF8BC19142DD9B3004D3FFC /* EmailButtonOff.png in Resources */,
+				3EF8BC1A142DD9B3004D3FFC /* EmailButtonOn.png in Resources */,
+				3EF8BC1C142DE075004D3FFC /* gear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
