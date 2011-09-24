@@ -14,7 +14,7 @@
 - (void)cellWithTextChanged:(CellWithText *)cell;
 @end
 
-@interface CellWithText : UITableViewCell
+@interface CellWithText : UITableViewCell <UITextFieldDelegate>
 {
     IBOutlet UILabel *mLabel;
     IBOutlet UITextField *mTextField;
