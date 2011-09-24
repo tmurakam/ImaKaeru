@@ -24,6 +24,9 @@
     IBOutlet UIButton *mSendButton2;
     IBOutlet UIButton *mSendButton3;
     
+    IBOutlet UIButton *mEmailButton;
+    IBOutlet UIButton *mTwitterButton;
+    
     IBOutlet UIButton *mConfigButton;
     
     IBOutlet ADBannerView *mAdBannerView;
@@ -34,6 +37,10 @@
 - (IBAction)onPushSendMessage:(id)sender;
 - (IBAction)showConfigViewController:(id)sender;
 
+- (IBAction)onToggleEmailButton:(id)sender;
+- (IBAction)onToggleTwitterButton:(id)sender;
+
+- (void)updateButtonStates;
 - (void)sendEmail;
 - (void)sendTwitter;
 

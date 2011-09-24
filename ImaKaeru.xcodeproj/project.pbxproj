@@ -64,6 +64,8 @@
 		3EE691341424E1CA00215A36 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6912F1424E1CA00215A36 /* hmac.c */; };
 		3EE691351424E1CA00215A36 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 3EE691311424E1CA00215A36 /* sha1.c */; };
 		3EE691371424E43100215A36 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691361424E43100215A36 /* Security.framework */; };
+		3EF8BC12142DD16D004D3FFC /* ButtonTwitterOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC11142DD16D004D3FFC /* ButtonTwitterOn.png */; };
+		3EF8BC15142DD2D1004D3FFC /* TwitterButtonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC14142DD2D1004D3FFC /* TwitterButtonOff.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +188,8 @@
 		3EE691311424E1CA00215A36 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
 		3EE691321424E1CA00215A36 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
 		3EE691361424E43100215A36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3EF8BC11142DD16D004D3FFC /* ButtonTwitterOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonTwitterOn.png; path = ImaKaeru/Images/ButtonTwitterOn.png; sourceTree = SOURCE_ROOT; };
+		3EF8BC14142DD2D1004D3FFC /* TwitterButtonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TwitterButtonOff.png; path = ImaKaeru/Images/TwitterButtonOff.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +261,7 @@
 			children = (
 				3E50587E1425922D00D2FFB8 /* Classes */,
 				3E011313142380240003B868 /* Resources */,
+				3EF8BC16142DD4DB004D3FFC /* Images */,
 				3E50587F1425924400D2FFB8 /* Locale */,
 				3E0112E514237ED50003B868 /* Supporting Files */,
 			);
@@ -442,6 +447,15 @@
 			path = Crypto;
 			sourceTree = "<group>";
 		};
+		3EF8BC16142DD4DB004D3FFC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3EF8BC11142DD16D004D3FFC /* ButtonTwitterOn.png */,
+				3EF8BC14142DD2D1004D3FFC /* TwitterButtonOff.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -519,6 +533,8 @@
 				3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */,
 				3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */,
 				3E4198461426006000EE2CFA /* InfoView.xib in Resources */,
+				3EF8BC12142DD16D004D3FFC /* ButtonTwitterOn.png in Resources */,
+				3EF8BC15142DD2D1004D3FFC /* TwitterButtonOff.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,14 +26,6 @@
 {
     [super viewDidLoad];
 
-    mConfig = [Config instance];
-
-    [mSendButton1 setTitle:mConfig.message1 forState:UIControlStateNormal];
-    [mSendButton2 setTitle:mConfig.message2 forState:UIControlStateNormal];
-    [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];
-    
-    [mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
-    
     // iAd を画面外に移動
     CGRect frame;
     frame.size = mAdBannerView.frame.size;
@@ -51,6 +43,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
+    [self updateButtonStates];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -75,6 +69,20 @@
 }
 
 #pragma mark - UI Handlers
+
+- (void)updateButtonStates
+{
+    mConfig = [Config instance];
+    
+    [mSendButton1 setTitle:mConfig.message1 forState:UIControlStateNormal];
+    [mSendButton2 setTitle:mConfig.message2 forState:UIControlStateNormal];
+    [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];
+    
+    [mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
+    
+    mEmailButton.selected = mConfig.isUseEmail;
+    mTwitterButton.selected = mConfig.isUseTwitter;    
+}
 
 - (IBAction)onPushSendMessage:(id)sender
 {
@@ -118,6 +126,24 @@
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     
     [self presentModalViewController:nv animated:YES];
+}
+
+- (IBAction)onToggleTwitterButton:(id)sender
+{
+    UIButton *button = (UIButton *)sender;
+    button.selected = !button.selected;
+    
+    mConfig.isUseTwitter = button.selected;
+    [mConfig save];
+}
+
+- (IBAction)onToggleEmailButton:(id)sender
+{
+    UIButton *button = (UIButton *)sender;
+    button.selected = !button.selected;
+    
+    mConfig.isUseEmail = button.selected;
+    [mConfig save];
 }
 
 - (void)showMessage:(NSString *)message title:(NSString *)title
