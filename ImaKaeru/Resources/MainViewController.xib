@@ -39,7 +39,7 @@
 					<object class="IBUIButton" id="78141313">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{240, 341}, {60, 36}}</string>
+						<string key="NSFrame">{{240, 356}, {60, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="745793501"/>
@@ -48,7 +48,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="1030414760">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -105,7 +104,7 @@
 					<object class="IBUIButton" id="312953543">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 20}, {280, 81}}</string>
+						<string key="NSFrame">{{20, 20}, {280, 60}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="723829564"/>
@@ -114,7 +113,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">いま帰る!</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1030414760"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
@@ -122,13 +120,17 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="826175019"/>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="339933794">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">whiteButton.png</string>
+						</object>
 						<reference key="IBUIFontDescription" ref="554526337"/>
 						<reference key="IBUIFont" ref="831306464"/>
 					</object>
 					<object class="IBUIButton" id="723829564">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 109}, {280, 81}}</string>
+						<string key="NSFrame">{{20, 109}, {280, 60}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="31278783"/>
@@ -137,7 +139,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">もう少ししたら帰る</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1030414760"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
@@ -145,13 +146,14 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="826175019"/>
+						<reference key="IBUINormalBackgroundImage" ref="339933794"/>
 						<reference key="IBUIFontDescription" ref="554526337"/>
 						<reference key="IBUIFont" ref="831306464"/>
 					</object>
 					<object class="IBUIButton" id="31278783">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 198}, {280, 81}}</string>
+						<string key="NSFrame">{{20, 198}, {280, 60}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="171754950"/>
@@ -160,7 +162,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">遅くなるかも</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1030414760"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
@@ -168,13 +169,14 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="826175019"/>
+						<reference key="IBUINormalBackgroundImage" ref="339933794"/>
 						<reference key="IBUIFontDescription" ref="554526337"/>
 						<reference key="IBUIFont" ref="831306464"/>
 					</object>
 					<object class="IBUIButton" id="818187202">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{88, 341}, {60, 36}}</string>
+						<string key="NSFrame">{{88, 356}, {60, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="78141313"/>
@@ -204,7 +206,7 @@
 					<object class="IBUIButton" id="171754950">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 341}, {60, 36}}</string>
+						<string key="NSFrame">{{20, 356}, {60, 36}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="818187202"/>
@@ -557,6 +559,7 @@
 			<string key="EmailButtonOn.png">{120, 72}</string>
 			<string key="TwitterButtonOff.png">{120, 72}</string>
 			<string key="gear.png">{26, 28}</string>
+			<string key="whiteButton.png">{280, 60}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">931</string>
 	</data>

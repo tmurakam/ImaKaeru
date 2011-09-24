@@ -25,7 +25,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    UIImage *whiteButton = [[UIImage imageNamed:@"whiteButton"] stretchableImageWithLeftCapWidth:16 topCapHeight:16];
+    //[mSendButton1 setBackgroundImage:whiteButton forState:UIControlStateNormal];
+    //[mSendButton2 setBackgroundImage:whiteButton forState:UIControlStateNormal];
+    //[mSendButton3 setBackgroundImage:whiteButton forState:UIControlStateNormal];
+    [mConfigButton setBackgroundImage:whiteButton forState:UIControlStateNormal];
+    
     // iAd を画面外に移動
     CGRect frame;
     frame.size = mAdBannerView.frame.size;
@@ -203,6 +209,7 @@
             msg = [NSString stringWithFormat:@"@%@ %@ %@ http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag")];
            [engine sendUpdate:msg];
         }
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     }
 }
 
@@ -235,7 +242,8 @@
 #pragma mark TwitterEngineDelegate
 - (void) requestSucceeded: (NSString *) requestIdentifier {
 	NSLog(@"Request %@ succeeded", requestIdentifier);
-
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
     if (mConfig.isUseEmail) {
         [self sendEmail];
     } else {
@@ -245,6 +253,8 @@
 
 - (void) requestFailed: (NSString *) requestIdentifier withError: (NSError *) error {
 	NSLog(@"Request %@ failed with error: %@", requestIdentifier, error);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
     [self showError:_L(@"tweet_failed")];
 }
 

@@ -69,6 +69,7 @@
 		3EF8BC19142DD9B3004D3FFC /* EmailButtonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC17142DD9B2004D3FFC /* EmailButtonOff.png */; };
 		3EF8BC1A142DD9B3004D3FFC /* EmailButtonOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC18142DD9B2004D3FFC /* EmailButtonOn.png */; };
 		3EF8BC1C142DE075004D3FFC /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC1B142DE075004D3FFC /* gear.png */; };
+		3EF8BC22142E0932004D3FFC /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC21142E0932004D3FFC /* whiteButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		3EF8BC17142DD9B2004D3FFC /* EmailButtonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButtonOff.png; sourceTree = "<group>"; };
 		3EF8BC18142DD9B2004D3FFC /* EmailButtonOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButtonOn.png; sourceTree = "<group>"; };
 		3EF8BC1B142DE075004D3FFC /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		3EF8BC21142E0932004D3FFC /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +458,7 @@
 		3EF8BC16142DD4DB004D3FFC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3EF8BC21142E0932004D3FFC /* whiteButton.png */,
 				3EF8BC1B142DE075004D3FFC /* gear.png */,
 				3EF8BC17142DD9B2004D3FFC /* EmailButtonOff.png */,
 				3EF8BC18142DD9B2004D3FFC /* EmailButtonOn.png */,
@@ -547,6 +550,7 @@
 				3EF8BC19142DD9B3004D3FFC /* EmailButtonOff.png in Resources */,
 				3EF8BC1A142DD9B3004D3FFC /* EmailButtonOn.png in Resources */,
 				3EF8BC1C142DE075004D3FFC /* gear.png in Resources */,
+				3EF8BC22142E0932004D3FFC /* whiteButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
