@@ -26,6 +26,8 @@
     
     IBOutlet UIButton *mConfigButton;
     
+    IBOutlet ADBannerView *mAdBannerView;
+    
     NSString *mMessageToSend;
 }
 
@@ -37,5 +39,7 @@
 
 - (void)showMessage:(NSString *)message title:(NSString *)title;
 - (void)showError:(NSString *)message;
+
+- (void)showHideBanner;
 
 @end

@@ -42,7 +42,6 @@
 						<string key="NSFrame">{{211, 359}, {89, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -78,7 +77,6 @@
 						<string key="NSFrame">{{0, 410}, {320, 50}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:822</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -227,6 +225,14 @@
 					<int key="connectionID">28</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">mAdBannerView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="745793501"/>
+					</object>
+					<int key="connectionID">30</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">showConfigViewController:</string>
 						<reference key="source" ref="78141313"/>
@@ -345,7 +351,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">29</int>
+			<int key="maxID">30</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -367,12 +373,17 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="mAdBannerView">ADBannerView</string>
 						<string key="mConfigButton">UIButton</string>
 						<string key="mSendButton1">UIButton</string>
 						<string key="mSendButton2">UIButton</string>
 						<string key="mSendButton3">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="mAdBannerView">
+							<string key="name">mAdBannerView</string>
+							<string key="candidateClassName">ADBannerView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="mConfigButton">
 							<string key="name">mConfigButton</string>
 							<string key="candidateClassName">UIButton</string>

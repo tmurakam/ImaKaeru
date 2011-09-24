@@ -27,6 +27,18 @@
     [super viewDidLoad];
 
     mConfig = [Config instance];
+
+    [mSendButton1 setTitle:mConfig.message1 forState:UIControlStateNormal];
+    [mSendButton2 setTitle:mConfig.message2 forState:UIControlStateNormal];
+    [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];
+    
+    [mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
+    
+    // iAd を画面外に移動
+    CGRect frame;
+    frame.size = mAdBannerView.frame.size;
+    frame.origin = CGPointMake(0.0f, CGRectGetMaxY(self.view.bounds));
+    mAdBannerView.frame = frame;
 }
 
 - (void)viewDidUnload
@@ -39,12 +51,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
-    [mSendButton1 setTitle:mConfig.message1 forState:UIControlStateNormal];
-    [mSendButton2 setTitle:mConfig.message2 forState:UIControlStateNormal];
-    [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];
-    
-    [mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -225,14 +231,31 @@
 
 #pragma mark - ADBannerViewDelegate
 
+- (void)showHideBanner
+{
+    CGRect frame;
+    frame.size = mAdBannerView.frame.size;
+    frame.origin = CGPointMake(0, CGRectGetMaxY(self.view.bounds));
+    
+    if (mAdBannerView.bannerLoaded) {
+        frame.origin.y -= mAdBannerView.frame.size.height;
+    }
+    
+    [UIView animateWithDuration:0.2f animations:^{
+        mAdBannerView.frame = frame;
+    }];
+}
+
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
     NSLog(@"iAd loaded");
+    [self showHideBanner];
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
     NSLog(@"iAd load failed");
+    [self showHideBanner];
 }
 
 @end
