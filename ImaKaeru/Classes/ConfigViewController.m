@@ -16,10 +16,10 @@
 #define K_MSG2 1
 #define K_MSG3 2
 
-#define K_IS_USE_EMAIL  3
+//#define K_IS_USE_EMAIL  3
 #define K_EMAIL_ADDRESS 4
 
-#define K_IS_USE_TWITTER 5
+//#define K_IS_USE_TWITTER 5
 #define K_IS_USE_DIRECT_MESSAGE 6
 #define K_TWITTER_ADDRESS 7
 
@@ -130,9 +130,9 @@
         case 0:
             return 3;
         case 1:
-            return 2;
+            return 1;
         case 2:
-            return 4;
+            return 3;
         case 3:
             return 1;
     }
@@ -165,11 +165,6 @@
             // Email settings
             switch (indexPath.row) {
                 case 0:
-                    // Email on/off
-                    cell = [self getCellWithSwitch:K_IS_USE_EMAIL label:_L(@"send_email") on:mConfig.isUseEmail];
-                    break;
-                    
-                case 1:
                     cell = [self getCellWithText:K_EMAIL_ADDRESS label:@"To:" placeholder:@"example.gmail.com" text:mConfig.emailAddress];
                     break;
             }
@@ -179,20 +174,15 @@
             // Twitter settings
             switch (indexPath.row) {
                 case 0:
-                    // Twitter on/off
-                    cell = [self getCellWithSwitch:K_IS_USE_TWITTER label:_L(@"send_twitter") on:mConfig.isUseTwitter];
-                    break;
-
-                case 1:
                     // direct message
                     cell = [self getCellWithSwitch:K_IS_USE_DIRECT_MESSAGE label:_L(@"direct_message") on:mConfig.isUseDirectMessage];
                     break;
                     
-                case 2:
+                case 1:
                     // address
                     cell = [self getCellWithText:K_TWITTER_ADDRESS label:_L(@"destination") placeholder:@"twitter account" text:mConfig.twitterAddress];
                     break;
-                case 3:
+                case 2:
                     // twitter account
                     cell = [self getPlainCell:_L(@"account")];
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -259,7 +249,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section == 2 && indexPath.row == 3) {
+    if (indexPath.section == 2 && indexPath.row == 2) {
         // setup twitter account
         [self authTwitter];
     }
@@ -274,14 +264,6 @@
 - (void)cellWithSwitchChanged:(CellWithSwitch *)cell
 {
     switch (cell.identifier) {
-        case K_IS_USE_EMAIL:
-            mConfig.isUseEmail = cell.on;
-            break;
-            
-        case K_IS_USE_TWITTER:
-            mConfig.isUseTwitter = cell.on;
-            break;
-            
         case K_IS_USE_DIRECT_MESSAGE:
             mConfig.isUseDirectMessage = cell.on;
             break;

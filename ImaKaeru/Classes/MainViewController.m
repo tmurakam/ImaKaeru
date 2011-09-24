@@ -60,7 +60,7 @@
     [mSendButton2 setTitle:mConfig.message2 forState:UIControlStateNormal];
     [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];
     
-    [mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
+    //[mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
     
     BOOL sendEnabled = YES;
     if (!mConfig.isUseEmail && !mConfig.isUseTwitter) {
