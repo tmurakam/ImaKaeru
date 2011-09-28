@@ -46,6 +46,9 @@
 		3E505894142592F700D2FFB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588B142592F700D2FFB8 /* main.m */; };
 		3E505895142592F700D2FFB8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588D142592F700D2FFB8 /* MainViewController.m */; };
 		3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E50589F1425939E00D2FFB8 /* Localizable.strings */; };
+		3ED297A514335CC400C52243 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED297A214335CC400C52243 /* Icon-72.png */; };
+		3ED297A614335CC400C52243 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED297A314335CC400C52243 /* Icon.png */; };
+		3ED297A714335CC400C52243 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED297A414335CC400C52243 /* Icon@2x.png */; };
 		3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EDE02E5142468AD00490D47 /* CellWithText.xib */; };
 		3EE691011424DAF100215A36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691001424DAF100215A36 /* libxml2.dylib */; };
 		3EE6911F1424E1A500215A36 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE691041424E1A500215A36 /* NSMutableURLRequest+Parameters.m */; };
@@ -157,6 +160,9 @@
 		3E5058A0142593A800D2FFB8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E5058AA1425949300D2FFB8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E5058AB1425952200D2FFB8 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		3ED297A214335CC400C52243 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		3ED297A314335CC400C52243 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3ED297A414335CC400C52243 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		3EDE02E5142468AD00490D47 /* CellWithText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellWithText.xib; sourceTree = "<group>"; };
 		3EE691001424DAF100215A36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EE691031424E1A500215A36 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
@@ -458,6 +464,9 @@
 		3EF8BC16142DD4DB004D3FFC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3ED297A214335CC400C52243 /* Icon-72.png */,
+				3ED297A314335CC400C52243 /* Icon.png */,
+				3ED297A414335CC400C52243 /* Icon@2x.png */,
 				3EF8BC21142E0932004D3FFC /* whiteButton.png */,
 				3EF8BC1B142DE075004D3FFC /* gear.png */,
 				3EF8BC17142DD9B2004D3FFC /* EmailButtonOff.png */,
@@ -551,6 +560,9 @@
 				3EF8BC1A142DD9B3004D3FFC /* EmailButtonOn.png in Resources */,
 				3EF8BC1C142DE075004D3FFC /* gear.png in Resources */,
 				3EF8BC22142E0932004D3FFC /* whiteButton.png in Resources */,
+				3ED297A514335CC400C52243 /* Icon-72.png in Resources */,
+				3ED297A614335CC400C52243 /* Icon.png in Resources */,
+				3ED297A714335CC400C52243 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

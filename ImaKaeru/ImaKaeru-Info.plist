@@ -9,7 +9,11 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
-	<array/>
+	<array>
+		<string>Icon@2x.png</string>
+		<string>Icon-72.png</string>
+		<string>Icon.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>org.tmurakam.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
