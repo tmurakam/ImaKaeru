@@ -11,8 +11,8 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import <iAd/iAd.h>
 
-#import "SA_OAuthTwitterEngine.h"
-#import "SA_OAuthTwitterController.h"
+#import <Twitter/Twitter.h>
+#import <Accounts/Accounts.h>
 
 #import "Config.h"
 

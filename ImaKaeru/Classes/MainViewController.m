@@ -184,6 +184,7 @@
 }
 
 #pragma mark - Twitter
+
 - (void)sendTwitter
 {
     if (mConfig.twitterAddress == nil || [mConfig.twitterAddress length] == 0) {
@@ -191,70 +192,74 @@
         return;
     }
     
-    SA_OAuthTwitterEngine *engine = [[SA_OAuthTwitterEngine alloc] initOAuthWithDelegate:self];
-    engine.consumerKey = CONSUMER_KEY;
-    engine.consumerSecret = CONSUMER_SECRET;
-    
-    UIViewController *vc = [SA_OAuthTwitterController controllerToEnterCredentialsWithTwitterEngine:engine delegate:self];
-    if (vc) {
-        // TODO: 認証されていない
-        [self showError:_L(@"error_setup_twitter_account")];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    NSString *apiUrl;
+
+    NSString *msg;
+    if (mConfig.isUseDirectMessage) {
+	// DirectMessage
+	apiUrl = @"http://api.twitter.com/1/direct_messages/new.json";
+
+	msg = [NSString stringWithFormat:@"%@ %@ http://iphone.tmurakam.org/ImaKaeru", mMessageToSend, _L(@"hash_tag")];
+	[params setObject:msg forKey:@"text"];
+	[params setObject:mMessageToSend forKey:@"user_id"];
     } else {
-        NSString *msg;
-        if (mConfig.isUseDirectMessage) {
-            msg = [NSString stringWithFormat:@"%@ %@ http://iphone.tmurakam.org/ImaKaeru", mMessageToSend, _L(@"hash_tag")];
-            [engine sendDirectMessage:msg to:mConfig.twitterAddress];
-        } else {
-            // mention
-            msg = [NSString stringWithFormat:@"@%@ %@ %@ http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag")];
-           [engine sendUpdate:msg];
-        }
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	// mention
+	apiUrl = @"http://api.twitter.com/1/statuses/update.json";
+
+	msg = [NSString stringWithFormat:@"@%@ %@ %@ http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag")];
+	[params setObject:msg forKey:@"text"];
     }
-}
 
-#pragma mark SA_OAuthTwitterEngineDelegate
-- (void) storeCachedTwitterOAuthData: (NSString *)data forUsername: (NSString *)username {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    ACAccountStore *store = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
-	[defaults setObject:data forKey: @"authData"];
-	[defaults synchronize];
+    [store requestAccessToAccountsWithType:accountType withCompletionHandler:^(BOOL granted, NSError *error) {
+        if (!granted) {
+	    // TBD : エラー
+	    [self showError:_L(@"error_setup_twitter_account")];
+	    return;
+	}
+	NSArray *accounts = [store accountsWithAccountType:accountType];
+	if ([accounts count] <= 0) {
+	    // TBD: エラー、アカウントなし
+	    [self showError:_L(@"error_setup_twitter_account")];
+	}
+	
+	ACAccount *account = [accounts objectAtIndex:0];
+
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
+	// request 作成
+	TWRequest *req = [[TWRequest alloc] initWithURL:[NSURL URLWithString:apiUrl]
+					     parameters:params
+					  requestMethod:TWRequestMethodPOST];
+	[req setAccount:account];
+	[req performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+		if ([urlReponse statusCode] == 200) {
+		    [self performSelectorOnMainThread:@selector(tweetDone) withObject:nil waitUntilDone:NO];
+		} else {
+		    [self performSelectorOnMainThread:@selector(tweetFailed) withObject:nil waitUntilDone:NO];
+		}
+	    }];
+	}];
 }
 
-- (NSString *)cachedTwitterOAuthDataForUsername:(NSString *)username
+- (void)tweetDone
 {
-	return [[NSUserDefaults standardUserDefaults] objectForKey: @"authData"];
-}
-
-#pragma mark SA_OAuthTwitterControllerDelegate
-- (void) OAuthTwitterController: (SA_OAuthTwitterController *) controller authenticatedWithUsername: (NSString *) username {
-	NSLog(@"Authenicated for %@", username);
-}
-
-- (void) OAuthTwitterControllerFailed: (SA_OAuthTwitterController *) controller {
-	NSLog(@"Authentication Failed!");
-}
-
-- (void) OAuthTwitterControllerCanceled: (SA_OAuthTwitterController *) controller {
-	NSLog(@"Authentication Canceled.");
-}
-
-#pragma mark TwitterEngineDelegate
-- (void) requestSucceeded: (NSString *) requestIdentifier {
-	NSLog(@"Request %@ succeeded", requestIdentifier);
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
+
     if (mConfig.isUseEmail) {
         [self sendEmail];
     } else {
         [self showMessage:_L(@"tweet_completed") title:@"Twitter"];
     }
+
 }
 
-- (void) requestFailed: (NSString *) requestIdentifier withError: (NSError *) error {
-	NSLog(@"Request %@ failed with error: %@", requestIdentifier, error);
+- (void)tweetFailed
+{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
     [self showError:_L(@"tweet_failed")];
 }
 
