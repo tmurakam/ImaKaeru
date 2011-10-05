@@ -234,7 +234,7 @@
 					  requestMethod:TWRequestMethodPOST];
 	[req setAccount:account];
 	[req performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-		if ([urlReponse statusCode] == 200) {
+		if ([urlResponse statusCode] == 200) {
 		    [self performSelectorOnMainThread:@selector(tweetDone) withObject:nil waitUntilDone:NO];
 		} else {
 		    [self performSelectorOnMainThread:@selector(tweetFailed) withObject:nil waitUntilDone:NO];

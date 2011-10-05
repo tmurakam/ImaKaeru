@@ -29,7 +29,6 @@
 - (UITableViewCell *)getPlainCell:(NSString *)label;
 - (CellWithSwitch *)getCellWithSwitch:(int)identifier label:(NSString *)label on:(BOOL)on;
 - (CellWithSwitch *)getCellWithText:(int)identifier label:(NSString *)label placeholder:(NSString *)placeholder text:(NSString *)text;
-- (void)authTwitter;
 @end
 
 @implementation ConfigViewController

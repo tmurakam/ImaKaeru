@@ -16,7 +16,7 @@
 
 #import "Config.h"
 
-@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate, SA_OAuthTwitterEngineDelegate, SA_OAuthTwitterControllerDelegate>
+@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate>
 {
     Config *mConfig;
     
