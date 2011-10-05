@@ -200,13 +200,15 @@
 
         msg = [NSString stringWithFormat:@"%@ %@ http://iphone.tmurakam.org/ImaKaeru", mMessageToSend, _L(@"hash_tag")];
         [params setObject:msg forKey:@"text"];
-        [params setObject:mMessageToSend forKey:@"user_id"];
+        [params setObject:mConfig.twitterAddress forKey:@"screen_name"];
     } else {
         // mention
         apiUrl = @"http://api.twitter.com/1/statuses/update.json";
 
         msg = [NSString stringWithFormat:@"@%@ %@ %@ http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag")];
-        [params setObject:msg forKey:@"text"];
+        [params setObject:msg forKey:@"status"];
+
+        // TODO: lat, lon...
     }
 
     ACAccountStore *store = [[ACAccountStore alloc] init];
@@ -234,10 +236,17 @@
                                           requestMethod:TWRequestMethodPOST];
         [req setAccount:account];
         [req performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-            if ([urlResponse statusCode] == 200) {
+            int statusCode = [urlResponse statusCode];
+            if (statusCode == 200) {
                 [self performSelectorOnMainThread:@selector(tweetDone) withObject:nil waitUntilDone:NO];
             } else {
-                [self performSelectorOnMainThread:@selector(tweetFailed) withObject:nil waitUntilDone:NO];
+                NSDictionary *headers = [urlResponse allHeaderFields];
+                for (NSString *key in headers) {
+                    NSLog(@"%@ = %@", key, [headers objectForKey:key]);
+                }
+                
+                NSString *statusMessage = [NSHTTPURLResponse localizedStringForStatusCode:statusCode];
+                [self performSelectorOnMainThread:@selector(tweetFailed:) withObject:statusMessage waitUntilDone:NO];
             }
         }];
     }];
@@ -255,10 +264,11 @@
 
 }
 
-- (void)tweetFailed
+- (void)tweetFailed:(NSString *)statusMessage
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [self showError:_L(@"tweet_failed")];
+    NSString *msg = [NSString stringWithFormat:@"%@ (%@)", _L(@"tweet_failed"), statusMessage];
+    [self showError:msg];
 }
 
 #pragma mark - ADBannerViewDelegate
