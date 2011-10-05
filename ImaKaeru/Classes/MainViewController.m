@@ -10,8 +10,6 @@
 #import "ConfigViewController.h"
 #import "Common.h"
 
-#import "TwitterSecret.h"
-
 @implementation MainViewController
 
 - (void)didReceiveMemoryWarning
