@@ -44,10 +44,15 @@ enum {
     frame.size = mAdBannerView.frame.size;
     frame.origin = CGPointMake(0.0f, CGRectGetMaxY(self.view.bounds));
     mAdBannerView.frame = frame;
+
+    mLocation = [[Location alloc] init];
+    mLocation.delegate = self;
 }
 
 - (void)viewDidUnload
 {
+    mLocation.delegate = nil;
+    mLocation = nil;
     [super viewDidUnload];
 }
 
@@ -57,9 +62,9 @@ enum {
     [self updateButtonStates];
 
     if (mConfig.isSendLocation) {
-        [self startUpdatingLocation];
+        [mLocation startUpdating];
     } else {
-        [self stopUpdatingLocation];
+        [mLocation stopUpdating];
     }
 }
 
@@ -122,11 +127,10 @@ enum {
         mMessageToSend = mConfig.message3;
     }
  
-    if (mConfig.isSendLocation && mLocationManager != nil &&
-        mLocationManager.location == nil) {
+    if (mConfig.isSendLocation && ![mLocation hasLocation]) {
         // wait for location update...
         mStatus = StGetLocation;
-        [self startUpdatingLocation];
+        [mLocation startUpdating];
     } else {
         [self startSend];
     }
@@ -195,68 +199,20 @@ enum {
     [self showMessage:message title:_L(@"error")];
 }
 
-#pragma mark - Location
+#pragma mark - LocationDelegate
 
-- (void)startUpdatingLocation
+- (void)location:(Location *)loc didUpdate:(CLLocation *)location
 {
-    if (mLocationManager == nil) {
-        mLocationManager = [[CLLocationManager alloc] init];
-        mLocationManager.delegate = self;
-        mLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-        mLocationManager.distanceFilter = kCLDistanceFilterNone;
-
-        [mLocationManager startUpdatingLocation];
-    }
-    else if (mLocationManager.location == nil) {
-        // stop させて、強制的にイベントを発生させる
-        [mLocationManager stopUpdatingLocation];
-        [mLocationManager startUpdatingLocation];
-    }
-}
-
-- (void)stopUpdatingLocation
-{
-    if (mLocationManager != nil) {
-        mLocationManager.delegate = nil;
-        [mLocationManager stopUpdatingLocation];
-        mLocationManager = nil;
-    }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-
-    NSLog(@"success to get location");
     if (mStatus == StGetLocation) {
         [self startSend];
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+- (void)location:(Location *)loc didFail:(NSError *)error
 {
-    NSLog(@"failed to get location");
     if (mStatus == StGetLocation) {
         [self startSend];
     }
-}
-
-- (BOOL)hasLocation
-{
-    if (mLocationManager != nil && mLocationManager.location != nil) {
-        return YES;
-    }
-    return NO;
-}
-
-- (NSString *)getLocationUrl
-{
-    if (mLocationManager != nil && mLocationManager.location != nil) {
-        return nil;
-    }
-
-    CLLocation *loc = mLocationManager.location;
-    NSString *url = [NSString stringWithFormat:@"http://maps.google.com/?q=%.4f,%.4f",
-                              loc.coordinate.latitude, loc.coordinate.longitude];
-    return url;
 }
 
 #pragma mark - Email
@@ -276,7 +232,7 @@ enum {
     
     NSMutableString *body = [NSMutableString stringWithString:mMessageToSend];
 
-    NSString *locUrl = [self getLocationUrl];
+    NSString *locUrl = [mLocation getLocationUrl];
     if (locUrl != nil) {
         [body appendString:@"\n"];
         [body appendString:locUrl];
@@ -315,8 +271,8 @@ enum {
         apiUrl = @"http://api.twitter.com/1/direct_messages/new.json";
 
         msg = [NSMutableString stringWithString:mMessageToSend];
-        if ([self hasLocation]) {
-            [msg appendFormat:@" %@", [self getLocationUrl]];
+        if ([mLocation hasLocation]) {
+            [msg appendFormat:@" %@", [mLocation getLocationUrl]];
         }
         [msg appendFormat:@" %@ %@", _L(@"hash_tag"), APP_URL];
         [params setObject:msg forKey:@"text"];
@@ -327,8 +283,8 @@ enum {
 
         msg = [NSString stringWithFormat:@"@%@ %@ %@ %@", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag"), APP_URL];
         [params setObject:msg forKey:@"status"];
-        if ([self hasLocation]) {
-            NSLocation *loc = mLocationManager.location;
+        if ([mLocation hasLocation]) {
+            NSLocation *loc = mLocation.location;
             [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.latitude] forKey:@"lat"];
             [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.longitude] forKey:@"lon"];
         }

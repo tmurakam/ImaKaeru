@@ -10,14 +10,14 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import <iAd/iAd.h>
-#import <CoreLocation/CoreLocation.h>
 
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
 
 #import "Config.h"
+#import "Location.h"
 
-@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate, CLLocationManagerDelegate>
+@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate, LocationDelegate>
 {
     Config *mConfig;
     
@@ -36,7 +36,7 @@
 
     int mStatus;
 
-    CLLocationManager *mLocationManager;
+    Location *mLocation;
 }
 
 - (IBAction)onPushSendMessage:(id)sender;
@@ -47,11 +47,6 @@
 
 - (void)updateButtonStates;
 - (void)startSend;
-
-- (void)startUpdatingLocation;
-- (void)stopUpdatingLocation;
-- (BOOL)hasLocation;
-- (NSString *)getLocationUrl;
 
 - (BOOL)sendEmail;
 - (BOOL)sendTwitter;
