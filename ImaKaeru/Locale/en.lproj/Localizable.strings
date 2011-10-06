@@ -27,6 +27,7 @@
 "error_no_email_dest" = "Please setup e-mail destination address.";
 "error_no_twitter_dest" = "Please setup twitter destination address.";
 "error_setup_twitter_account" = "Please setup twitter account.";
+"error_twitter_denied" = "Twitter access was denied.";
 
 /* ConfigViewController */
 "message" = "Message";

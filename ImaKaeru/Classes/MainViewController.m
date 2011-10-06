@@ -320,14 +320,15 @@
     
     [store requestAccessToAccountsWithType:accountType withCompletionHandler:^(BOOL granted, NSError *error) {
         if (!granted) {
-            // TBD : エラー
-            [self showError:_L(@"error_setup_twitter_account")];
+            // エラー: Twitter アカウント拒否
+            [self performSelectorOnMainThread:@selector(tweetFailed:) withObject:_L(@"error_twitter_denied") waitUntilDone:NO];
             return;
         }
         NSArray *accounts = [store accountsWithAccountType:accountType];
         if ([accounts count] <= 0) {
-            // TBD: エラー、アカウントなし
-            [self showError:_L(@"error_setup_twitter_account")];
+            // エラー、アカウントなし
+            [self performSelectorOnMainThread:@selector(tweetFailed:) withObject:_L(@"error_setup_twitter_account") waitUntilDone:NO];
+            return;
         }
 
         ACAccount *account = [accounts objectAtIndex:0];
