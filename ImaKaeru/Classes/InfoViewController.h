@@ -19,4 +19,6 @@
 - (IBAction)showWebsite:(id)sender;
 - (IBAction)showFacebook:(id)sender;
 
+- (void)showUrl:(NSString *)url;
+
 @end

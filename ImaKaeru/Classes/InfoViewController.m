@@ -63,11 +63,20 @@
 }
 
 - (IBAction)showHelp:(id)sender {
+	[self showUrl:@"http://iphone.tmurakam.org/ImaKaeru"];
 }
 
 - (IBAction)showWebsite:(id)sender {
+	[self showUrl:@"http://iphone.tmurakam.org/ImaKaeru"];
 }
 
 - (IBAction)showFacebook:(id)sender {
+	[self showUrl:@"http://m.facebook.com/pages/ImaKaeru/208663542534847"];    
+}
+
+- (void)showUrl:(NSString *)url
+{
+    NSURL *u = [NSURL URLWithString:url];
+    [[UIApplication sharedApplication] openURL:u];
 }
 @end
