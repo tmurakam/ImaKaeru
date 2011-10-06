@@ -16,8 +16,7 @@
 enum {
     StIdle = 0,
     StGetLocation,
-    StSendTwitter,
-    StSendEmail
+    StSending,
 };
 
 @implementation MainViewController
@@ -56,6 +55,12 @@ enum {
 {
     [super viewWillAppear:animated];
     [self updateButtonStates];
+
+    if (mConfig.isSendLocation) {
+        [self startUpdatingLocation];
+    } else {
+        [self stopUpdatingLocation];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -117,10 +122,9 @@ enum {
         mMessageToSend = mConfig.message3;
     }
  
-    mHasLocation = NO;
-
-    if (mConfig.isSendLocation) {
-        [self getLocation];
+    if (mConfig.isSendLocation && !mHasLocation) {
+        // wait for location update...
+        mStatus = StGetLocation;
     } else {
         [self startSend];
     }
@@ -128,18 +132,22 @@ enum {
 
 - (void)startSend
 {
-    if (mStatus != StIdle &&
-        mStatus != StGetLocation) {
+    if (mStatus == StSending) {
         return;
     }
+    mStatus = StSending;
 
     // 送信する
     // Twitter とメール同時送信の場合は、Twitter送信が完了してからメール送信する
     if (mConfig.isUseTwitter) {
-        [self sendTwitter];
+        if (![self sendTwitter]) {
+            mStatus = StIdle; // error...
+        }
     }
     else if (mConfig.isUseEmail) {
-        [self sendEmail];
+        if (![self sendEmail]) {
+            mStatus = StIdle;
+        }
     }
     else {
         mStatus = StIdle;
@@ -187,38 +195,39 @@ enum {
 
 #pragma mark - Location
 
-- (void)getLocation
+- (void)startUpdatingLocation
 {
-    mStatus = StGetLocation;
+    if (mLocationManager == nil) {
+        mLocationManager = [[CLLocationManager alloc] init];
+        mLocationManager.delegate = self;
+        mLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+        mLocationManager.distanceFilter = kCLDistanceFilterNone;
+        [mLocationManager startUpdatingLocation];
+    }
+}
 
-    mLocationManager = [[CLLocationManager alloc] init];
-    mLocationManager.delegate = self;
-    mLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-    mLocationManager.distanceFilter = kCLDistanceFilterNone;
-    [mLocationManager startUpdatingLocation];
+- (void)stopUpdatingLocation
+{
+    if (mLocationManager != nil) {
+        mLocationManager.delegate = nil;
+        [mLocationManager stopUpdatingLocation];
+        mLocationManager = nil;
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    manager.delegate = nil;
-    [manager stopUpdatingLocation];
-    mLocationManager = nil;
+
+    mLatitude = newLocation.coordinate.latitude;
+    mLongitude = newLocation.coordinate.longitude;
+    mHasLocation = YES;
 
     if (mStatus == StGetLocation) {
-        mLatitude = newLocation.coordinate.latitude;
-        mLongitude = newLocation.coordinate.longitude;
-        mHasLocation = YES;
-
         [self startSend];
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    manager.delegate = nil;
-    [manager stopUpdatingLocation];
-    mLocationManager = nil;
-    mHasLocation = NO;
-
     if (mStatus == StGetLocation) {
         [self startSend];
     }
@@ -236,14 +245,12 @@ enum {
 
 #pragma mark - Email
 
-- (void)sendEmail
+- (BOOL)sendEmail
 {
     if (![MFMailComposeViewController canSendMail]) {
         // TBD
-        mStatus = StIdle;
-        return;
+        return NO;
     }
-    mStatus = StSendEmail;
     
     MFMailComposeViewController *vc = [MFMailComposeViewController new];
     vc.mailComposeDelegate = self;
@@ -264,6 +271,8 @@ enum {
     [vc setMessageBody:body isHTML:NO];
     
     [self presentModalViewController:vc animated:YES];
+
+    return YES;
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -274,14 +283,12 @@ enum {
 
 #pragma mark - Twitter
 
-- (void)sendTwitter
+- (BOOL)sendTwitter
 {
     if (mConfig.twitterAddress == nil || [mConfig.twitterAddress length] == 0) {
         // TODO: 宛先なし
-        mStatus = StIdle;
-        return;
+        return NO;
     }
-    mStatus = StSendTwitter;
 
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     NSString *apiUrl;
@@ -349,6 +356,8 @@ enum {
             }
         }];
     }];
+
+    return YES;
 }
 
 - (void)tweetDone
@@ -356,12 +365,13 @@ enum {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
     if (mConfig.isUseEmail) {
-        [self sendEmail];
+        if (![self sendEmail]) {
+            mStatus = StIdle;
+        }
     } else {
         [self showMessage:_L(@"tweet_completed") title:@"Twitter"];
         mStatus = StIdle;
     }
-
 }
 
 - (void)tweetFailed:(NSString *)statusMessage

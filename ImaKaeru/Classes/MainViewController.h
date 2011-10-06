@@ -50,13 +50,14 @@
 
 - (void)updateButtonStates;
 - (void)startSend;
-- (void)sendEmail;
-- (void)sendTwitter;
+- (BOOL)sendEmail;
+- (BOOL)sendTwitter;
 
 - (void)showMessage:(NSString *)message title:(NSString *)title;
 - (void)showError:(NSString *)message;
 
-- (void)getLocation;
+- (void)startUpdatingLocation;
+- (void)stopUpdatingLocation;
 
 - (void)tweetDone;
 - (void)tweetFailed:(NSString *)statusMessage;
