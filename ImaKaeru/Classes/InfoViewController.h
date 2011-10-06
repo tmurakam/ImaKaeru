@@ -8,5 +8,14 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoViewController : UIViewController
+{
+    
+    __weak IBOutlet UILabel *mAppNameLabel;
+    __weak IBOutlet UILabel *mVersionLabel;
+}
+
+- (IBAction)showHelp:(id)sender;
+- (IBAction)showWebsite:(id)sender;
+- (IBAction)showFacebook:(id)sender;
 
 @end

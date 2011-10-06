@@ -9,7 +9,6 @@
 #import "InfoViewController.h"
 
 #import "Common.h"
-#import "TwitterSecret.h"
 
 #define K_MSG1 0
 #define K_MSG2 1

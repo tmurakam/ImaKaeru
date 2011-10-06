@@ -30,6 +30,8 @@
 
 - (void)viewDidUnload
 {
+    mAppNameLabel = nil;
+    mVersionLabel = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -40,4 +42,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)showHelp:(id)sender {
+}
+
+- (IBAction)showWebsite:(id)sender {
+}
+
+- (IBAction)showFacebook:(id)sender {
+}
 @end
