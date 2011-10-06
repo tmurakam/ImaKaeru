@@ -10,6 +10,8 @@
 #import "ConfigViewController.h"
 #import "Common.h"
 
+#define APP_URL @"http://iphone.tmurakam.org/ImaKaeru"
+
 @implementation MainViewController
 
 - (void)didReceiveMemoryWarning
@@ -104,7 +106,17 @@
     else if (sender == mSendButton3) {
         mMessageToSend = mConfig.message3;
     }
-    
+ 
+    mHasLocation = NO;
+    if (YES) { // TODO:
+        [self getLocation];
+    } else {
+        [self startSend];
+    }
+}
+
+- (void)startSend
+{
     // 送信する
     // Twitter とメール同時送信の場合は、Twitter送信が完了してからメール送信する
     if (mConfig.isUseTwitter) {
@@ -154,6 +166,47 @@
     [self showMessage:message title:_L(@"error")];
 }
 
+#pragma mark - Location
+
+- (void)getLocation
+{
+    mLocationManager = [[CLLocationManager alloc] init];
+    mLocationManager.delegate = self;
+    mLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    mLocationManager.distanceFilter = kCLDistanceFilterNone;
+    [mLocationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    [manager stopUpdatingLocation];
+    mLocationManager = nil;
+
+    mLatitude = newLocation.coordinate.latitude;
+    mLongitude = newLocation.coordinate.longitude;
+    mHasLocation = YES;
+
+    [self startSend];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    [manager stopUpdatingLocation];
+    mLocationManager = nil;
+    mHasLocation = NO;
+
+    [self startSend];
+}
+
+- (NSString *)getLocationUrl
+{
+    if (!mHasLocation) {
+        return nil;
+    }
+
+    NSString *url = [NSString stringWithFormat:@"htttp://maps.google.com/?q=%f,%f", mLatitude, mLongitude];
+    return url;
+}
+
 #pragma mark - Email
 - (void)sendEmail
 {
@@ -169,6 +222,13 @@
     [vc setSubject:mMessageToSend]; // TBD
     
     NSMutableString *body = [NSMutableString stringWithString:mMessageToSend];
+
+    NSString *locUrl = [self getLocationUrl];
+    if (locUrl != nil) {
+        [body appendString:@"\n"];
+        [body appendString:locUrl];
+    }
+
     [body appendString:@"\n\n"];
     [body appendFormat:@"Sent from %@\nhttp://iphone.tmurakam.org/ImaKaeru", _L(@"app_name")];
     [vc setMessageBody:body isHTML:NO];
@@ -193,22 +253,28 @@
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     NSString *apiUrl;
 
-    NSString *msg;
+    NSMutableString *msg;
     if (mConfig.isUseDirectMessage) {
         // DirectMessage
         apiUrl = @"http://api.twitter.com/1/direct_messages/new.json";
 
-        msg = [NSString stringWithFormat:@"%@ %@ http://iphone.tmurakam.org/ImaKaeru", mMessageToSend, _L(@"hash_tag")];
+        msg = [NSMutableString stringWithString:mMessageToSend];
+        if (mHasLocation) {
+            [msg appendFormat:@" %@", [self getLocationUrl]];
+        }
+        [msg appendFormat:@" %@ %@", _L(@"hash_tag"), APP_URL];
         [params setObject:msg forKey:@"text"];
         [params setObject:mConfig.twitterAddress forKey:@"screen_name"];
     } else {
         // mention
         apiUrl = @"http://api.twitter.com/1/statuses/update.json";
 
-        msg = [NSString stringWithFormat:@"@%@ %@ %@ http://iphone.tmurakam.org/ImaKaeru", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag")];
+        msg = [NSString stringWithFormat:@"@%@ %@ %@ %@", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag"), APP_URL];
         [params setObject:msg forKey:@"status"];
-
-        // TODO: lat, lon...
+        if (mHasLocation) {
+            [params setObject:[NSString stringWithFormat:@"%f", mLatitude] forKey:@"lat"];
+            [params setObject:[NSString stringWithFormat:@"%f", mLongitude] forKey:@"lon"];
+        }
     }
 
     ACAccountStore *store = [[ACAccountStore alloc] init];
@@ -225,7 +291,7 @@
             // TBD: エラー、アカウントなし
             [self showError:_L(@"error_setup_twitter_account")];
         }
-	
+
         ACAccount *account = [accounts objectAtIndex:0];
 
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

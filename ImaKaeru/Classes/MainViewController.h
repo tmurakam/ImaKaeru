@@ -10,13 +10,14 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import <iAd/iAd.h>
+#import <CoreLocation/CoreLocation.h>
 
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
 
 #import "Config.h"
 
-@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate>
+@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate, CLLocationManagerDelegate>
 {
     Config *mConfig;
     
@@ -32,6 +33,11 @@
     IBOutlet ADBannerView *mAdBannerView;
     
     NSString *mMessageToSend;
+
+    CLLocationManager *mLocationManager;
+    BOOL mHasLocation;
+    double mLatitude;
+    double mLongitude;
 }
 
 - (IBAction)onPushSendMessage:(id)sender;
@@ -41,12 +47,19 @@
 - (IBAction)onToggleTwitterButton:(id)sender;
 
 - (void)updateButtonStates;
+- (void)startSend;
 - (void)sendEmail;
 - (void)sendTwitter;
 
 - (void)showMessage:(NSString *)message title:(NSString *)title;
 - (void)showError:(NSString *)message;
 
+- (void)getLocation;
+
+- (void)tweetDone;
+- (void)tweetFailed:(NSString *)statusMessage;
+
 - (void)showHideBanner;
+
 
 @end
