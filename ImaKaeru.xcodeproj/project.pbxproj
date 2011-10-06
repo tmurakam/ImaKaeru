@@ -30,6 +30,8 @@
 		3E505894142592F700D2FFB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588B142592F700D2FFB8 /* main.m */; };
 		3E505895142592F700D2FFB8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588D142592F700D2FFB8 /* MainViewController.m */; };
 		3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E50589F1425939E00D2FFB8 /* Localizable.strings */; };
+		3E72FD8B143DACF80095EF86 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E72FD8A143DACF80095EF86 /* Location.m */; };
+		3E72FD8E143DADBF0095EF86 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E72FD8D143DADBE0095EF86 /* CoreLocation.framework */; };
 		3EB5919E143C96F600D4858E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB5919D143C96F600D4858E /* Accounts.framework */; };
 		3EB591A1143C96FD00D4858E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB591A0143C96FD00D4858E /* Twitter.framework */; };
 		3ED297A514335CC400C52243 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED297A214335CC400C52243 /* Icon-72.png */; };
@@ -90,11 +92,13 @@
 		3E50588B142592F700D2FFB8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
 		3E50588C142592F700D2FFB8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3E50588D142592F700D2FFB8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		3E50588E142592F700D2FFB8 /* TwitterSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSecret.h; sourceTree = "<group>"; };
 		3E50589E1425939E00D2FFB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E5058A0142593A800D2FFB8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E5058AA1425949300D2FFB8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E5058AB1425952200D2FFB8 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		3E72FD89143DACF80095EF86 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		3E72FD8A143DACF80095EF86 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		3E72FD8D143DADBE0095EF86 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3EB5919D143C96F600D4858E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		3EB591A0143C96FD00D4858E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		3ED297A214335CC400C52243 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E72FD8E143DADBF0095EF86 /* CoreLocation.framework in Frameworks */,
 				3EB591A1143C96FD00D4858E /* Twitter.framework in Frameworks */,
 				3EB5919E143C96F600D4858E /* Accounts.framework in Frameworks */,
 				3EE691371424E43100215A36 /* Security.framework in Frameworks */,
@@ -144,8 +149,6 @@
 		3E0112CF14237ED50003B868 = {
 			isa = PBXGroup;
 			children = (
-				3EB591A0143C96FD00D4858E /* Twitter.framework */,
-				3EB5919D143C96F600D4858E /* Accounts.framework */,
 				3E0112E414237ED50003B868 /* ImaKaeru */,
 				3E01130214237ED60003B868 /* ImaKaeruTests */,
 				3E0112DD14237ED50003B868 /* Frameworks */,
@@ -165,6 +168,9 @@
 		3E0112DD14237ED50003B868 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E72FD8D143DADBE0095EF86 /* CoreLocation.framework */,
+				3EB591A0143C96FD00D4858E /* Twitter.framework */,
+				3EB5919D143C96F600D4858E /* Accounts.framework */,
 				3EE691001424DAF100215A36 /* libxml2.dylib */,
 				3EE691361424E43100215A36 /* Security.framework */,
 				3E011333142435990003B868 /* MessageUI.framework */,
@@ -245,7 +251,8 @@
 				3E50588A142592F700D2FFB8 /* ConfigViewController.m */,
 				3E50588C142592F700D2FFB8 /* MainViewController.h */,
 				3E50588D142592F700D2FFB8 /* MainViewController.m */,
-				3E50588E142592F700D2FFB8 /* TwitterSecret.h */,
+				3E72FD89143DACF80095EF86 /* Location.h */,
+				3E72FD8A143DACF80095EF86 /* Location.m */,
 				3E5058AB1425952200D2FFB8 /* Common.h */,
 				3E4198481426181A00EE2CFA /* InfoViewController.h */,
 				3E4198491426181A00EE2CFA /* InfoViewController.m */,
@@ -405,6 +412,7 @@
 				3E505894142592F700D2FFB8 /* main.m in Sources */,
 				3E505895142592F700D2FFB8 /* MainViewController.m in Sources */,
 				3E41984A1426181A00EE2CFA /* InfoViewController.m in Sources */,
+				3E72FD8B143DACF80095EF86 /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +519,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -524,7 +531,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

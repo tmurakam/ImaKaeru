@@ -284,7 +284,7 @@ enum {
         msg = [NSString stringWithFormat:@"@%@ %@ %@ %@", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag"), APP_URL];
         [params setObject:msg forKey:@"status"];
         if ([mLocation hasLocation]) {
-            NSLocation *loc = mLocation.location;
+            CLLocation *loc = mLocation.location;
             [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.latitude] forKey:@"lat"];
             [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.longitude] forKey:@"lon"];
         }

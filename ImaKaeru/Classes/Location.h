@@ -18,12 +18,12 @@
 
 @interface Location : NSObject <CLLocationManagerDelegate>
 {
-    id<LocationDelegate> mDelegate;
+    __weak id<LocationDelegate> mDelegate;
 
     CLLocationManager *mLocationManager;
 }
 
-@property(unsafe_unretained) id<LocationDelegate> delegate;
+@property(weak) id<LocationDelegate> delegate;
 @property(readonly) CLLocation *location;
 
 - (void)startUpdating;
