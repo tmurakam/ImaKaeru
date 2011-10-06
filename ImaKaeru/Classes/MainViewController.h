@@ -33,7 +33,8 @@
     IBOutlet ADBannerView *mAdBannerView;
     
     NSString *mMessageToSend;
-    BOOL mQueueSend;
+
+    int mStatus;
 
     CLLocationManager *mLocationManager;
     BOOL mHasLocation;

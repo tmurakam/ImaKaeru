@@ -17,21 +17,22 @@
     NSString *mMessage1;
     NSString *mMessage2;
     NSString *mMessage3;
-    
+
+    BOOL mIsSendLocation;
+
     BOOL mIsUseEmail;
     NSString *mEmailAddress;
     
     BOOL mIsUseTwitter;
     BOOL mIsUseDirectMessage;
     NSString *mTwitterAddress;
-    
-    NSString *mTwitterOAuthToken;
-    NSString *mTwitterOAuthSecret;
 }
 
 @property(nonatomic, strong) NSString *message1;
 @property(nonatomic, strong) NSString *message2;
 @property(nonatomic, strong) NSString *message3;
+
+@property(nonatomic) BOOL isSendLocation;
 
 @property(nonatomic) BOOL isUseEmail;
 @property(nonatomic, strong) NSString *emailAddress;
@@ -39,9 +40,6 @@
 @property(nonatomic) BOOL isUseTwitter;
 @property(nonatomic) BOOL isUseDirectMessage;
 @property(nonatomic, strong) NSString *twitterAddress;
-
-@property(nonatomic, strong) NSString *twitterOAuthToken;
-@property(nonatomic, strong) NSString *twitterOAuthSecret;
 
 + (Config *)instance;
 - (void)save;

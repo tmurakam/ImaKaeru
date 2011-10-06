@@ -21,15 +21,14 @@
 @synthesize message2 = mMessage2;
 @synthesize message3 = mMessage3;
 
+@synthesize isSendLocation = mIsSendLocation;
+
 @synthesize isUseEmail = mIsUseEmail;
 @synthesize emailAddress = mEmailAddress;
 
 @synthesize isUseTwitter = mIsUseTwitter;
 @synthesize isUseDirectMessage = mIsUseDirectMessage;
 @synthesize twitterAddress = mTwitterAddress;
-
-@synthesize twitterOAuthToken = mTwitterOAuthToken;
-@synthesize twitterOAuthSecret = mTwitterOAuthSecret;
 
 static Config *theInstance = nil;
 
@@ -65,6 +64,8 @@ static Config *theInstance = nil;
     mMessage2 = _L(@"ill_on_my_way_later");
     mMessage3 = _L(@"ill_be_late");
     
+    mIsSendLocation = YES;
+
     mIsUseEmail = YES;
     mIsUseTwitter = YES;
     mIsUseDirectMessage = YES;
@@ -80,15 +81,14 @@ static Config *theInstance = nil;
     mMessage2 = [defaults stringForKey:@"Message2"];
     mMessage3 = [defaults stringForKey:@"Message3"];
     
+    mIsSendLocation = [defaults boolForKey:@"IsSendLocation"];
+
     mIsUseEmail = [defaults boolForKey:@"IsUseEmail"];
     mEmailAddress = [defaults stringForKey:@"EmailAddress"];
     
     mIsUseTwitter = [defaults boolForKey:@"IsUseTwitter"];
     mIsUseDirectMessage = [defaults boolForKey:@"IsUseDirectMessage"];
     mTwitterAddress = [defaults stringForKey:@"TwitterAddress"];
-    
-    mTwitterOAuthToken = [defaults stringForKey:@"TwitterOAuthToken"];
-    mTwitterOAuthSecret = [defaults stringForKey:@"TwitterOAuthSecret"];
 }
 
 - (void)save
@@ -99,15 +99,14 @@ static Config *theInstance = nil;
     [defaults setObject:mMessage2 forKey:@"Message2"];
     [defaults setObject:mMessage3 forKey:@"Message3"];    
     
+    [defaults setBool:mIsSendLocation forKey:@"IsSendLocation"];
+
     [defaults setBool:mIsUseEmail forKey:@"IsUseEmail"];
     [defaults setObject:mEmailAddress forKey:@"EmailAddress"];
     
     [defaults setBool:mIsUseTwitter forKey:@"IsUseTwitter"];
     [defaults setBool:mIsUseDirectMessage forKey:@"IsUseDirectMessage"];
     [defaults setObject:mTwitterAddress forKey:@"TwitterAddress"];
-    
-    [defaults setObject:mTwitterOAuthToken forKey:@"TwitterOAuthToken"];
-    [defaults setObject:mTwitterOAuthSecret forKey:@"TwitterOAuthSecret"];
     
     // save current version
     [defaults setObject:[self currentVersion] forKey:@"LastLaunchedVersion"];
