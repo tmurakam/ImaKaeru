@@ -16,6 +16,13 @@
 #import "Config.h"
 #import "Location.h"
 
+// ステート
+typedef enum {
+    StIdle = 0,
+    StGetLocation,
+    StSending,
+} State;
+
 @interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate, LocationDelegate>
 {
     Config *mConfig;
@@ -33,10 +40,12 @@
     
     NSString *mMessageToSend;
 
-    int mStatus;
+    State mState;
 
     Location *mLocation;
 }
+
+@property(assign) State state;
 
 - (IBAction)onPushSendMessage:(id)sender;
 - (IBAction)showConfigViewController:(id)sender;

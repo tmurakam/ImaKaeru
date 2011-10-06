@@ -12,13 +12,6 @@
 #define APP_URL @"http://iphone.tmurakam.org/ImaKaeru"
 #define SHORTEN_APP_URL @"http://bit.ly/imkaeru"
 
-
-enum {
-    StIdle = 0,
-    StGetLocation,
-    StSending,
-};
-
 @implementation MainViewController
 
 - (void)didReceiveMemoryWarning
@@ -33,6 +26,8 @@ enum {
 {
     [super viewDidLoad];
     
+    mState = StIdle;
+
     UIImage *whiteButton = [[UIImage imageNamed:@"whiteButton"] stretchableImageWithLeftCapWidth:16 topCapHeight:16];
     //[mSendButton1 setBackgroundImage:whiteButton forState:UIControlStateNormal];
     //[mSendButton2 setBackgroundImage:whiteButton forState:UIControlStateNormal];
@@ -75,6 +70,18 @@ enum {
 
 #pragma mark - UI Handlers
 
+- (State)state
+{
+    return mState;
+}
+
+// 状態変更
+- (void)setState:(State)newState
+{
+    mState = newState;
+    [self updateButtonStates];
+}
+
 // ボタン状態を更新する
 - (void)updateButtonStates
 {
@@ -87,12 +94,15 @@ enum {
     //[mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
     
     BOOL sendEnabled = YES;
-    if (!mConfig.isUseEmail && !mConfig.isUseTwitter) {
+    if (mState != StIdle || (!mConfig.isUseEmail && !mConfig.isUseTwitter)) {
         sendEnabled = NO;
     }
     mSendButton1.enabled = sendEnabled;
     mSendButton2.enabled = sendEnabled;
     mSendButton3.enabled = sendEnabled;
+    
+    mEmailButton.enabled = (mState == StIdle);
+    mTwitterButton.enabled = (mState == StIdle);
     
     mEmailButton.selected = mConfig.isUseEmail;
     mTwitterButton.selected = mConfig.isUseTwitter;    
@@ -101,7 +111,7 @@ enum {
 // メッセージ送信
 - (IBAction)onPushSendMessage:(id)sender
 {
-    if (mStatus != StIdle) return;
+    if (mState != StIdle) return;
 
     // sanity check
     if (!mConfig.isUseEmail && !mConfig.isUseTwitter) {
@@ -129,7 +139,7 @@ enum {
  
     if (mConfig.isSendLocation && ![mLocation hasLocation]) {
         // wait for location update...
-        mStatus = StGetLocation;
+        mState = StGetLocation;
         [mLocation startUpdating];
     } else {
         [self startSend];
@@ -138,25 +148,25 @@ enum {
 
 - (void)startSend
 {
-    if (mStatus == StSending) {
+    if (mState == StSending) {
         return;
     }
-    mStatus = StSending;
+    self.state = StSending;
 
     // 送信する
     // Twitter とメール同時送信の場合は、Twitter送信が完了してからメール送信する
     if (mConfig.isUseTwitter) {
         if (![self sendTwitter]) {
-            mStatus = StIdle; // error...
+            self.state = StIdle; // error...
         }
     }
     else if (mConfig.isUseEmail) {
         if (![self sendEmail]) {
-            mStatus = StIdle;
+            self.state = StIdle; // error...
         }
     }
     else {
-        mStatus = StIdle;
+        self.state = StIdle;
     }
 }
 
@@ -203,14 +213,14 @@ enum {
 
 - (void)location:(Location *)loc didUpdate:(CLLocation *)location
 {
-    if (mStatus == StGetLocation) {
+    if (mState == StGetLocation) {
         [self startSend];
     }
 }
 
 - (void)location:(Location *)loc didFail:(NSError *)error
 {
-    if (mStatus == StGetLocation) {
+    if (mState == StGetLocation) {
         [self startSend];
     }
 }
@@ -250,7 +260,7 @@ enum {
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [controller dismissModalViewControllerAnimated:YES];
-    mStatus = StIdle;
+    mState = StIdle;
 }
 
 #pragma mark - Twitter
@@ -341,11 +351,11 @@ enum {
 
     if (mConfig.isUseEmail) {
         if (![self sendEmail]) {
-            mStatus = StIdle;
+            mState = StIdle;
         }
     } else {
         [self showMessage:_L(@"tweet_completed") title:@"Twitter"];
-        mStatus = StIdle;
+        mState = StIdle;
     }
 }
 
@@ -355,7 +365,7 @@ enum {
     NSString *msg = [NSString stringWithFormat:@"%@ (%@)", _L(@"tweet_failed"), statusMessage];
     [self showError:msg];
 
-    mStatus = StIdle;
+    mState = StIdle;
 }
 
 #pragma mark - ADBannerViewDelegate
