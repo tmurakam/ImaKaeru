@@ -38,3 +38,4 @@
 "direct_message" = "ダイレクトメッセージ";
 "destination" = "送信先";
 "account" = "アカウント";
+"send_location" = "位置情報送信";

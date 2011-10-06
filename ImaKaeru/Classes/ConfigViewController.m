@@ -16,10 +16,10 @@
 #define K_MSG2 1
 #define K_MSG3 2
 
-//#define K_IS_USE_EMAIL  3
+#define K_IS_SEND_LOCATION 3
+
 #define K_EMAIL_ADDRESS 4
 
-//#define K_IS_USE_TWITTER 5
 #define K_IS_USE_DIRECT_MESSAGE 6
 #define K_TWITTER_ADDRESS 7
 
@@ -127,7 +127,7 @@
 {
     switch (section) {
         case 0:
-            return 3;
+            return 4;
         case 1:
             return 1;
         case 2:
@@ -156,6 +156,9 @@
                     break;
                 case 2:
                     cell = [self getCellWithText:K_MSG3 label:label placeholder:@"Message" text:mConfig.message3];
+                    break;
+                case 3:
+                    cell = [self getCellWithSwitch:K_IS_SEND_LOCATION label:_L(@"send_location") on:mConfig.isSendLocation];
                     break;
             }
             break;
@@ -254,6 +257,10 @@
 - (void)cellWithSwitchChanged:(CellWithSwitch *)cell
 {
     switch (cell.identifier) {
+        case K_IS_SEND_LOCATION:
+            mConfig.isSendLocation = cell.on;
+            break;
+
         case K_IS_USE_DIRECT_MESSAGE:
             mConfig.isUseDirectMessage = cell.on;
             break;

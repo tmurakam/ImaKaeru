@@ -119,7 +119,7 @@ enum {
  
     mHasLocation = NO;
 
-    if (YES) { // TODO:
+    if (mConfig.isSendLocation) {
         [self getLocation];
     } else {
         [self startSend];
