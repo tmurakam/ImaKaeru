@@ -12,6 +12,14 @@
 
 #define APP_URL @"http://iphone.tmurakam.org/ImaKaeru"
 
+
+enum {
+    StIdle = 0,
+    StGetLocation,
+    StSendTwitter,
+    StSendEmail
+};
+
 @implementation MainViewController
 
 - (void)didReceiveMemoryWarning
@@ -83,6 +91,8 @@
 // メッセージ送信
 - (IBAction)onPushSendMessage:(id)sender
 {
+    if (mStatus != StIdle) return;
+
     // sanity check
     if (!mConfig.isUseEmail && !mConfig.isUseTwitter) {
         [self showError:_L(@"error_no_dest")];
@@ -108,7 +118,6 @@
     }
  
     mHasLocation = NO;
-    mQueueSend = YES;
 
     if (YES) { // TODO:
         [self getLocation];
@@ -119,8 +128,10 @@
 
 - (void)startSend
 {
-    if (!mQueueSend) return;
-    mQueueSend = NO;
+    if (mStatus != StIdle &&
+        mStatus != StGetLocation) {
+        return;
+    }
 
     // 送信する
     // Twitter とメール同時送信の場合は、Twitter送信が完了してからメール送信する
@@ -129,6 +140,9 @@
     }
     else if (mConfig.isUseEmail) {
         [self sendEmail];
+    }
+    else {
+        mStatus = StIdle;
     }
 }
 
@@ -175,6 +189,8 @@
 
 - (void)getLocation
 {
+    mStatus = StGetLocation;
+
     mLocationManager = [[CLLocationManager alloc] init];
     mLocationManager.delegate = self;
     mLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
@@ -187,11 +203,13 @@
     [manager stopUpdatingLocation];
     mLocationManager = nil;
 
-    mLatitude = newLocation.coordinate.latitude;
-    mLongitude = newLocation.coordinate.longitude;
-    mHasLocation = YES;
+    if (mStatus == StGetLocation) {
+        mLatitude = newLocation.coordinate.latitude;
+        mLongitude = newLocation.coordinate.longitude;
+        mHasLocation = YES;
 
-    [self startSend];
+        [self startSend];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -201,7 +219,9 @@
     mLocationManager = nil;
     mHasLocation = NO;
 
-    [self startSend];
+    if (mStatus == StGetLocation) {
+        [self startSend];
+    }
 }
 
 - (NSString *)getLocationUrl
@@ -215,12 +235,15 @@
 }
 
 #pragma mark - Email
+
 - (void)sendEmail
 {
     if (![MFMailComposeViewController canSendMail]) {
         // TBD
+        mStatus = StIdle;
         return;
     }
+    mStatus = StSendEmail;
     
     MFMailComposeViewController *vc = [MFMailComposeViewController new];
     vc.mailComposeDelegate = self;
@@ -246,6 +269,7 @@
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [controller dismissModalViewControllerAnimated:YES];
+    mStatus = StIdle;
 }
 
 #pragma mark - Twitter
@@ -254,9 +278,11 @@
 {
     if (mConfig.twitterAddress == nil || [mConfig.twitterAddress length] == 0) {
         // TODO: 宛先なし
+        mStatus = StIdle;
         return;
     }
-    
+    mStatus = StSendTwitter;
+
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     NSString *apiUrl;
 
@@ -333,6 +359,7 @@
         [self sendEmail];
     } else {
         [self showMessage:_L(@"tweet_completed") title:@"Twitter"];
+        mStatus = StIdle;
     }
 
 }
@@ -342,6 +369,8 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSString *msg = [NSString stringWithFormat:@"%@ (%@)", _L(@"tweet_failed"), statusMessage];
     [self showError:msg];
+
+    mStatus = StIdle;
 }
 
 #pragma mark - ADBannerViewDelegate
