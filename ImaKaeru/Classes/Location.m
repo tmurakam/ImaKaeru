@@ -19,7 +19,7 @@
         mLocationManager = [[CLLocationManager alloc] init];
         mLocationManager.delegate = self;
         mLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-        mLocationManager.distanceFilter = kCLDistanceFilterNone;
+        mLocationManager.distanceFilter = 100;
     }
     return self;
 }
@@ -62,12 +62,12 @@
 
 - (NSString *)getLocationUrl
 {
-    if (mLocationManager.location != nil) {
+    if (mLocationManager.location == nil) {
         return nil;
     }
 
     CLLocation *loc = mLocationManager.location;
-    NSString *url = [NSString stringWithFormat:@"http://maps.google.com/?q=%.4f,%.4f",
+    NSString *url = [NSString stringWithFormat:@"http://maps.google.com?q=%.4f,%.4f",
                               loc.coordinate.latitude, loc.coordinate.longitude];
     return url;
 }

@@ -11,6 +11,7 @@
 #import "Common.h"
 
 #define APP_URL @"http://iphone.tmurakam.org/ImaKaeru"
+#define SHORTEN_APP_URL @"http://bit.ly/imkaeru"
 
 
 enum {
@@ -234,12 +235,12 @@ enum {
 
     NSString *locUrl = [mLocation getLocationUrl];
     if (locUrl != nil) {
-        [body appendString:@"\n"];
+        [body appendString:@"\nat "];
         [body appendString:locUrl];
     }
 
     [body appendString:@"\n\n"];
-    [body appendFormat:@"Sent from %@\nhttp://iphone.tmurakam.org/ImaKaeru", _L(@"app_name")];
+    [body appendFormat:@"Sent from %@\n%@", _L(@"app_name"), APP_URL];
     [vc setMessageBody:body isHTML:NO];
     
     [self presentModalViewController:vc animated:YES];
@@ -274,19 +275,21 @@ enum {
         if ([mLocation hasLocation]) {
             [msg appendFormat:@" %@", [mLocation getLocationUrl]];
         }
-        [msg appendFormat:@" %@ %@", _L(@"hash_tag"), APP_URL];
+        [msg appendFormat:@" %@", _L(@"hash_tag")];
+        //[msg appendFOrmat:@" %@", SHORTEN_APP_URL]; // directmessage では app url つけない
         [params setObject:msg forKey:@"text"];
         [params setObject:mConfig.twitterAddress forKey:@"screen_name"];
     } else {
         // mention
         apiUrl = @"http://api.twitter.com/1/statuses/update.json";
 
-        msg = [NSString stringWithFormat:@"@%@ %@ %@ %@", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag"), APP_URL];
+        msg = [NSString stringWithFormat:@"@%@ %@ %@ %@", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag"), SHORTEN_APP_URL];
         [params setObject:msg forKey:@"status"];
         if ([mLocation hasLocation]) {
             CLLocation *loc = mLocation.location;
-            [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.latitude] forKey:@"lat"];
-            [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.longitude] forKey:@"lon"];
+            [params setObject:[NSString stringWithFormat:@"%.1f", loc.coordinate.latitude] forKey:@"lat"];
+            [params setObject:[NSString stringWithFormat:@"%.1f", loc.coordinate.longitude] forKey:@"long"];
+            [params setObject:@"true" forKey:@"display_coordinates"];
         }
     }
 
