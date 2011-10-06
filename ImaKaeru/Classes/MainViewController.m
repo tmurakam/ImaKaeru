@@ -108,6 +108,8 @@
     }
  
     mHasLocation = NO;
+    mQueueSend = YES;
+
     if (YES) { // TODO:
         [self getLocation];
     } else {
@@ -117,6 +119,9 @@
 
 - (void)startSend
 {
+    if (!mQueueSend) return;
+    mQueueSend = NO;
+
     // 送信する
     // Twitter とメール同時送信の場合は、Twitter送信が完了してからメール送信する
     if (mConfig.isUseTwitter) {
@@ -178,6 +183,7 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    manager.delegate = nil;
     [manager stopUpdatingLocation];
     mLocationManager = nil;
 
@@ -190,6 +196,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+    manager.delegate = nil;
     [manager stopUpdatingLocation];
     mLocationManager = nil;
     mHasLocation = NO;
