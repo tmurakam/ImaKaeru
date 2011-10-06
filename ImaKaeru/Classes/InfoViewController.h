@@ -14,6 +14,7 @@
     __weak IBOutlet UILabel *mVersionLabel;
 }
 
+- (IBAction)doneAction:(id)sender;
 - (IBAction)showHelp:(id)sender;
 - (IBAction)showWebsite:(id)sender;
 - (IBAction)showFacebook:(id)sender;

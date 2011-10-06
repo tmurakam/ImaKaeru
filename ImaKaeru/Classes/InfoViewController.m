@@ -6,6 +6,7 @@
  */
 
 #import "InfoViewController.h"
+#import "Common.h"
 
 @implementation InfoViewController
 
@@ -28,6 +29,21 @@
 
 #pragma mark - View lifecycle
 
+- (void)viewDidLoad
+{
+    self.title = _L(@"info");
+    
+    self.navigationItem.rightBarButtonItem = 
+    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
+    
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    
+    [mAppNameLabel setText:_L(@"app_name")];
+     
+    NSString *version = [info valueForKey:@"CFBundleShortVersionString"];
+    [mVersionLabel setText:[NSString stringWithFormat:@"Version %@", version]];
+}
+
 - (void)viewDidUnload
 {
     mAppNameLabel = nil;
@@ -40,6 +56,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)doneAction:(id)sender {
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)showHelp:(id)sender {

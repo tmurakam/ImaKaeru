@@ -7,6 +7,7 @@
 
 #import "MainViewController.h"
 #import "ConfigViewController.h"
+#import "InfoViewController.h"
 #import "Common.h"
 
 #define APP_URL @"http://iphone.tmurakam.org/ImaKaeru"
@@ -32,7 +33,7 @@
     //[mSendButton1 setBackgroundImage:whiteButton forState:UIControlStateNormal];
     //[mSendButton2 setBackgroundImage:whiteButton forState:UIControlStateNormal];
     //[mSendButton3 setBackgroundImage:whiteButton forState:UIControlStateNormal];
-    [mConfigButton setBackgroundImage:whiteButton forState:UIControlStateNormal];
+    //[mConfigButton setBackgroundImage:whiteButton forState:UIControlStateNormal];
     
     // iAd を画面外に移動
     CGRect frame;
@@ -178,6 +179,12 @@
     ConfigViewController *vc = [[ConfigViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     
+    [self presentModalViewController:nv animated:YES];
+}
+
+- (IBAction)showInfoViewController:(id)sender {
+    InfoViewController *vc = [[InfoViewController alloc] initWithNibName:@"InfoView" bundle:nil];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentModalViewController:nv animated:YES];
 }
 
