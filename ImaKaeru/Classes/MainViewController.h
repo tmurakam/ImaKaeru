@@ -18,9 +18,9 @@
 
 // ステート
 typedef enum {
-    StIdle = 0,
-    StGetLocation,
-    StSending,
+    StIdle = 0,     // アイドル中
+    StGetLocation,  // 送信前位置取得中
+    StSending,      // 送信中
 } State;
 
 @interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate, LocationDelegate>
@@ -38,10 +38,13 @@ typedef enum {
     
     IBOutlet ADBannerView *mAdBannerView;
     
+    // 送信したいメッセージ
     NSString *mMessageToSend;
 
+    // 送信状態
     State mState;
 
+    // 位置取得用
     Location *mLocation;
 }
 

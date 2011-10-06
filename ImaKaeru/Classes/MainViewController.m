@@ -54,6 +54,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     [self updateButtonStates];
 
     if (mConfig.isSendLocation) {
@@ -94,15 +95,15 @@
     //[mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
     
     BOOL sendEnabled = YES;
-    if (mState != StIdle || (!mConfig.isUseEmail && !mConfig.isUseTwitter)) {
+    if (self.state != StIdle || (!mConfig.isUseEmail && !mConfig.isUseTwitter)) {
         sendEnabled = NO;
     }
     mSendButton1.enabled = sendEnabled;
     mSendButton2.enabled = sendEnabled;
     mSendButton3.enabled = sendEnabled;
     
-    mEmailButton.enabled = (mState == StIdle);
-    mTwitterButton.enabled = (mState == StIdle);
+    mEmailButton.enabled = (self.state == StIdle);
+    mTwitterButton.enabled = (self.state == StIdle);
     
     mEmailButton.selected = mConfig.isUseEmail;
     mTwitterButton.selected = mConfig.isUseTwitter;    
@@ -111,7 +112,7 @@
 // メッセージ送信
 - (IBAction)onPushSendMessage:(id)sender
 {
-    if (mState != StIdle) return;
+    if (self.state != StIdle) return;
 
     // sanity check
     if (!mConfig.isUseEmail && !mConfig.isUseTwitter) {
@@ -137,18 +138,20 @@
         mMessageToSend = mConfig.message3;
     }
  
+    // 位置情報取得 / 送信開始
     if (mConfig.isSendLocation && ![mLocation hasLocation]) {
         // wait for location update...
-        mState = StGetLocation;
+        self.state = StGetLocation;
         [mLocation startUpdating];
     } else {
         [self startSend];
     }
 }
 
+// 送信開始
 - (void)startSend
 {
-    if (mState == StSending) {
+    if (self.state == StSending) {
         return;
     }
     self.state = StSending;
@@ -213,20 +216,21 @@
 
 - (void)location:(Location *)loc didUpdate:(CLLocation *)location
 {
-    if (mState == StGetLocation) {
+    if (self.state == StGetLocation) {
         [self startSend];
     }
 }
 
 - (void)location:(Location *)loc didFail:(NSError *)error
 {
-    if (mState == StGetLocation) {
+    if (self.state == StGetLocation) {
         [self startSend];
     }
 }
 
 #pragma mark - Email
 
+// メール送信
 - (BOOL)sendEmail
 {
     if (![MFMailComposeViewController canSendMail]) {
@@ -240,6 +244,7 @@
     [vc setToRecipients:[NSArray arrayWithObject:mConfig.emailAddress]];
     [vc setSubject:mMessageToSend]; // TBD
     
+    // メール本文作詞絵
     NSMutableString *body = [NSMutableString stringWithString:mMessageToSend];
 
     NSString *locUrl = [mLocation getLocationUrl];
@@ -260,11 +265,12 @@
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [controller dismissModalViewControllerAnimated:YES];
-    mState = StIdle;
+    self.state = StIdle;
 }
 
 #pragma mark - Twitter
 
+// Twitter 送信
 - (BOOL)sendTwitter
 {
     if (mConfig.twitterAddress == nil || [mConfig.twitterAddress length] == 0) {
@@ -284,20 +290,27 @@
         if ([mLocation hasLocation]) {
             [msg appendFormat:@" %@", [mLocation getLocationUrl]];
         }
-        [msg appendFormat:@" %@", _L(@"hash_tag")];
-        //[msg appendFOrmat:@" %@", SHORTEN_APP_URL]; // directmessage では app url つけない
+        
+        // direct message では hash tag, app url ともにつけない
+        //[msg appendFormat:@" %@", _L(@"hash_tag")];
+        //[msg appendFOrmat:@" %@", SHORTEN_APP_URL];
+        
         [params setObject:msg forKey:@"text"];
         [params setObject:mConfig.twitterAddress forKey:@"screen_name"];
     } else {
         // mention
         apiUrl = @"http://api.twitter.com/1/statuses/update.json";
 
-        msg = [NSString stringWithFormat:@"@%@ %@ %@ %@", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag"), SHORTEN_APP_URL];
+        msg = [NSMutableString stringWithFormat:@"@%@", mConfig.twitterAddress];
+        [msg appendFormat:@" %@", mMessageToSend];
+        [msg appendFormat:@" %@", _L(@"hash_tag")];
+        [msg appendString:@" " SHORTEN_APP_URL];
         [params setObject:msg forKey:@"status"];
+
         if ([mLocation hasLocation]) {
             CLLocation *loc = mLocation.location;
-            [params setObject:[NSString stringWithFormat:@"%.1f", loc.coordinate.latitude] forKey:@"lat"];
-            [params setObject:[NSString stringWithFormat:@"%.1f", loc.coordinate.longitude] forKey:@"long"];
+            [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.latitude] forKey:@"lat"];
+            [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.longitude] forKey:@"long"];
             [params setObject:@"true" forKey:@"display_coordinates"];
         }
     }
@@ -351,11 +364,11 @@
 
     if (mConfig.isUseEmail) {
         if (![self sendEmail]) {
-            mState = StIdle;
+            self.state = StIdle;
         }
     } else {
         [self showMessage:_L(@"tweet_completed") title:@"Twitter"];
-        mState = StIdle;
+        self.state = StIdle;
     }
 }
 
@@ -365,7 +378,7 @@
     NSString *msg = [NSString stringWithFormat:@"%@ (%@)", _L(@"tweet_failed"), statusMessage];
     [self showError:msg];
 
-    mState = StIdle;
+    self.state = StIdle;
 }
 
 #pragma mark - ADBannerViewDelegate
