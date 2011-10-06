@@ -203,7 +203,7 @@
         return nil;
     }
 
-    NSString *url = [NSString stringWithFormat:@"htttp://maps.google.com/?q=%f,%f", mLatitude, mLongitude];
+    NSString *url = [NSString stringWithFormat:@"http://maps.google.com/?q=%.4f,%.4f", mLatitude, mLongitude];
     return url;
 }
 
