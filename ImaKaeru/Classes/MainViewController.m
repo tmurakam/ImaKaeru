@@ -122,9 +122,11 @@ enum {
         mMessageToSend = mConfig.message3;
     }
  
-    if (mConfig.isSendLocation && !mHasLocation) {
+    if (mConfig.isSendLocation && mLocationManager != nil &&
+        mLocationManager.location == nil) {
         // wait for location update...
         mStatus = StGetLocation;
+        [self startUpdatingLocation];
     } else {
         [self startSend];
     }
@@ -202,6 +204,12 @@ enum {
         mLocationManager.delegate = self;
         mLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
         mLocationManager.distanceFilter = kCLDistanceFilterNone;
+
+        [mLocationManager startUpdatingLocation];
+    }
+    else if (mLocationManager.location == nil) {
+        // stop させて、強制的にイベントを発生させる
+        [mLocationManager stopUpdatingLocation];
         [mLocationManager startUpdatingLocation];
     }
 }
@@ -217,10 +225,7 @@ enum {
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
 
-    mLatitude = newLocation.coordinate.latitude;
-    mLongitude = newLocation.coordinate.longitude;
-    mHasLocation = YES;
-
+    NSLog(@"success to get location");
     if (mStatus == StGetLocation) {
         [self startSend];
     }
@@ -228,18 +233,29 @@ enum {
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+    NSLog(@"failed to get location");
     if (mStatus == StGetLocation) {
         [self startSend];
     }
 }
 
+- (BOOL)hasLocation
+{
+    if (mLocationManager != nil && mLocationManager.location != nil) {
+        return YES;
+    }
+    return NO;
+}
+
 - (NSString *)getLocationUrl
 {
-    if (!mHasLocation) {
+    if (mLocationManager != nil && mLocationManager.location != nil) {
         return nil;
     }
 
-    NSString *url = [NSString stringWithFormat:@"http://maps.google.com/?q=%.4f,%.4f", mLatitude, mLongitude];
+    CLLocation *loc = mLocationManager.location;
+    NSString *url = [NSString stringWithFormat:@"http://maps.google.com/?q=%.4f,%.4f",
+                              loc.coordinate.latitude, loc.coordinate.longitude];
     return url;
 }
 
@@ -299,7 +315,7 @@ enum {
         apiUrl = @"http://api.twitter.com/1/direct_messages/new.json";
 
         msg = [NSMutableString stringWithString:mMessageToSend];
-        if (mHasLocation) {
+        if ([self hasLocation]) {
             [msg appendFormat:@" %@", [self getLocationUrl]];
         }
         [msg appendFormat:@" %@ %@", _L(@"hash_tag"), APP_URL];
@@ -311,9 +327,10 @@ enum {
 
         msg = [NSString stringWithFormat:@"@%@ %@ %@ %@", mConfig.twitterAddress, mMessageToSend, _L(@"hash_tag"), APP_URL];
         [params setObject:msg forKey:@"status"];
-        if (mHasLocation) {
-            [params setObject:[NSString stringWithFormat:@"%f", mLatitude] forKey:@"lat"];
-            [params setObject:[NSString stringWithFormat:@"%f", mLongitude] forKey:@"lon"];
+        if ([self hasLocation]) {
+            NSLocation *loc = mLocationManager.location;
+            [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.latitude] forKey:@"lat"];
+            [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.longitude] forKey:@"lon"];
         }
     }
 

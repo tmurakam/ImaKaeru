@@ -37,9 +37,6 @@
     int mStatus;
 
     CLLocationManager *mLocationManager;
-    BOOL mHasLocation;
-    double mLatitude;
-    double mLongitude;
 }
 
 - (IBAction)onPushSendMessage:(id)sender;
@@ -50,14 +47,17 @@
 
 - (void)updateButtonStates;
 - (void)startSend;
+
+- (void)startUpdatingLocation;
+- (void)stopUpdatingLocation;
+- (BOOL)hasLocation;
+- (NSString *)getLocationUrl;
+
 - (BOOL)sendEmail;
 - (BOOL)sendTwitter;
 
 - (void)showMessage:(NSString *)message title:(NSString *)title;
 - (void)showError:(NSString *)message;
-
-- (void)startUpdatingLocation;
-- (void)stopUpdatingLocation;
 
 - (void)tweetDone;
 - (void)tweetFailed:(NSString *)statusMessage;
