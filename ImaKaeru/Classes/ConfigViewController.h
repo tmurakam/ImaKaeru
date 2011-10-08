@@ -15,4 +15,6 @@
     Config *mConfig;
 }
 
+- (IBAction)doneAction:(id)sender;
+
 @end

@@ -63,7 +63,7 @@ static Config *theInstance = nil;
     mMessage2 = _L(@"ill_on_my_way_later");
     mMessage3 = _L(@"ill_be_late");
     
-    mIsSendLocation = YES;
+    mIsSendLocation = NO;
 
     mIsUseEmail = YES;
     mIsUseTwitter = YES;

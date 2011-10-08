@@ -31,16 +31,6 @@
 
 @implementation ConfigViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-        mConfig = [Config instance];
-    }
-    return self;
-}
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -54,6 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    mConfig = [Config instance];
 
     self.title = _L(@"config");
     
@@ -61,16 +52,15 @@
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
 }
 
-- (void)doneAction:(id)sender
-{
-    [self.navigationController dismissModalViewControllerAnimated:YES];
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    mConfig = nil;
+}
+
+- (IBAction)doneAction:(id)sender
+{
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -103,7 +93,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 3;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -115,8 +105,6 @@
             return _L(@"email_config");
         case 2:
             return _L(@"twitter_config");
-        case 3:
-            return _L(@"info");
     }
     return nil;
 }
@@ -130,8 +118,6 @@
             return 1;
         case 2:
             return 2;
-        case 3:
-            return 1;
     }
     return 0;
 }
@@ -183,11 +169,6 @@
                     cell = [self getCellWithText:K_TWITTER_ADDRESS label:_L(@"destination") placeholder:@"twitter account" text:mConfig.twitterAddress];
                     break;
             }
-            break;
-        case 3:
-            // info
-            cell = [self getPlainCell:_L(@"info")];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
     }
     
