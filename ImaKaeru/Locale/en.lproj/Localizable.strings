@@ -45,3 +45,6 @@
 "website_url" = "http://iphone.tmurakam.org/ImaKaeru/index.en.html";
 "help_url" = "http://iphone.tmurakam.org/ImaKaeru/help.en.html";
 "facebook_url" = "http://m.facebook.com/pages/ImaKaeru/208663542534847";
+
+"welcome" = "Welcome";
+"welcome_message" = "Welcome to NowOnMyWay! First, tap config button to setup destination e-mail or twitter address.";

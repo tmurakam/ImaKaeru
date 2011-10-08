@@ -86,7 +86,7 @@
     mActivityIndicator.hidden = YES;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	
-    mBackButton.enabled = [v canGoBack];
+    //mBackButton.enabled = [v canGoBack];
     mForwardButton.enabled = [v canGoForward];
 }
 

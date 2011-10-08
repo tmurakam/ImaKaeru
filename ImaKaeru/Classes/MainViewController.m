@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    mConfig = [Config instance];
     mState = StIdle;
 
     //UIImage *whiteButton = [[UIImage imageNamed:@"whiteButton"] stretchableImageWithLeftCapWidth:16 topCapHeight:16];
@@ -49,6 +50,7 @@
 {
     mLocation.delegate = nil;
     mLocation = nil;
+    mConfig = nil;
     [super viewDidUnload];
 }
 
@@ -62,6 +64,17 @@
         [mLocation startUpdating];
     } else {
         [mLocation stopUpdating];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    if (mConfig.isFirstStartup || mConfig.isVersionUp) {
+        mConfig.isFirstStartup = NO;
+        mConfig.isVersionUp = NO;
+        [self showMessage:_L(@"welcome_message") title:_L(@"welcome")];
     }
 }
 
@@ -87,8 +100,6 @@
 // ボタン状態を更新する
 - (void)updateButtonStates
 {
-    mConfig = [Config instance];
-    
     [mSendButton1 setTitle:mConfig.message1 forState:UIControlStateNormal];
     [mSendButton2 setTitle:mConfig.message2 forState:UIControlStateNormal];
     [mSendButton3 setTitle:mConfig.message3 forState:UIControlStateNormal];

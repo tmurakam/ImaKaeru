@@ -30,21 +30,21 @@
     BOOL mIsVersionUp;
 }
 
-@property(nonatomic, strong) NSString *message1;
-@property(nonatomic, strong) NSString *message2;
-@property(nonatomic, strong) NSString *message3;
+@property(strong) NSString *message1;
+@property(strong) NSString *message2;
+@property(strong) NSString *message3;
 
-@property(nonatomic) BOOL isSendLocation;
+@property BOOL isSendLocation;
 
-@property(nonatomic) BOOL isUseEmail;
-@property(nonatomic, strong) NSString *emailAddress;
+@property BOOL isUseEmail;
+@property(strong) NSString *emailAddress;
 
-@property(nonatomic) BOOL isUseTwitter;
-@property(nonatomic) BOOL isUseDirectMessage;
-@property(nonatomic, strong) NSString *twitterAddress;
+@property BOOL isUseTwitter;
+@property BOOL isUseDirectMessage;
+@property(strong) NSString *twitterAddress;
 
-@property(readonly) BOOL isFirstStartup;
-@property(readonly) BOOL isVersionUp;
+@property BOOL isFirstStartup;
+@property BOOL isVersionUp;
 
 + (Config *)instance;
 - (void)save;

@@ -45,3 +45,6 @@
 "website_url" = "http://iphone.tmurakam.org/ImaKaeru";
 "help_url" = "http://iphone.tmurakam.org/ImaKaeru/help.html";
 "facebook_url" = "http://m.facebook.com/pages/ImaKaeru/208663542534847";
+
+"welcome" = "ようこそ";
+"welcome_message" = "いまカエルへようこそ! 最初に設定ボタンを押して、送信先のメールアドレスやTwitterアドレスを設定してください。";
