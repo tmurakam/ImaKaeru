@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2fC-ga-u2B">
+    <dependencies>
+        <development version="4200" defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="xd4-WR-d70">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FqR-up-7lq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="2fC-ga-u2B" customClass="MainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OsH-3P-5k4">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFit" image="Background.png" id="Lrp-gn-kog">
+                                <rect key="frame" x="-9" y="0.0" width="329" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7IY-dA-pCV">
+                                <rect key="frame" x="20" y="29" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="いま帰る!" backgroundImage="whiteButton.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPushSendMessage:" destination="2fC-ga-u2B" eventType="touchUpInside" id="cu8-xi-8aG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hd7-2T-Gzd">
+                                <rect key="frame" x="20" y="97" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="もう少ししたら帰る" backgroundImage="whiteButton.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPushSendMessage:" destination="2fC-ga-u2B" eventType="touchUpInside" id="ber-AI-2ht"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HRC-Xb-PtG">
+                                <rect key="frame" x="20" y="165" width="280" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="遅くなるかも" backgroundImage="whiteButton.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPushSendMessage:" destination="2fC-ga-u2B" eventType="touchUpInside" id="Xfh-Z9-N7P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uTv-gr-NG6">
+                                <rect key="frame" x="20" y="355" width="60" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="EmailButtonOff.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="EmailButtonOn.png"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onToggleEmailButton:" destination="2fC-ga-u2B" eventType="touchUpInside" id="MPG-ma-DKu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OBk-Er-n0G">
+                                <rect key="frame" x="101" y="355" width="60" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="TwitterButtonOff.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="ButtonTwitterOn.png"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onToggleTwitterButton:" destination="2fC-ga-u2B" eventType="touchUpInside" id="4GM-aO-wjY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZBv-ek-iOK">
+                                <rect key="frame" x="187" y="355" width="61" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" image="gear.png">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" image="gear.png"/>
+                                <state key="selected" image="gear.png"/>
+                                <state key="highlighted" image="gear.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showConfigViewController:" destination="2fC-ga-u2B" eventType="touchUpInside" id="MWq-Fk-8b5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="XiO-Ol-vYM">
+                                <rect key="frame" x="282" y="364" width="18" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showInfoViewController:" destination="2fC-ga-u2B" eventType="touchUpInside" id="0nW-7I-uRL"/>
+                                </connections>
+                            </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fUZ-JB-xAu">
+                                <rect key="frame" x="0.0" y="410" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <requiredContentSizeIdentifiers>
+                                    <string>ADBannerContentSizeLandscape</string>
+                                    <string>ADBannerContentSizePortrait</string>
+                                </requiredContentSizeIdentifiers>
+                                <connections>
+                                    <outlet property="delegate" destination="2fC-ga-u2B" id="C9k-oM-Wcq"/>
+                                </connections>
+                            </adBannerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mAdBannerView" destination="fUZ-JB-xAu" id="1Rm-ML-Llw"/>
+                        <outlet property="mConfigButton" destination="ZBv-ek-iOK" id="SY4-CS-NFR"/>
+                        <outlet property="mEmailButton" destination="uTv-gr-NG6" id="cd3-uR-kT2"/>
+                        <outlet property="mSendButton1" destination="7IY-dA-pCV" id="EjH-8s-BBd"/>
+                        <outlet property="mSendButton2" destination="hd7-2T-Gzd" id="HZi-kp-4bm"/>
+                        <outlet property="mSendButton3" destination="HRC-Xb-PtG" id="zAH-KV-lZL"/>
+                        <outlet property="mTwitterButton" destination="OBk-Er-n0G" id="tIr-Gn-C6U"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="167" y="164"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background.png" width="690" height="980"/>
+        <image name="ButtonTwitterOn.png" width="120" height="72"/>
+        <image name="EmailButtonOff.png" width="120" height="72"/>
+        <image name="EmailButtonOn.png" width="120" height="72"/>
+        <image name="TwitterButtonOff.png" width="120" height="72"/>
+        <image name="gear.png" width="26" height="28"/>
+        <image name="whiteButton.png" width="280" height="60"/>
+    </resources>
+    <classes>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onPushSendMessage:"/>
+                <relationship kind="action" name="onToggleEmailButton:"/>
+                <relationship kind="action" name="onToggleTwitterButton:"/>
+                <relationship kind="action" name="showConfigViewController:"/>
+                <relationship kind="action" name="showInfoViewController:"/>
+                <relationship kind="outlet" name="mAdBannerView" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="mConfigButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mEmailButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mSendButton1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mSendButton2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mSendButton3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mTwitterButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

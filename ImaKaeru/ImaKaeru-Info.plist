@@ -29,6 +29,8 @@
 	<true/>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>UIMainStoryboardFile</key>
+	<string>MainStoryboard</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>

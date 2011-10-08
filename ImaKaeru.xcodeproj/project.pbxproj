@@ -15,7 +15,6 @@
 		3E0112FF14237ED60003B868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E014237ED50003B868 /* Foundation.framework */; };
 		3E01130714237ED60003B868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E01130514237ED60003B868 /* InfoPlist.strings */; };
 		3E01130A14237ED60003B868 /* ImaKaeruTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E01130914237ED60003B868 /* ImaKaeruTests.m */; };
-		3E0113151423806E0003B868 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E0113141423806E0003B868 /* MainViewController.xib */; };
 		3E01131714242CAD0003B868 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E01131614242CAD0003B868 /* iAd.framework */; };
 		3E011334142435990003B868 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E011333142435990003B868 /* MessageUI.framework */; };
 		3E011336142441800003B868 /* CellWithSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E011335142441800003B868 /* CellWithSwitch.xib */; };
@@ -47,6 +46,7 @@
 		3EF8BC1C142DE075004D3FFC /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC1B142DE075004D3FFC /* gear.png */; };
 		3EF8BC22142E0932004D3FFC /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF8BC21142E0932004D3FFC /* whiteButton.png */; };
 		3EFF5D9B143FDB8E00319C2E /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF5D9A143FDB8E00319C2E /* Background.png */; };
+		3EFF5DEF143FF5F400319C2E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF5DEE143FF5F400319C2E /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 		3E01130614237ED60003B868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E01130814237ED60003B868 /* ImaKaeruTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImaKaeruTests.h; sourceTree = "<group>"; };
 		3E01130914237ED60003B868 /* ImaKaeruTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImaKaeruTests.m; sourceTree = "<group>"; };
-		3E0113141423806E0003B868 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		3E01131614242CAD0003B868 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		3E011333142435990003B868 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3E011335142441800003B868 /* CellWithSwitch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellWithSwitch.xib; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		3EF8BC1B142DE075004D3FFC /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		3EF8BC21142E0932004D3FFC /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
 		3EFF5D9A143FDB8E00319C2E /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		3EFF5DEE143FF5F400319C2E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				3EDE02E5142468AD00490D47 /* CellWithText.xib */,
-				3E0113141423806E0003B868 /* MainViewController.xib */,
+				3EFF5DEE143FF5F400319C2E /* MainStoryboard.storyboard */,
 				3E011335142441800003B868 /* CellWithSwitch.xib */,
 				3E4198451426006000EE2CFA /* InfoView.xib */,
 			);
@@ -356,7 +356,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0113151423806E0003B868 /* MainViewController.xib in Resources */,
 				3E011336142441800003B868 /* CellWithSwitch.xib in Resources */,
 				3EDE02E6142468AD00490D47 /* CellWithText.xib in Resources */,
 				3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */,
@@ -372,6 +371,7 @@
 				3E1091C6143DBFDC003E5114 /* InfoPlist.strings in Resources */,
 				3E1091C8143DBFEA003E5114 /* InfoPlist.strings in Resources */,
 				3EFF5D9B143FDB8E00319C2E /* Background.png in Resources */,
+				3EFF5DEF143FF5F400319C2E /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
