@@ -1,12 +1,10 @@
-/* 
-  Localizable.strings
-  ImaKaeru
+/*
+ * ImaKaeru
+ * Copyright (C) 2011, Takuya & Yasuko Murakami, All rights reserved.
+ * For conditions of distribution and use, see LICENSE file.
+ */
 
-  Created by 村上 卓弥 on 11/09/18.
-  Copyright (c) 2011年 __MyCompanyName__. All rights reserved.
-*/
-
-"app_name" = "NowOnMyWay";
+"app_name" = "Now On My Way";
 
 /* messages */
 "im_on_my_way" = "I'm on my way.";
