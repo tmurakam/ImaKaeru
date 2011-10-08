@@ -462,7 +462,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ZQE-ze-cNA" kind="push" identifier="showFacebook" id="mhJ-lH-syB"/>
+                                    <action selector="showFacebook:" destination="AQ8-0N-pmr" eventType="touchUpInside" id="bl6-CC-rKA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pHn-uG-Mwt">

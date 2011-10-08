@@ -58,6 +58,13 @@
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
+// WebView からだと facebook にログインしていない状態なので、
+// Safari で開く
+- (IBAction)showFacebook:(id)sender {
+    NSURL *url = [NSURL URLWithString:_L(@"facebook_url")];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *sid = [segue identifier];
@@ -69,9 +76,9 @@
     else if ([sid isEqualToString:@"showWebsite"]) {
         vc.urlString = _L(@"website_url");
     }
-    else if ([sid isEqualToString:@"showFacebook"]) {
-        vc.urlString = _L(@"facebook_url");
-    }
+    //else if ([sid isEqualToString:@"showFacebook"]) {
+    //    vc.urlString = _L(@"facebook_url");
+    //}
 }
 
 @end

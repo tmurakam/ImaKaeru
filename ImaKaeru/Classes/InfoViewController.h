@@ -15,5 +15,6 @@
 }
 
 - (IBAction)doneAction:(id)sender;
+- (IBAction)showFacebook:(id)sender;
 
 @end
