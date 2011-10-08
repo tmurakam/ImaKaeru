@@ -7,13 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfoViewController : UIViewController
+@interface WebViewController : UIViewController <UIWebViewDelegate>
 {
-    
-    __weak IBOutlet UILabel *mAppNameLabel;
-    __weak IBOutlet UILabel *mVersionLabel;
+    NSString *mUrlString;
+    __weak IBOutlet UIWebView *mWebView;
 }
 
-- (IBAction)doneAction:(id)sender;
+@property(strong) NSString *urlString;
 
 @end

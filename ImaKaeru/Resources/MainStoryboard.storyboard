@@ -462,7 +462,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showFacebook:" destination="AQ8-0N-pmr" eventType="touchUpInside" id="qdm-SJ-a9B"/>
+                                    <segue destination="ZQE-ze-cNA" kind="push" identifier="showFacebook" id="mhJ-lH-syB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pHn-uG-Mwt">
@@ -477,11 +477,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showWebsite:" destination="AQ8-0N-pmr" eventType="touchUpInside" id="XAh-EN-Q7U"/>
+                                    <segue destination="ZQE-ze-cNA" kind="push" identifier="showWebsite" id="43V-er-eaY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qlt-Az-GfV">
-                                <rect key="frame" x="153" y="265" width="147" height="37"/>
+                                <rect key="frame" x="153" y="269" width="147" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Show Help">
@@ -492,7 +492,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showHelp:" destination="AQ8-0N-pmr" eventType="touchUpInside" id="Iy9-cJ-Qsu"/>
+                                    <segue destination="ZQE-ze-cNA" kind="push" identifier="showHelp" id="VHt-Qx-UAW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Credits:" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="3Nf-cr-i4x">
@@ -533,6 +533,40 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1171" y="797"/>
+        </scene>
+        <scene sceneID="Xsi-VS-j0H">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22W-TL-4Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="ZQE-ze-cNA" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QyU-dN-Yvq">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="5Wg-4m-lUd">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" id="Fog-JM-Ob1"/>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" id="0jI-Za-3t0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZQE-ze-cNA" id="7gS-0Q-aze"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Browser" id="T3E-g6-Usf"/>
+                    <connections>
+                        <outlet property="mWebView" destination="0jI-Za-3t0" id="ZjM-PN-CZR"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1702" y="797"/>
         </scene>
         <scene sceneID="pEG-tP-PRu">
             <objects>
@@ -607,10 +641,19 @@
                 <relationship kind="outlet" name="mTwitterButton" candidateClass="UIButton"/>
             </relationships>
         </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="VHt-Qx-UAW"/>
+    </inferredMetricsTieBreakers>
 </document>
