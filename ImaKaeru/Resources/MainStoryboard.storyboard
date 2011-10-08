@@ -571,7 +571,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <webView contentMode="scaleToFill" id="0jI-Za-3t0">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="0jI-Za-3t0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -579,11 +579,16 @@
                                     <outlet property="delegate" destination="ZQE-ze-cNA" id="7gS-0Q-aze"/>
                                 </connections>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="white" id="btP-Rk-qiy">
+                                <rect key="frame" x="150" y="383" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Browser" id="T3E-g6-Usf"/>
                     <connections>
+                        <outlet property="mActivityIndicator" destination="btP-Rk-qiy" id="VAv-aE-fLc"/>
                         <outlet property="mBackButton" destination="Fog-JM-Ob1" id="ByL-hN-z6Y"/>
                         <outlet property="mForwardButton" destination="uFo-2z-wHW" id="Vpg-eN-n8c"/>
                         <outlet property="mWebView" destination="0jI-Za-3t0" id="ZjM-PN-CZR"/>
@@ -670,7 +675,9 @@
                 <relationship kind="action" name="goBackward:"/>
                 <relationship kind="action" name="goForward:"/>
                 <relationship kind="action" name="reloadPage:"/>
+                <relationship kind="outlet" name="mActivityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="mBackButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="mForwardButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="mWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>

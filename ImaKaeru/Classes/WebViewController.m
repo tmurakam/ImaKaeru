@@ -35,6 +35,7 @@
     mWebView = nil;
     mBackButton = nil;
     mForwardButton = nil;
+    mActivityIndicator = nil;
     [super viewDidUnload];
 }
 
@@ -59,9 +60,9 @@
     UIActionSheet *as = 
         [[UIActionSheet alloc] initWithTitle:nil 
                                     delegate:self
-                           cancelButtonTitle:_L(@"Cancel")
+                           cancelButtonTitle:_L(@"cancel")
                             destructiveButtonTitle:nil
-                           otherButtonTitles:_L(@"Open with Safari"), nil];
+                           otherButtonTitles:_L(@"open_with_safari"), nil];
     [as showInView:self.view];
 }
 
@@ -74,13 +75,15 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    //[activityIndicator startAnimating];
+    [mActivityIndicator startAnimating];
+    mActivityIndicator.hidden = NO;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)v
 {
-    //[activityIndicator stopAnimating];
+    [mActivityIndicator stopAnimating];
+    mActivityIndicator.hidden = YES;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	
     mBackButton.enabled = [v canGoBack];
@@ -89,7 +92,8 @@
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError*)err
 {
-    //[activityIndicator stopAnimating];
+    [mActivityIndicator stopAnimating];
+    mActivityIndicator.hidden = YES;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 

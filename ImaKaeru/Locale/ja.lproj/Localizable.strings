@@ -38,3 +38,6 @@
 "destination" = "送信先";
 "account" = "アカウント";
 "send_location" = "位置情報送信";
+
+"cancel" = "キャンセル";
+"open_with_safari" = "Safariで開く";

@@ -38,3 +38,6 @@
 "destination" = "Destination";
 "account" = "Account";
 "send_location" = "Send Location";
+
+"cancel" = "Cancel";
+"open_with_safari" = "Open with Safari";

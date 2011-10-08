@@ -13,6 +13,7 @@
     __weak IBOutlet UIWebView *mWebView;
     __weak IBOutlet UIBarButtonItem *mBackButton;
     __weak IBOutlet UIBarButtonItem *mForwardButton;
+    __weak IBOutlet UIActivityIndicatorView *mActivityIndicator;
 }
 
 @property(strong) NSString *urlString;
