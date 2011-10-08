@@ -49,6 +49,4 @@
 + (Config *)instance;
 - (void)save;
 
-- (void)saveCurrentVersion;
-
 @end

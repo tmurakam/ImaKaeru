@@ -10,7 +10,6 @@
 @interface Config ()
 - (void)firstStartup;
 - (void)load;
-- (void)save;
 - (NSString *)currentVersion;
 @end
 
@@ -62,7 +61,6 @@ static Config *theInstance = nil;
         if (![mLastLaunchedVersion isEqualToString:[self currentVersion]]) {
             // version up
             mIsVersionUp = YES;
-            [self saveCurrentVersion];
         }
     }
     
