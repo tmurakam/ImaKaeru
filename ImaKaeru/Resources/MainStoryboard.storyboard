@@ -109,6 +109,7 @@
                                 </state>
                                 <connections>
                                     <action selector="showConfigViewController:" destination="2fC-ga-u2B" eventType="touchUpInside" id="MWq-Fk-8b5"/>
+                                    <segue destination="DaK-hc-LWu" kind="modal" id="Ip1-ig-Cti"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="XiO-Ol-vYM">
@@ -124,6 +125,7 @@
                                 </state>
                                 <connections>
                                     <action selector="showInfoViewController:" destination="2fC-ga-u2B" eventType="touchUpInside" id="0nW-7I-uRL"/>
+                                    <segue destination="A6W-n2-T82" kind="modal" modalTransitionStyle="flipHorizontal" id="Kpv-rO-mvm"/>
                                 </connections>
                             </button>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fUZ-JB-xAu">
@@ -154,6 +156,197 @@
             </objects>
             <point key="canvasLocation" x="167" y="164"/>
         </scene>
+        <scene sceneID="0x7-YC-o64">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OsZ-He-51K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="aOR-Xq-F1I" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eVd-W8-Ag2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="hBe-6j-HNI">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XR0-jb-wkO">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tIx-Xm-7y4">
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="h7h-Qe-DMc">
+                                        <rect key="frame" x="0.0" y="99" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="aOR-Xq-F1I" id="zBh-Dt-rfE"/>
+                            <outlet property="delegate" destination="aOR-Xq-F1I" id="ACR-5m-XbT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Config" id="XFf-J5-UHi"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1171" y="164"/>
+        </scene>
+        <scene sceneID="X1d-6S-ESe">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5l-0P-qfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="DaK-hc-LWu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mA3-nw-D51">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aOR-Xq-F1I" kind="relationship" relationship="rootViewController" id="O3Z-dD-VMI"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="645" y="164"/>
+        </scene>
+        <scene sceneID="WhU-Ms-beT">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZkP-ik-wJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="AQ8-0N-pmr" customClass="InfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EhK-jA-MsQ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFill" image="Background.png" id="ckJ-Xm-NV7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="On My Way" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="9gC-Xb-3xu">
+                                <rect key="frame" x="20" y="13" width="280" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="36"/>
+                                <color key="textColor" red="0.1031362035" green="0.66605802759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="version x.x" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="OeM-zs-BhZ">
+                                <rect key="frame" x="20" y="71" width="280" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="24"/>
+                                <color key="textColor" red="0.1031362035" green="0.66605802759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright © 2011
+Murakami Software
+All rights reserved." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="10" id="Zoc-Th-CCy">
+                                <rect key="frame" x="100" y="121" width="200" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Credits:
+Art &amp; Design : Yasuko Murakami
+Program : Takuya Murakami" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="10" id="TuQ-jg-hnt">
+                                <rect key="frame" x="100" y="187" width="200" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XhX-m7-bVo">
+                                <rect key="frame" x="153" y="359" width="147" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Facebook Page">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFacebook:" destination="AQ8-0N-pmr" eventType="touchUpInside" id="qdm-SJ-a9B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pHn-uG-Mwt">
+                                <rect key="frame" x="153" y="314" width="147" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Support Website">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWebsite:" destination="AQ8-0N-pmr" eventType="touchUpInside" id="XAh-EN-Q7U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qlt-Az-GfV">
+                                <rect key="frame" x="153" y="265" width="147" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Help">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showHelp:" destination="AQ8-0N-pmr" eventType="touchUpInside" id="Iy9-cJ-Qsu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Info" id="EEA-lw-jbm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Lgf-fP-3rd">
+                            <connections>
+                                <action selector="doneAction:" destination="AQ8-0N-pmr" id="iDO-YF-HHB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1171" y="797"/>
+        </scene>
+        <scene sceneID="pEG-tP-PRu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aym-AI-jVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="A6W-n2-T82" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="7LZ-bm-Ll3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AQ8-0N-pmr" kind="relationship" relationship="rootViewController" id="bwQ-cx-61B"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="645" y="797"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background.png" width="690" height="980"/>
@@ -165,6 +358,17 @@
         <image name="whiteButton.png" width="280" height="60"/>
     </resources>
     <classes>
+        <class className="InfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneAction:"/>
+                <relationship kind="action" name="showFacebook:"/>
+                <relationship kind="action" name="showHelp:"/>
+                <relationship kind="action" name="showWebsite:"/>
+                <relationship kind="outlet" name="mAppNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mVersionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>

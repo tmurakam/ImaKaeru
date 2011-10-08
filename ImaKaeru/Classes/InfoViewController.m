@@ -33,9 +33,6 @@
 {
     self.title = _L(@"info");
     
-    self.navigationItem.rightBarButtonItem = 
-    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
-    
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     
     [mAppNameLabel setText:_L(@"app_name")];
