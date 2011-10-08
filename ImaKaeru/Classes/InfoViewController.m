@@ -64,13 +64,13 @@
     WebViewController *vc = [segue destinationViewController];
     
     if ([sid isEqualToString:@"showHelp"]) {
-        vc.urlString = @"http://iphone.tmurakam.org/ImaKaeru";
+        vc.urlString = _L(@"help_url");
     }
     else if ([sid isEqualToString:@"showWebsite"]) {
-        vc.urlString = @"http://iphone.tmurakam.org/ImaKaeru";
+        vc.urlString = _L(@"website_url");
     }
     else if ([sid isEqualToString:@"showFacebook"]) {
-        vc.urlString = @"http://m.facebook.com/pages/ImaKaeru/208663542534847";
+        vc.urlString = _L(@"facebook_url");
     }
 }
 
