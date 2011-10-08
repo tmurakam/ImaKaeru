@@ -40,4 +40,19 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)goBackward:(id)sender {
+    [mWebView goBack];
+}
+
+- (IBAction)goForward:(id)sender {
+    [mWebView goForward];
+}
+
+- (IBAction)reloadPage:(id)sender {
+    [mWebView reload];
+}
+
+- (IBAction)doAction:(id)sender {
+}
+
 @end

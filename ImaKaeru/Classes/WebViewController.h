@@ -15,4 +15,9 @@
 
 @property(strong) NSString *urlString;
 
+- (IBAction)goBackward:(id)sender;
+- (IBAction)goForward:(id)sender;
+- (IBAction)reloadPage:(id)sender;
+- (IBAction)doAction:(id)sender;
+
 @end
