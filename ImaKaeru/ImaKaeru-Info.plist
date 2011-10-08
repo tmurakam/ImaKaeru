@@ -11,7 +11,6 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon@2x.png</string>
-		<string>Icon-72.png</string>
 		<string>Icon.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
@@ -26,6 +25,8 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>

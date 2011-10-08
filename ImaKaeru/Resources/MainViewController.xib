@@ -46,12 +46,12 @@
 						<reference key="NSNextKeyView" ref="312953543"/>
 						<string key="NSReuseIdentifierKey">_NS:567</string>
 						<float key="IBUIAlpha">0.40000000596046448</float>
-						<int key="IBUIContentMode">2</int>
+						<int key="IBUIContentMode">1</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">Icon@2x.png</string>
+							<string key="NSResourceName">Background.png</string>
 						</object>
 					</object>
 					<object class="IBUIButton" id="78141313">
@@ -628,10 +628,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="Background.png">{690, 980}</string>
 			<string key="ButtonTwitterOn.png">{120, 72}</string>
 			<string key="EmailButtonOff.png">{120, 72}</string>
 			<string key="EmailButtonOn.png">{120, 72}</string>
-			<string key="Icon@2x.png">{114, 114}</string>
 			<string key="TwitterButtonOff.png">{120, 72}</string>
 			<string key="gear.png">{26, 28}</string>
 			<string key="whiteButton.png">{280, 60}</string>
