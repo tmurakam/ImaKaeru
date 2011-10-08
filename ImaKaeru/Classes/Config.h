@@ -25,6 +25,9 @@
     BOOL mIsUseTwitter;
     BOOL mIsUseDirectMessage;
     NSString *mTwitterAddress;
+    
+    BOOL mIsFirstStartup;
+    BOOL mIsVersionUp;
 }
 
 @property(nonatomic, strong) NSString *message1;
@@ -40,7 +43,12 @@
 @property(nonatomic) BOOL isUseDirectMessage;
 @property(nonatomic, strong) NSString *twitterAddress;
 
+@property(readonly) BOOL isFirstStartup;
+@property(readonly) BOOL isVersionUp;
+
 + (Config *)instance;
 - (void)save;
+
+- (void)saveCurrentVersion;
 
 @end
