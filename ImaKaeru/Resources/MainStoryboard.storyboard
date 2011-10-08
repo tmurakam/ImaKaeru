@@ -584,6 +584,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Browser" id="T3E-g6-Usf"/>
                     <connections>
+                        <outlet property="mBackButton" destination="Fog-JM-Ob1" id="ByL-hN-z6Y"/>
+                        <outlet property="mForwardButton" destination="uFo-2z-wHW" id="Vpg-eN-n8c"/>
                         <outlet property="mWebView" destination="0jI-Za-3t0" id="ZjM-PN-CZR"/>
                     </connections>
                 </viewController>
@@ -668,6 +670,7 @@
                 <relationship kind="action" name="goBackward:"/>
                 <relationship kind="action" name="goForward:"/>
                 <relationship kind="action" name="reloadPage:"/>
+                <relationship kind="outlet" name="mBackButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="mWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>

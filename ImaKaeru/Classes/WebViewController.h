@@ -7,10 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController <UIWebViewDelegate>
+@interface WebViewController : UIViewController <UIWebViewDelegate, UIActionSheetDelegate>
 {
     NSString *mUrlString;
     __weak IBOutlet UIWebView *mWebView;
+    __weak IBOutlet UIBarButtonItem *mBackButton;
+    __weak IBOutlet UIBarButtonItem *mForwardButton;
 }
 
 @property(strong) NSString *urlString;
