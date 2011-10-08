@@ -32,7 +32,7 @@
 - (void)viewDidLoad
 {
     self.title = _L(@"info");
-    
+
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     
     [mAppNameLabel setText:_L(@"app_name")];
@@ -46,8 +46,6 @@
     mAppNameLabel = nil;
     mVersionLabel = nil;
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

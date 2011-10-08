@@ -230,7 +230,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="version x.x" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="OeM-zs-BhZ">
-                                <rect key="frame" x="20" y="71" width="280" height="42"/>
+                                <rect key="frame" x="20" y="57" width="280" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="24"/>
                                 <color key="textColor" red="0.1031362035" green="0.66605802759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -309,6 +309,10 @@ Program : Takuya Murakami" textAlignment="right" lineBreakMode="tailTruncation" 
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mAppNameLabel" destination="9gC-Xb-3xu" id="yPz-LV-XrV"/>
+                        <outlet property="mVersionLabel" destination="OeM-zs-BhZ" id="ovh-Tb-ct6"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1171" y="797"/>
