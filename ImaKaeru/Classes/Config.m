@@ -29,6 +29,9 @@
 @synthesize isUseDirectMessage = mIsUseDirectMessage;
 @synthesize twitterAddress = mTwitterAddress;
 
+@synthesize isFirstStartup = mIsFirstStartup;
+@synthesize isVersionUp = mIsVersionUp;
+
 static Config *theInstance = nil;
 
 + (Config *)instance
@@ -45,13 +48,27 @@ static Config *theInstance = nil;
     if (!self) return nil;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     mLastLaunchedVersion = [defaults stringForKey:@"LastLaunchedVersion"];
+
+    NSString *currentVersion = [self currentVersion];
+    
     if (mLastLaunchedVersion == nil) {
         // First startup
+        mIsFirstStartup = YES;
         [self firstStartup];
     } else {
         [self load];
+
+        if (![mLastLaunchedVersion isEqualToString:[self currentVersion]]) {
+            // version up
+            mIsVersionUp = YES;
+            [self saveCurrentVersion];
+        }
+    }
+    
+    if (mIsFirstStartup || mIsVersionUp) {
+        [defaults setObject:currentVersion forKey:@"LastLaunchedVersion"];
+        [defaults synchronize];
     }
     
     return self;
@@ -63,7 +80,7 @@ static Config *theInstance = nil;
     mMessage2 = _L(@"ill_on_my_way_later");
     mMessage3 = _L(@"ill_be_late");
     
-    mIsSendLocation = YES;
+    mIsSendLocation = NO;
 
     mIsUseEmail = YES;
     mIsUseTwitter = YES;
@@ -106,9 +123,6 @@ static Config *theInstance = nil;
     [defaults setBool:mIsUseTwitter forKey:@"IsUseTwitter"];
     [defaults setBool:mIsUseDirectMessage forKey:@"IsUseDirectMessage"];
     [defaults setObject:mTwitterAddress forKey:@"TwitterAddress"];
-    
-    // save current version
-    [defaults setObject:[self currentVersion] forKey:@"LastLaunchedVersion"];
 
     [defaults synchronize];
 }

@@ -21,25 +21,12 @@
 #define K_IS_USE_DIRECT_MESSAGE 6
 #define K_TWITTER_ADDRESS 7
 
-
 @interface ConfigViewController ()
-- (void)doneAction:(id)sender;
-- (UITableViewCell *)getPlainCell:(NSString *)label;
-- (CellWithSwitch *)getCellWithSwitch:(int)identifier label:(NSString *)label on:(BOOL)on;
-- (CellWithSwitch *)getCellWithText:(int)identifier label:(NSString *)label placeholder:(NSString *)placeholder text:(NSString *)text;
+- (void)loadConfig;
+- (void)saveConfig;
 @end
 
 @implementation ConfigViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-        mConfig = [Config instance];
-    }
-    return self;
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -54,43 +41,76 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     self.title = _L(@"config");
     
     self.navigationItem.rightBarButtonItem = 
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
-}
 
-- (void)doneAction:(id)sender
-{
-    [self.navigationController dismissModalViewControllerAnimated:YES];
-}
+    mConfig = [Config instance];
+    
+    // localization
+    mLabelMessage1.text = [NSString stringWithFormat:@"%@1", _L(@"message")];
+    mLabelMessage2.text = [NSString stringWithFormat:@"%@2", _L(@"message")];
+    mLabelMessage3.text = [NSString stringWithFormat:@"%@3", _L(@"message")];
+    mLabelLocation.text = _L(@"send_location");
+    mLabelDirectMessage.text = _L(@"direct_message");
+    mLabelTwitterDestination.text = _L(@"destination");
+    
+    [self loadConfig];
+}   
 
 - (void)viewDidUnload
 {
+    mTextMessage1 = nil;
+    mTextMessage2 = nil;
+    mTextMessage3 = nil;
+    mSwitchLocation = nil;
+    mSwitchDirectMessage = nil;
+    mTextEmail = nil;
+    mTextTwitterName = nil;
+    mLabelMessage1 = nil;
+    mLabelMessage2 = nil;
+    mLabelMessage3 = nil;
+    mLabelLocation = nil;
+    mLabelDirectMessage = nil;
+    mLabelTwitterDestination = nil;
+    mConfig = nil;
+
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)loadConfig
 {
-    [super viewWillAppear:animated];
+    mTextMessage1.text = mConfig.message1;
+    mTextMessage2.text = mConfig.message2;
+    mTextMessage3.text = mConfig.message3;
+    mSwitchLocation.on = mConfig.isSendLocation;
+    
+    mTextEmail.text = mConfig.emailAddress;
+    
+    mSwitchDirectMessage.on = mConfig.isUseDirectMessage;
+    mTextTwitterName.text = mConfig.twitterAddress;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)saveConfig
 {
-    [super viewDidAppear:animated];
+    mConfig.message1 = mTextMessage1.text;
+    mConfig.message2 = mTextMessage2.text;
+    mConfig.message3 = mTextMessage3.text;
+    mConfig.isSendLocation =  mSwitchLocation.on;
+    
+    mConfig.emailAddress = mTextEmail.text;
+    
+    mConfig.isUseDirectMessage = mSwitchDirectMessage.on;
+    mConfig.twitterAddress = mTextTwitterName.text;
+
+    [mConfig save];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (IBAction)doneAction:(id)sender
 {
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
+    [self saveConfig];
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -101,11 +121,6 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 4;
-}
-
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     switch (section) {
@@ -115,181 +130,16 @@
             return _L(@"email_config");
         case 2:
             return _L(@"twitter_config");
-        case 3:
-            return _L(@"info");
     }
     return nil;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    switch (section) {
-        case 0:
-            return 4;
-        case 1:
-            return 1;
-        case 2:
-            return 2;
-        case 3:
-            return 1;
-    }
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell;
-    NSString *label;
-
-    switch (indexPath.section) {
-        case 0:
-            // Message settings
-            label = [NSString stringWithFormat:@"%@%d", _L(@"message"), indexPath.row + 1];
-            switch (indexPath.row) {
-                case 0:
-                    cell = [self getCellWithText:K_MSG1 label:label placeholder:@"Message" text:mConfig.message1];
-                    break;
-                case 1:
-                    cell = [self getCellWithText:K_MSG2 label:label placeholder:@"Message" text:mConfig.message2];
-                    break;
-                case 2:
-                    cell = [self getCellWithText:K_MSG3 label:label placeholder:@"Message" text:mConfig.message3];
-                    break;
-                case 3:
-                    cell = [self getCellWithSwitch:K_IS_SEND_LOCATION label:_L(@"send_location") on:mConfig.isSendLocation];
-                    break;
-            }
-            break;
-            
-        case 1:
-            // Email settings
-            switch (indexPath.row) {
-                case 0:
-                    cell = [self getCellWithText:K_EMAIL_ADDRESS label:@"To:" placeholder:@"example.gmail.com" text:mConfig.emailAddress];
-                    break;
-            }
-            break;
-            
-        case 2:
-            // Twitter settings
-            switch (indexPath.row) {
-                case 0:
-                    // direct message
-                    cell = [self getCellWithSwitch:K_IS_USE_DIRECT_MESSAGE label:_L(@"direct_message") on:mConfig.isUseDirectMessage];
-                    break;
-                    
-                case 1:
-                    // address
-                    cell = [self getCellWithText:K_TWITTER_ADDRESS label:_L(@"destination") placeholder:@"twitter account" text:mConfig.twitterAddress];
-                    break;
-            }
-            break;
-        case 3:
-            // info
-            cell = [self getPlainCell:_L(@"info")];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            break;
-    }
-    
-    /*
-    
-    return cell;
-     */
-    
-    return cell;
-}
-
-- (UITableViewCell *)getPlainCell:(NSString *)text
-{
-    static NSString *CellIdentifier = @"PlainCell";
-    
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    //cell.textLabel.font = [UIFont systemFontOfSize:14.0];
-    cell.textLabel.text = text;
-    return cell;
-}
-
-- (CellWithSwitch *)getCellWithSwitch:(int)identifier label:(NSString *)label on:(BOOL)on
-{
-    CellWithSwitch *cell;
-    
-    cell = [CellWithSwitch getCell:self.tableView];
-    [cell setLabel:label];
-    cell.identifier = identifier;
-    cell.on = on;
-    cell.delegate = self;
-    return cell;
-}
-
-- (CellWithText *)getCellWithText:(int)identifier label:(NSString *)label placeholder:(NSString *)placeholder text:(NSString *)text
-{
-    CellWithText *cell;
-    
-    cell = [CellWithText getCell:self.tableView];
-    [cell setLabel:label];
-    cell.identifier = identifier;
-    cell.placeholder = placeholder;
-    cell.text = text;
-    cell.delegate = self;
-    return cell;
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (indexPath.section == 3 && indexPath.row == 0) {
-        // info
-        InfoViewController *vc = [[InfoViewController alloc] initWithNibName:@"InfoView" bundle:nil];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-}
-
-#pragma mark - Data changed
-- (void)cellWithSwitchChanged:(CellWithSwitch *)cell
-{
-    switch (cell.identifier) {
-        case K_IS_SEND_LOCATION:
-            mConfig.isSendLocation = cell.on;
-            break;
-
-        case K_IS_USE_DIRECT_MESSAGE:
-            mConfig.isUseDirectMessage = cell.on;
-            break;
-    }
-    [mConfig save];
-}
-
-- (void)cellWithTextChanged:(CellWithText *)cell
-{
-    switch (cell.identifier) {
-        case K_MSG1:
-            mConfig.message1 = cell.text;
-            break;
-
-        case K_MSG2:
-            mConfig.message2 = cell.text;
-            break;
-            
-        case K_MSG3:
-            mConfig.message3 = cell.text;
-            break;
-            
-        case K_EMAIL_ADDRESS:
-            mConfig.emailAddress = cell.text;
-            break;
-            
-        case K_TWITTER_ADDRESS:
-            mConfig.twitterAddress = cell.text;
-            break;
-    }
-    [mConfig save];
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

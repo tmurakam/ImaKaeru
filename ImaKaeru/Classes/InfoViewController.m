@@ -32,10 +32,7 @@
 - (void)viewDidLoad
 {
     self.title = _L(@"info");
-    
-    self.navigationItem.rightBarButtonItem = 
-    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
-    
+
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     
     [mAppNameLabel setText:_L(@"app_name")];
@@ -49,8 +46,6 @@
     mAppNameLabel = nil;
     mVersionLabel = nil;
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
