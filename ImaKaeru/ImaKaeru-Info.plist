@@ -26,7 +26,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>UIPrerenderedIcon</key>
-	<false/>
+	<true/>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UIMainStoryboardFile</key>
