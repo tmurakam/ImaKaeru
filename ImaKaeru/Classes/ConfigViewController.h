@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "Config.h"
 
-@interface ConfigViewController : UITableViewController
+@interface ConfigViewController : UITableViewController <UITextFieldDelegate>
 {
     Config *mConfig;
     
