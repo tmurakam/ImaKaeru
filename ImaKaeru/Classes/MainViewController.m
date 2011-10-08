@@ -10,8 +10,8 @@
 #import "InfoViewController.h"
 #import "Common.h"
 
-#define APP_URL @"http://iphone.tmurakam.org/ImaKaeru"
-#define SHORTEN_APP_URL @"http://bit.ly/imkaeru"
+#define APP_URL _L(@"website_url")
+#define SHORTEN_APP_URL _L(@"shorten_website_url")
 
 @implementation MainViewController
 
@@ -308,7 +308,7 @@
         msg = [NSMutableString stringWithFormat:@"@%@", mConfig.twitterAddress];
         [msg appendFormat:@" %@", mMessageToSend];
         [msg appendFormat:@" %@", _L(@"hash_tag")];
-        [msg appendString:@" " SHORTEN_APP_URL];
+        [msg appendFormat:@" %@", SHORTEN_APP_URL];
         [params setObject:msg forKey:@"status"];
 
         if ([mLocation hasLocation]) {
