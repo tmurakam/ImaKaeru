@@ -108,7 +108,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showConfigViewController:" destination="2fC-ga-u2B" eventType="touchUpInside" id="MWq-Fk-8b5"/>
                                     <segue destination="DaK-hc-LWu" kind="modal" id="Ip1-ig-Cti"/>
                                 </connections>
                             </button>
@@ -124,7 +123,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showInfoViewController:" destination="2fC-ga-u2B" eventType="touchUpInside" id="0nW-7I-uRL"/>
                                     <segue destination="A6W-n2-T82" kind="modal" modalTransitionStyle="flipHorizontal" id="Kpv-rO-mvm"/>
                                 </connections>
                             </button>
@@ -236,18 +234,14 @@
                                 <color key="textColor" red="0.1031362035" green="0.66605802759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright © 2011
-Murakami Software
-All rights reserved." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="10" id="Zoc-Th-CCy">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright © 2011 Murakami Software All rights reserved." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="10" id="Zoc-Th-CCy">
                                 <rect key="frame" x="100" y="121" width="200" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Credits:
-Art &amp; Design : Yasuko Murakami
-Program : Takuya Murakami" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="10" id="TuQ-jg-hnt">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Credits: Art &amp; Design : Yasuko Murakami Program : Takuya Murakami" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="10" id="TuQ-jg-hnt">
                                 <rect key="frame" x="100" y="187" width="200" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
@@ -368,8 +362,6 @@ Program : Takuya Murakami" textAlignment="right" lineBreakMode="tailTruncation" 
                 <relationship kind="action" name="onPushSendMessage:"/>
                 <relationship kind="action" name="onToggleEmailButton:"/>
                 <relationship kind="action" name="onToggleTwitterButton:"/>
-                <relationship kind="action" name="showConfigViewController:"/>
-                <relationship kind="action" name="showInfoViewController:"/>
                 <relationship kind="outlet" name="mAdBannerView" candidateClass="ADBannerView"/>
                 <relationship kind="outlet" name="mConfigButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mEmailButton" candidateClass="UIButton"/>

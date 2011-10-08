@@ -51,8 +51,6 @@ typedef enum {
 @property(assign) State state;
 
 - (IBAction)onPushSendMessage:(id)sender;
-- (IBAction)showConfigViewController:(id)sender;
-- (IBAction)showInfoViewController:(id)sender;
 
 - (IBAction)onToggleEmailButton:(id)sender;
 - (IBAction)onToggleTwitterButton:(id)sender;

@@ -29,7 +29,7 @@
     
     mState = StIdle;
 
-    UIImage *whiteButton = [[UIImage imageNamed:@"whiteButton"] stretchableImageWithLeftCapWidth:16 topCapHeight:16];
+    //UIImage *whiteButton = [[UIImage imageNamed:@"whiteButton"] stretchableImageWithLeftCapWidth:16 topCapHeight:16];
     //[mSendButton1 setBackgroundImage:whiteButton forState:UIControlStateNormal];
     //[mSendButton2 setBackgroundImage:whiteButton forState:UIControlStateNormal];
     //[mSendButton3 setBackgroundImage:whiteButton forState:UIControlStateNormal];
@@ -172,20 +172,6 @@
     else {
         self.state = StIdle;
     }
-}
-
-- (IBAction)showConfigViewController:(id)sender
-{
-    ConfigViewController *vc = [[ConfigViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
-    
-    [self presentModalViewController:nv animated:YES];
-}
-
-- (IBAction)showInfoViewController:(id)sender {
-    InfoViewController *vc = [[InfoViewController alloc] initWithNibName:@"InfoView" bundle:nil];
-    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentModalViewController:nv animated:YES];
 }
 
 - (IBAction)onToggleTwitterButton:(id)sender
