@@ -276,17 +276,17 @@
 		3EF8BC16142DD4DB004D3FFC /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3E7599C414446DB000083664 /* Default_r.png */,
 				3EFF5E241440473D00319C2E /* Default.png */,
 				3EFF5E141440024500319C2E /* Default@2x.png */,
+				3E7599C414446DB000083664 /* Default_r.png */,
 				3ED297A314335CC400C52243 /* Icon.png */,
 				3ED297A414335CC400C52243 /* Icon@2x.png */,
 				3EF8BC21142E0932004D3FFC /* whiteButton.png */,
 				3E7599C71444714D00083664 /* button1.png */,
-				3E7599C81444714D00083664 /* button2.png */,
-				3E7599C91444714D00083664 /* button3.png */,
 				3E7599CD144473B800083664 /* button1@2x.png */,
+				3E7599C81444714D00083664 /* button2.png */,
 				3E7599CE144473B800083664 /* button2@2x.png */,
+				3E7599C91444714D00083664 /* button3.png */,
 				3E7599CF144473B800083664 /* button3@2x.png */,
 				3EF8BC1B142DE075004D3FFC /* gear.png */,
 				3EF8BC17142DD9B2004D3FFC /* EmailButtonOff.png */,
