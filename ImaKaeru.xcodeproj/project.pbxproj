@@ -30,6 +30,7 @@
 		3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E50589F1425939E00D2FFB8 /* Localizable.strings */; };
 		3E72FD8B143DACF80095EF86 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E72FD8A143DACF80095EF86 /* Location.m */; };
 		3E72FD8E143DADBF0095EF86 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E72FD8D143DADBE0095EF86 /* CoreLocation.framework */; };
+		3E7599C514446DB000083664 /* Default_r.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7599C414446DB000083664 /* Default_r.png */; };
 		3EB5919E143C96F600D4858E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB5919D143C96F600D4858E /* Accounts.framework */; };
 		3EB591A1143C96FD00D4858E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB591A0143C96FD00D4858E /* Twitter.framework */; };
 		3ED297A614335CC400C52243 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED297A314335CC400C52243 /* Icon.png */; };
@@ -94,6 +95,7 @@
 		3E72FD89143DACF80095EF86 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		3E72FD8A143DACF80095EF86 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		3E72FD8D143DADBE0095EF86 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3E7599C414446DB000083664 /* Default_r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default_r.png; sourceTree = "<group>"; };
 		3EB5919D143C96F600D4858E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		3EB591A0143C96FD00D4858E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		3ED297A314335CC400C52243 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		3EF8BC16142DD4DB004D3FFC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3E7599C414446DB000083664 /* Default_r.png */,
 				3EFF5E241440473D00319C2E /* Default.png */,
 				3EFF5E141440024500319C2E /* Default@2x.png */,
 				3ED297A314335CC400C52243 /* Icon.png */,
@@ -363,6 +366,7 @@
 				3EFF5E151440024500319C2E /* Default@2x.png in Resources */,
 				3EFF5E251440473D00319C2E /* Default.png in Resources */,
 				3E2428E81440844E0042C6AD /* backward.png in Resources */,
+				3E7599C514446DB000083664 /* Default_r.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

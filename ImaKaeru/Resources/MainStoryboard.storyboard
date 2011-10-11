@@ -418,7 +418,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" image="Default.png" id="ckJ-Xm-NV7">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" image="Default_r.png" id="ckJ-Xm-NV7">
                                 <rect key="frame" x="0.0" y="-44" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -618,6 +618,7 @@
     <resources>
         <image name="ButtonTwitterOn.png" width="120" height="72"/>
         <image name="Default.png" width="320" height="480"/>
+        <image name="Default_r.png" width="640" height="960"/>
         <image name="EmailButtonOff.png" width="120" height="72"/>
         <image name="EmailButtonOn.png" width="120" height="72"/>
         <image name="TwitterButtonOff.png" width="120" height="72"/>
@@ -649,6 +650,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
             <relationships>
                 <relationship kind="action" name="doneAction:"/>
+                <relationship kind="action" name="showFacebook:"/>
                 <relationship kind="outlet" name="mAppNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mVersionLabel" candidateClass="UILabel"/>
             </relationships>
