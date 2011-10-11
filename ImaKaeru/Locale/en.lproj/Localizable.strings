@@ -1,0 +1,51 @@
+/*
+ * ImaKaeru
+ * Copyright (C) 2011, Takuya & Yasuko Murakami, All rights reserved.
+ * For conditions of distribution and use, see LICENSE file.
+ */
+
+"app_name" = "Now On My Way";
+
+/* messages */
+"im_on_my_way" = "I'm on my way.";
+"ill_on_my_way_later" = "I'll on my way a little later.";
+"ill_be_late" = "I'll be late.";
+
+/* MainViewController */
+"config" = "Config";
+"info" = "Info";
+"hash_tag" = "#NowOnMyWay";
+"tweet_completed" = "Tweet completed";
+"tweet_failed" = "Tweet failed";
+
+"error" = "Error";
+"dismiss" = "Dismiss";
+
+"error_no_dest" = "Please setup destination settings.";
+"error_no_email_dest" = "Please setup e-mail destination address.";
+"error_no_twitter_dest" = "Please setup twitter destination address.";
+"error_setup_twitter_account" = "Please setup twitter account.";
+"error_twitter_denied" = "Twitter access was denied.";
+
+/* ConfigViewController */
+"message" = "Message";
+"messages_config" = "Messages";
+"email_config" = "E-mail";
+"twitter_config" = "Twitter";
+"send_email" = "Send E-mail";
+"send_twitter" = "Send Twitter";
+"direct_message" = "Direct Message";
+"destination" = "Destination";
+"account" = "Account";
+"send_location" = "Send Location";
+
+"cancel" = "Cancel";
+"open_with_safari" = "Open with Safari";
+
+"website_url" = "http://iphone.tmurakam.org/ImaKaeru/index.en.html";
+"help_url" = "http://iphone.tmurakam.org/ImaKaeru/help.en.html";
+"facebook_url" = "http://m.facebook.com/pages/ImaKaeru/208663542534847";
+"shorten_website_url" = "http://bit.ly/imkaerue";
+
+"welcome" = "Welcome";
+"welcome_message" = "Welcome to NowOnMyWay! First, tap config button to setup destination e-mail or twitter address.";

@@ -1,0 +1,51 @@
+/*
+ * ImaKaeru
+ * Copyright (C) 2011, Takuya & Yasuko Murakami, All rights reserved.
+ * For conditions of distribution and use, see LICENSE file.
+ */
+
+"app_name" = "いまカエル!";
+
+/* messages */
+"im_on_my_way" = "今から帰るよ!";
+"ill_on_my_way_later" = "もう少ししたら帰ります";
+"ill_be_late" = "遅くなりそうです";
+
+/* MainViewController */
+"config" = "設定";
+"info" = "情報";
+"hash_tag" = "#ImaKaeru";
+"tweet_completed" = "送信完了";
+"tweet_failed" = "送信失敗";
+
+"error" = "エラー";
+"dismiss" = "閉じる";
+
+"error_no_dest" = "送信先が設定されていません";
+"error_no_email_dest" = "Eメール送信先が設定されていません";
+"error_no_twitter_dest" = "Twitter送信先が設定されていません";
+"error_setup_twitter_account" = "Twitterアカウントが設定されていません";
+"error_twitter_denied" = "Twitterアクセスが許可されていません";
+
+/* ConfigViewController */
+"message" = "メッセージ";
+"messages_config" = "メッセージ設定";
+"email_config" = "Eメール設定";
+"twitter_config" = "Twitter設定";
+"send_email" = "Eメール送信";
+"send_twitter" = "Twitter送信";
+"direct_message" = "ダイレクトメッセージ";
+"destination" = "送信先";
+"account" = "アカウント";
+"send_location" = "位置情報送信";
+
+"cancel" = "キャンセル";
+"open_with_safari" = "Safariで開く";
+
+"website_url" = "http://iphone.tmurakam.org/ImaKaeru";
+"help_url" = "http://iphone.tmurakam.org/ImaKaeru/help.html";
+"facebook_url" = "http://m.facebook.com/pages/ImaKaeru/208663542534847";
+"shorten_website_url" = "http://bit.ly/imkaeru";
+
+"welcome" = "ようこそ";
+"welcome_message" = "いまカエルへようこそ! 最初に設定ボタンを押して、送信先のメールアドレスやTwitterアドレスを設定してください。";
