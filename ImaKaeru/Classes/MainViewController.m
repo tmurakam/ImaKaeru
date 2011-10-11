@@ -41,6 +41,7 @@
     frame.size = mAdBannerView.frame.size;
     frame.origin = CGPointMake(0.0f, CGRectGetMaxY(self.view.bounds));
     mAdBannerView.frame = frame;
+    mIsBannerVisible = NO;
 
     mLocation = [[Location alloc] init];
     mLocation.delegate = self;
@@ -388,31 +389,48 @@
 
 #pragma mark - ADBannerViewDelegate
 
-- (void)showHideBanner
-{
-    CGRect frame;
-    frame.size = mAdBannerView.frame.size;
-    frame.origin = CGPointMake(0, CGRectGetMaxY(self.view.bounds));
-    
-    if (mAdBannerView.bannerLoaded) {
-        frame.origin.y -= mAdBannerView.frame.size.height;
-    }
-    
-    [UIView animateWithDuration:0.2f animations:^{
-        mAdBannerView.frame = frame;
-    }];
-}
-
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
     NSLog(@"iAd loaded");
-    [self showHideBanner];
+    [self showBanner];
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
     NSLog(@"iAd load failed");
-    [self showHideBanner];
+    [self hideBanner];
+}
+
+- (void)showBanner
+{
+    if (!mIsBannerVisible) {
+        mIsBannerVisible = YES;
+        
+        CGRect frame;
+        frame.size = mAdBannerView.frame.size;
+        frame.origin = CGPointMake(0, CGRectGetMaxY(self.view.bounds));
+    
+        frame.origin.y -= mAdBannerView.frame.size.height;
+    
+        [UIView animateWithDuration:0.2f animations:^{
+            mAdBannerView.frame = frame;
+        }];
+    }
+}
+
+- (void)hideBanner
+{
+    if (mIsBannerVisible) {
+        mIsBannerVisible = NO;
+
+        CGRect frame;
+        frame.size = mAdBannerView.frame.size;
+        frame.origin = CGPointMake(0, CGRectGetMaxY(self.view.bounds));
+
+        [UIView animateWithDuration:0.2f animations:^{
+            mAdBannerView.frame = frame;
+        }];
+    }
 }
 
 @end

@@ -46,6 +46,8 @@ typedef enum {
 
     // 位置取得用
     Location *mLocation;
+    
+    BOOL mIsBannerVisible;
 }
 
 @property(assign) State state;
@@ -67,7 +69,8 @@ typedef enum {
 - (void)tweetDone;
 - (void)tweetFailed:(NSString *)statusMessage;
 
-- (void)showHideBanner;
 
+- (void)showBanner;
+- (void)hideBanner;
 
 @end
