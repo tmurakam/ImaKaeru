@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2fC-ga-u2B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2fC-ga-u2B">
     <dependencies>
         <development version="4200" defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -13,7 +13,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" image="Default.png" id="Lrp-gn-kog">
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" image="background.png" id="Lrp-gn-kog">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -418,7 +418,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" image="Default_r.png" id="ckJ-Xm-NV7">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" image="background_r.png" id="ckJ-Xm-NV7">
                                 <rect key="frame" x="0.0" y="-44" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -617,15 +617,15 @@
     </scenes>
     <resources>
         <image name="ButtonTwitterOn.png" width="120" height="72"/>
-        <image name="Default.png" width="320" height="480"/>
-        <image name="Default_r.png" width="640" height="960"/>
         <image name="EmailButtonOff.png" width="120" height="72"/>
         <image name="EmailButtonOn.png" width="120" height="72"/>
         <image name="TwitterButtonOff.png" width="120" height="72"/>
+        <image name="background.png" width="640" height="960"/>
+        <image name="background_r.png" width="640" height="960"/>
         <image name="backward.png" width="20" height="20"/>
-        <image name="button1.png" width="48" height="48"/>
-        <image name="button2.png" width="48" height="48"/>
-        <image name="button3.png" width="48" height="48"/>
+        <image name="button1.png" width="64" height="48"/>
+        <image name="button2.png" width="64" height="48"/>
+        <image name="button3.png" width="64" height="48"/>
         <image name="gear.png" width="26" height="28"/>
         <image name="whiteButton.png" width="280" height="60"/>
     </resources>
