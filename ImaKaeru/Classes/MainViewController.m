@@ -72,10 +72,12 @@
 {
     [super viewDidAppear:animated];
 
-    if (mConfig.isFirstStartup || mConfig.isVersionUp) {
+    if (mConfig.isFirstStartup) {
         mConfig.isFirstStartup = NO;
-        mConfig.isVersionUp = NO;
         [self showMessage:_L(@"welcome_message") title:_L(@"welcome")];
+    }
+    else if (mConfig.isVersionUp) {
+        mConfig.isVersionUp = NO;
     }
 }
 
@@ -249,13 +251,15 @@
     [vc setToRecipients:[NSArray arrayWithObject:mConfig.emailAddress]];
     [vc setSubject:mMessageToSend]; // TBD
     
-    // メール本文作詞絵
+    // メール本文作成
     NSMutableString *body = [NSMutableString stringWithString:mMessageToSend];
 
-    NSString *locUrl = [mLocation getLocationUrl];
-    if (locUrl != nil) {
-        [body appendString:@"\nat "];
-        [body appendString:locUrl];
+    if (mConfig.isSendLocation) {
+        NSString *locUrl = [mLocation getLocationUrl];
+        if (locUrl != nil) {
+            [body appendString:@"\nat "];
+            [body appendString:locUrl];
+        }
     }
 
     [body appendString:@"\n\n"];
@@ -292,7 +296,7 @@
         apiUrl = @"http://api.twitter.com/1/direct_messages/new.json";
 
         msg = [NSMutableString stringWithString:mMessageToSend];
-        if ([mLocation hasLocation]) {
+        if (mConfig.isSendLocation && [mLocation hasLocation]) {
             [msg appendFormat:@" %@", [mLocation getLocationUrl]];
         }
         
@@ -312,7 +316,7 @@
         [msg appendFormat:@" %@", SHORTEN_APP_URL];
         [params setObject:msg forKey:@"status"];
 
-        if ([mLocation hasLocation]) {
+        if (mConfig.isSendLocation && [mLocation hasLocation]) {
             CLLocation *loc = mLocation.location;
             [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.latitude] forKey:@"lat"];
             [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.longitude] forKey:@"long"];
