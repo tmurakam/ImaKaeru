@@ -21,6 +21,7 @@
 		3E1091C8143DBFEA003E5114 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E1091C4143DBFDC003E5114 /* InfoPlist.strings */; };
 		3E2428D6144080B40042C6AD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2428D5144080B40042C6AD /* WebViewController.m */; };
 		3E2428E81440844E0042C6AD /* backward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E2428E71440844E0042C6AD /* backward.png */; };
+		3E3E27BF1604AD1B0073A879 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E27BE1604AD1B0073A879 /* Default-568h@2x.png */; };
 		3E41984A1426181A00EE2CFA /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4198491426181A00EE2CFA /* InfoViewController.m */; };
 		3E50588F142592F700D2FFB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505882142592F700D2FFB8 /* AppDelegate.m */; };
 		3E505892142592F700D2FFB8 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505888142592F700D2FFB8 /* Config.m */; };
@@ -86,6 +87,7 @@
 		3E2428D4144080B40042C6AD /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		3E2428D5144080B40042C6AD /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		3E2428E71440844E0042C6AD /* backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backward.png; sourceTree = "<group>"; };
+		3E3E27BE1604AD1B0073A879 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3E4198481426181A00EE2CFA /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		3E4198491426181A00EE2CFA /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		3E505881142592F700D2FFB8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		3EF8BC16142DD4DB004D3FFC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3E3E27BE1604AD1B0073A879 /* Default-568h@2x.png */,
 				3EFF5E241440473D00319C2E /* Default.png */,
 				3EF7E6BA145304B400FC63BC /* Default@2x.png */,
 				3EFF5E141440024500319C2E /* background.png */,
@@ -399,6 +402,7 @@
 				3E7599D2144473B800083664 /* button3@2x.png in Resources */,
 				3EEF8D911444866C0098FDAC /* Icon-72.png in Resources */,
 				3EF7E6BB145304B400FC63BC /* Default@2x.png in Resources */,
+				3E3E27BF1604AD1B0073A879 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
