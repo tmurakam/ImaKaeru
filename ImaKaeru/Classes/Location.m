@@ -17,7 +17,7 @@
     if (self) {
         mLocationManager = [[CLLocationManager alloc] init];
         mLocationManager.delegate = self;
-        mLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+        mLocationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
         mLocationManager.distanceFilter = 100;
     }
     return self;
