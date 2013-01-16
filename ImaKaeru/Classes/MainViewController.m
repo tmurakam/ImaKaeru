@@ -293,7 +293,7 @@
     NSMutableString *msg;
     if (mConfig.isUseDirectMessage) {
         // DirectMessage
-        apiUrl = @"http://api.twitter.com/1/direct_messages/new.json";
+        apiUrl = @"http://api.twitter.com/1.1/direct_messages/new.json";
 
         msg = [NSMutableString stringWithString:mMessageToSend];
         if (mConfig.isSendLocation && [mLocation hasLocation]) {
@@ -308,7 +308,7 @@
         [params setObject:mConfig.twitterAddress forKey:@"screen_name"];
     } else {
         // mention
-        apiUrl = @"http://api.twitter.com/1/statuses/update.json";
+        apiUrl = @"http://api.twitter.com/1.1/statuses/update.json";
 
         msg = [NSMutableString stringWithFormat:@"@%@", mConfig.twitterAddress];
         [msg appendFormat:@" %@", mMessageToSend];
