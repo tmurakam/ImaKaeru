@@ -29,6 +29,9 @@
 		3E505894142592F700D2FFB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588B142592F700D2FFB8 /* main.m */; };
 		3E505895142592F700D2FFB8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E50588D142592F700D2FFB8 /* MainViewController.m */; };
 		3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E50589F1425939E00D2FFB8 /* Localizable.strings */; };
+		3E56EC5B16AA5A570032A864 /* libCrittercism_v3_4_9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E56EC5A16AA5A570032A864 /* libCrittercism_v3_4_9.a */; };
+		3E56EC5D16AA5AF60032A864 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E56EC5C16AA5AF60032A864 /* QuartzCore.framework */; };
+		3E56EC5F16AA5AFF0032A864 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E56EC5E16AA5AFF0032A864 /* SystemConfiguration.framework */; };
 		3E72FD8B143DACF80095EF86 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E72FD8A143DACF80095EF86 /* Location.m */; };
 		3E72FD8E143DADBF0095EF86 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E72FD8D143DADBE0095EF86 /* CoreLocation.framework */; };
 		3E7599C514446DB000083664 /* background_r.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7599C414446DB000083664 /* background_r.png */; };
@@ -102,6 +105,11 @@
 		3E50589E1425939E00D2FFB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E5058A0142593A800D2FFB8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E5058AB1425952200D2FFB8 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		3E56EC5816AA5A570032A864 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		3E56EC5916AA5A570032A864 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		3E56EC5A16AA5A570032A864 /* libCrittercism_v3_4_9.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v3_4_9.a; sourceTree = "<group>"; };
+		3E56EC5C16AA5AF60032A864 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3E56EC5E16AA5AFF0032A864 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3E72FD89143DACF80095EF86 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		3E72FD8A143DACF80095EF86 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		3E72FD8D143DADBE0095EF86 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -136,6 +144,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E56EC5F16AA5AFF0032A864 /* SystemConfiguration.framework in Frameworks */,
+				3E56EC5D16AA5AF60032A864 /* QuartzCore.framework in Frameworks */,
 				3E72FD8E143DADBF0095EF86 /* CoreLocation.framework in Frameworks */,
 				3EB591A1143C96FD00D4858E /* Twitter.framework in Frameworks */,
 				3EB5919E143C96F600D4858E /* Accounts.framework in Frameworks */,
@@ -146,6 +156,7 @@
 				3E0112DF14237ED50003B868 /* UIKit.framework in Frameworks */,
 				3E0112E114237ED50003B868 /* Foundation.framework in Frameworks */,
 				3E0112E314237ED50003B868 /* CoreGraphics.framework in Frameworks */,
+				3E56EC5B16AA5A570032A864 /* libCrittercism_v3_4_9.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +178,7 @@
 			children = (
 				3E0112E414237ED50003B868 /* ImaKaeru */,
 				3E01130214237ED60003B868 /* ImaKaeruTests */,
+				3E56EC5516AA5A300032A864 /* Libraries */,
 				3E0112DD14237ED50003B868 /* Frameworks */,
 				3E0112DB14237ED50003B868 /* Products */,
 			);
@@ -184,6 +196,8 @@
 		3E0112DD14237ED50003B868 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E56EC5C16AA5AF60032A864 /* QuartzCore.framework */,
+				3E56EC5E16AA5AFF0032A864 /* SystemConfiguration.framework */,
 				3E72FD8D143DADBE0095EF86 /* CoreLocation.framework */,
 				3EB591A0143C96FD00D4858E /* Twitter.framework */,
 				3EB5919D143C96F600D4858E /* Accounts.framework */,
@@ -277,6 +291,25 @@
 				3E50589F1425939E00D2FFB8 /* Localizable.strings */,
 			);
 			path = Locale;
+			sourceTree = "<group>";
+		};
+		3E56EC5516AA5A300032A864 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				3E56EC5716AA5A3A0032A864 /* CrittercismSDK */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		3E56EC5716AA5A3A0032A864 /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				3E56EC5816AA5A570032A864 /* Crittercism.h */,
+				3E56EC5916AA5A570032A864 /* CrittercismDelegate.h */,
+				3E56EC5A16AA5A570032A864 /* libCrittercism_v3_4_9.a */,
+			);
+			name = CrittercismSDK;
+			path = ImaKaeru/Libraries/CrittercismSDK;
 			sourceTree = "<group>";
 		};
 		3EF8BC16142DD4DB004D3FFC /* Images */ = {
@@ -552,7 +585,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ImaKaeru/Libraries/CrittercismSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -564,7 +600,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ImaKaeru/Libraries/CrittercismSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

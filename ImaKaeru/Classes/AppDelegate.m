@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 
 #import "MainViewController.h"
+#import "Crittercism.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Initialize crittercism
+    [Crittercism enableWithAppID:@"50f9944a8cb83141a5000009"];
+    
     return YES;
 }
 
