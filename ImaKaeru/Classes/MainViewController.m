@@ -262,8 +262,8 @@
         }
     }
 
-    [body appendString:@"\n\n"];
-    [body appendFormat:@"Sent from %@\n%@", _L(@"app_name"), APP_URL];
+    //[body appendString:@"\n\n"];
+    //[body appendFormat:@"Sent from %@\n%@", _L(@"app_name"), APP_URL];
     [vc setMessageBody:body isHTML:NO];
     
     [self presentModalViewController:vc animated:YES];
