@@ -41,6 +41,7 @@
 		3E7599D0144473B800083664 /* button1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7599CD144473B800083664 /* button1@2x.png */; };
 		3E7599D1144473B800083664 /* button2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7599CE144473B800083664 /* button2@2x.png */; };
 		3E7599D2144473B800083664 /* button3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7599CF144473B800083664 /* button3@2x.png */; };
+		3E88DD961A5C266300223FEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E88DD951A5C266300223FEA /* Images.xcassets */; };
 		3EB5919E143C96F600D4858E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB5919D143C96F600D4858E /* Accounts.framework */; };
 		3EB591A1143C96FD00D4858E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB591A0143C96FD00D4858E /* Twitter.framework */; };
 		3ED297A614335CC400C52243 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ED297A314335CC400C52243 /* Icon.png */; };
@@ -120,6 +121,7 @@
 		3E7599CD144473B800083664 /* button1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button1@2x.png"; sourceTree = "<group>"; };
 		3E7599CE144473B800083664 /* button2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button2@2x.png"; sourceTree = "<group>"; };
 		3E7599CF144473B800083664 /* button3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button3@2x.png"; sourceTree = "<group>"; };
+		3E88DD951A5C266300223FEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ImaKaeru/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		3EB5919D143C96F600D4858E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		3EB591A0143C96FD00D4858E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		3ED297A314335CC400C52243 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 		3EF8BC16142DD4DB004D3FFC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3E88DD951A5C266300223FEA /* Images.xcassets */,
 				3E3E27BE1604AD1B0073A879 /* Default-568h@2x.png */,
 				3EFF5E241440473D00319C2E /* Default.png */,
 				3EF7E6BA145304B400FC63BC /* Default@2x.png */,
@@ -414,6 +417,7 @@
 				3E50589D1425939E00D2FFB8 /* Localizable.strings in Resources */,
 				3EF8BC12142DD16D004D3FFC /* ButtonTwitterOn.png in Resources */,
 				3EF8BC15142DD2D1004D3FFC /* TwitterButtonOff.png in Resources */,
+				3E88DD961A5C266300223FEA /* Images.xcassets in Resources */,
 				3EF8BC19142DD9B3004D3FFC /* EmailButtonOff.png in Resources */,
 				3EF8BC1A142DD9B3004D3FFC /* EmailButtonOn.png in Resources */,
 				3EF8BC1C142DE075004D3FFC /* gear.png in Resources */,
@@ -582,6 +586,8 @@
 		3E01130E14237ED60003B868 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
@@ -597,6 +603,8 @@
 		3E01130F14237ED60003B868 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
