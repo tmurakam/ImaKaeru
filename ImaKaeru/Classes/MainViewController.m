@@ -327,7 +327,7 @@
     ACAccountStore *store = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
-    [store requestAccessToAccountsWithType:accountType withCompletionHandler:^(BOOL granted, NSError *error) {
+    [store requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
         if (!granted) {
             // エラー: Twitter アカウント拒否
             [self performSelectorOnMainThread:@selector(tweetFailed:) withObject:_L(@"error_twitter_denied") waitUntilDone:NO];
@@ -345,12 +345,14 @@
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 
         // request 作成
-        TWRequest *req = [[TWRequest alloc] initWithURL:[NSURL URLWithString:apiUrl]
-                                             parameters:params
-                                          requestMethod:TWRequestMethodPOST];
+        SLRequest *req = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                            requestMethod:SLRequestMethodPOST
+                                                      URL:[NSURL URLWithString:apiUrl]
+                                               parameters:params];
+
         [req setAccount:account];
         [req performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-            int statusCode = [urlResponse statusCode];
+            NSInteger statusCode = [urlResponse statusCode];
             if (statusCode == 200) {
                 [self performSelectorOnMainThread:@selector(tweetDone) withObject:nil waitUntilDone:NO];
             } else {

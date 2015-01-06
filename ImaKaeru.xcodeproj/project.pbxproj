@@ -18,6 +18,7 @@
 		3E011334142435990003B868 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E011333142435990003B868 /* MessageUI.framework */; };
 		3E1091C6143DBFDC003E5114 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E1091C4143DBFDC003E5114 /* InfoPlist.strings */; };
 		3E2428D6144080B40042C6AD /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2428D5144080B40042C6AD /* WebViewController.m */; };
+		3E29CA3A1A5C36500061CFCA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E29CA391A5C36500061CFCA /* Social.framework */; };
 		3E41984A1426181A00EE2CFA /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4198491426181A00EE2CFA /* InfoViewController.m */; };
 		3E50588F142592F700D2FFB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505882142592F700D2FFB8 /* AppDelegate.m */; };
 		3E505892142592F700D2FFB8 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E505888142592F700D2FFB8 /* Config.m */; };
@@ -32,7 +33,6 @@
 		3E88DD961A5C266300223FEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E88DD951A5C266300223FEA /* Images.xcassets */; };
 		3E88DD981A5C276200223FEA /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E88DD971A5C276200223FEA /* Launch Screen.xib */; };
 		3EB5919E143C96F600D4858E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB5919D143C96F600D4858E /* Accounts.framework */; };
-		3EB591A1143C96FD00D4858E /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB591A0143C96FD00D4858E /* Twitter.framework */; };
 		3EDB6A1F1A5C31780030DEB3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDB6A1E1A5C31780030DEB3 /* Crashlytics.framework */; };
 		3EE691011424DAF100215A36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691001424DAF100215A36 /* libxml2.dylib */; };
 		3EE691371424E43100215A36 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691361424E43100215A36 /* Security.framework */; };
@@ -67,6 +67,7 @@
 		3E1091C7143DBFEA003E5114 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Locale/ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E2428D4144080B40042C6AD /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		3E2428D5144080B40042C6AD /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		3E29CA391A5C36500061CFCA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3E4198481426181A00EE2CFA /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		3E4198491426181A00EE2CFA /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		3E505881142592F700D2FFB8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		3E88DD951A5C266300223FEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ImaKaeru/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		3E88DD971A5C276200223FEA /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		3EB5919D143C96F600D4858E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		3EB591A0143C96FD00D4858E /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		3EDB6A1E1A5C31780030DEB3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		3EE691001424DAF100215A36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EE691361424E43100215A36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -101,11 +101,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E29CA3A1A5C36500061CFCA /* Social.framework in Frameworks */,
 				3E56EC5F16AA5AFF0032A864 /* SystemConfiguration.framework in Frameworks */,
 				3E56EC5D16AA5AF60032A864 /* QuartzCore.framework in Frameworks */,
 				3EDB6A1F1A5C31780030DEB3 /* Crashlytics.framework in Frameworks */,
 				3E72FD8E143DADBF0095EF86 /* CoreLocation.framework in Frameworks */,
-				3EB591A1143C96FD00D4858E /* Twitter.framework in Frameworks */,
 				3EB5919E143C96F600D4858E /* Accounts.framework in Frameworks */,
 				3EE691371424E43100215A36 /* Security.framework in Frameworks */,
 				3EE691011424DAF100215A36 /* libxml2.dylib in Frameworks */,
@@ -152,11 +152,11 @@
 		3E0112DD14237ED50003B868 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E29CA391A5C36500061CFCA /* Social.framework */,
 				3EDB6A1E1A5C31780030DEB3 /* Crashlytics.framework */,
 				3E56EC5C16AA5AF60032A864 /* QuartzCore.framework */,
 				3E56EC5E16AA5AFF0032A864 /* SystemConfiguration.framework */,
 				3E72FD8D143DADBE0095EF86 /* CoreLocation.framework */,
-				3EB591A0143C96FD00D4858E /* Twitter.framework */,
 				3EB5919D143C96F600D4858E /* Accounts.framework */,
 				3EE691001424DAF100215A36 /* libxml2.dylib */,
 				3EE691361424E43100215A36 /* Security.framework */,
