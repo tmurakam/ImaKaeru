@@ -8,7 +8,7 @@
 #import "AppDelegate.h"
 
 #import "MainViewController.h"
-//#import "Crittercism.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
@@ -17,8 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Initialize crittercism
-    //[Crittercism enableWithAppID:@"50f9944a8cb83141a5000009"];
+    // Crashlytics
+    [Crashlytics startWithAPIKey:@"532ecad9ca165fccdfe2d04c731d6b7449375147"];
     
     return YES;
 }
