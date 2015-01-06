@@ -248,7 +248,7 @@
     MFMailComposeViewController *vc = [MFMailComposeViewController new];
     vc.mailComposeDelegate = self;
     
-    [vc setToRecipients:[NSArray arrayWithObject:mConfig.emailAddress]];
+    [vc setToRecipients:@[mConfig.emailAddress]];
     [vc setSubject:mMessageToSend]; // TBD
     
     // メール本文作成
@@ -304,8 +304,8 @@
         //[msg appendFormat:@" %@", _L(@"hash_tag")];
         //[msg appendFOrmat:@" %@", SHORTEN_APP_URL];
         
-        [params setObject:msg forKey:@"text"];
-        [params setObject:mConfig.twitterAddress forKey:@"screen_name"];
+        params[@"text"] = msg;
+        params[@"screen_name"] = mConfig.twitterAddress;
     } else {
         // mention
         apiUrl = @"http://api.twitter.com/1.1/statuses/update.json";
@@ -314,13 +314,13 @@
         [msg appendFormat:@" %@", mMessageToSend];
         [msg appendFormat:@" %@", _L(@"hash_tag")];
         [msg appendFormat:@" %@", SHORTEN_APP_URL];
-        [params setObject:msg forKey:@"status"];
+        params[@"status"] = msg;
 
         if (mConfig.isSendLocation && [mLocation hasLocation]) {
             CLLocation *loc = mLocation.location;
-            [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.latitude] forKey:@"lat"];
-            [params setObject:[NSString stringWithFormat:@"%f", loc.coordinate.longitude] forKey:@"long"];
-            [params setObject:@"true" forKey:@"display_coordinates"];
+            params[@"lat"] = [NSString stringWithFormat:@"%f", loc.coordinate.latitude];
+            params[@"long"] = [NSString stringWithFormat:@"%f", loc.coordinate.longitude];
+            params[@"display_coordinates"] = @"true";
         }
     }
 
@@ -340,7 +340,7 @@
             return;
         }
 
-        ACAccount *account = [accounts objectAtIndex:0];
+        ACAccount *account = accounts[0];
 
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 
@@ -356,7 +356,7 @@
             } else {
                 NSDictionary *headers = [urlResponse allHeaderFields];
                 for (NSString *key in headers) {
-                    NSLog(@"%@ = %@", key, [headers objectForKey:key]);
+                    NSLog(@"%@ = %@", key, headers[key]);
                 }
                 
                 NSString *statusMessage = [NSHTTPURLResponse localizedStringForStatusCode:statusCode];
