@@ -2,6 +2,8 @@
 
 	* iOS 7.1 以上
 	* AutoLayout 使用
+	* Twitter: Social.framework に切り替え
+	* Crittercism -> Crashlytics に切り替え
 
 2013-01-19 : Takuya Murakami
 
