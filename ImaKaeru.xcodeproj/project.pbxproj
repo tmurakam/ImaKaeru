@@ -10,7 +10,6 @@
 		3E0112DF14237ED50003B868 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112DE14237ED50003B868 /* UIKit.framework */; };
 		3E0112E114237ED50003B868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E014237ED50003B868 /* Foundation.framework */; };
 		3E0112E314237ED50003B868 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E214237ED50003B868 /* CoreGraphics.framework */; };
-		3E0112FD14237ED60003B868 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112FC14237ED60003B868 /* SenTestingKit.framework */; };
 		3E0112FE14237ED60003B868 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112DE14237ED50003B868 /* UIKit.framework */; };
 		3E0112FF14237ED60003B868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E014237ED50003B868 /* Foundation.framework */; };
 		3E01130714237ED60003B868 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E01130514237ED60003B868 /* InfoPlist.strings */; };
@@ -58,7 +57,6 @@
 		3E0112E614237ED50003B868 /* ImaKaeru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImaKaeru-Info.plist"; sourceTree = "<group>"; };
 		3E0112EC14237ED50003B868 /* ImaKaeru-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImaKaeru-Prefix.pch"; sourceTree = "<group>"; };
 		3E0112FB14237ED60003B868 /* ImaKaeruTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImaKaeruTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E0112FC14237ED60003B868 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3E01130414237ED60003B868 /* ImaKaeruTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImaKaeruTests-Info.plist"; sourceTree = "<group>"; };
 		3E01130614237ED60003B868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E01130814237ED60003B868 /* ImaKaeruTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImaKaeruTests.h; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E0112FD14237ED60003B868 /* SenTestingKit.framework in Frameworks */,
 				3E0112FE14237ED60003B868 /* UIKit.framework in Frameworks */,
 				3E0112FF14237ED60003B868 /* Foundation.framework in Frameworks */,
 			);
@@ -168,7 +165,6 @@
 				3E0112DE14237ED50003B868 /* UIKit.framework */,
 				3E0112E014237ED50003B868 /* Foundation.framework */,
 				3E0112E214237ED50003B868 /* CoreGraphics.framework */,
-				3E0112FC14237ED60003B868 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -307,7 +303,7 @@
 			name = ImaKaeruTests;
 			productName = ImaKaeruTests;
 			productReference = 3E0112FB14237ED60003B868 /* ImaKaeruTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -538,10 +534,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/ImaKaeru/Libraries/CrittercismSDK\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -559,10 +552,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeru/ImaKaeru-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/ImaKaeru/Libraries/CrittercismSDK\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -574,14 +564,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImaKaeru.app/ImaKaeru";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeruTests/ImaKaeruTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -591,14 +580,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImaKaeru.app/ImaKaeru";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImaKaeru/ImaKaeru-Prefix.pch";
 				INFOPLIST_FILE = "ImaKaeruTests/ImaKaeruTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
