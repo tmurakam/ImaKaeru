@@ -23,7 +23,7 @@ typedef enum {
     StSending,      // 送信中
 } State;
 
-@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, ADBannerViewDelegate, LocationDelegate>
+@interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, LocationDelegate>
 {
     Config *mConfig;
     
@@ -36,7 +36,7 @@ typedef enum {
     
     IBOutlet UIButton *mConfigButton;
     
-    IBOutlet ADBannerView *mAdBannerView;
+    //IBOutlet ADBannerView *mAdBannerView;
     
     // 送信したいメッセージ
     NSString *mMessageToSend;
@@ -47,7 +47,7 @@ typedef enum {
     // 位置取得用
     Location *mLocation;
     
-    BOOL mIsBannerVisible;
+    //BOOL mIsBannerVisible;
 }
 
 @property(assign) State state;
@@ -69,8 +69,7 @@ typedef enum {
 - (void)tweetDone;
 - (void)tweetFailed:(NSString *)statusMessage;
 
-
-- (void)showBanner;
-- (void)hideBanner;
+//- (void)showBanner;
+//- (void)hideBanner;
 
 @end

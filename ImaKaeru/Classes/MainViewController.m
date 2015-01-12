@@ -10,8 +10,15 @@
 #import "InfoViewController.h"
 #import "Common.h"
 
+#import "GADBannerView.h"
+#import "GADRequest.h"
+
 #define APP_URL _L(@"website_url")
 #define SHORTEN_APP_URL _L(@"shorten_website_url")
+
+@interface MainViewController()
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
+@end
 
 @implementation MainViewController
 
@@ -37,11 +44,17 @@
     //[mConfigButton setBackgroundImage:whiteButton forState:UIControlStateNormal];
     
     // iAd を画面外に移動
+#if 0
     CGRect frame;
     frame.size = mAdBannerView.frame.size;
     frame.origin = CGPointMake(0.0f, CGRectGetMaxY(self.view.bounds));
     mAdBannerView.frame = frame;
     mIsBannerVisible = NO;
+#endif
+    
+    // AdMob
+    self.bannerView.adUnitID = @"ca-app-pub-4621925249922081/2876373500";
+    self.bannerView.rootViewController = self;
 
     mLocation = [[Location alloc] init];
     mLocation.delegate = self;
@@ -395,6 +408,7 @@
 
 #pragma mark - ADBannerViewDelegate
 
+#if 0
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
     NSLog(@"iAd loaded");
@@ -438,5 +452,6 @@
         }];
     }
 }
+#endif
 
 @end

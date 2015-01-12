@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2fC-ga-u2B">
     <dependencies>
-        <deployment version="1536" identifier="iOS"/>
+        <deployment version="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -132,39 +132,36 @@
                                     <segue destination="A6W-n2-T82" kind="modal" modalTransitionStyle="flipHorizontal" id="Kpv-rO-mvm"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="fUZ-JB-xAu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVk-7a-3ud" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="iUY-bE-F0i"/>
+                                    <constraint firstAttribute="height" constant="50" id="e7n-Hh-v35"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="2fC-ga-u2B" id="C9k-oM-Wcq"/>
-                                </connections>
-                            </adBannerView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hd7-2T-Gzd" firstAttribute="top" secondItem="7IY-dA-pCV" secondAttribute="bottom" constant="25" id="12i-KT-WkZ"/>
+                            <constraint firstItem="OBk-Er-n0G" firstAttribute="bottom" secondItem="uTv-gr-NG6" secondAttribute="bottom" id="24W-hz-B6X"/>
                             <constraint firstItem="Lrp-gn-kog" firstAttribute="leading" secondItem="OsH-3P-5k4" secondAttribute="leading" id="2EB-Lr-MH2"/>
-                            <constraint firstItem="fUZ-JB-xAu" firstAttribute="top" secondItem="ZBv-ek-iOK" secondAttribute="bottom" constant="8" id="2K6-t6-jgx"/>
                             <constraint firstItem="Lrp-gn-kog" firstAttribute="top" secondItem="OsH-3P-5k4" secondAttribute="top" id="3AW-SW-JJS"/>
-                            <constraint firstItem="fUZ-JB-xAu" firstAttribute="top" secondItem="uTv-gr-NG6" secondAttribute="bottom" constant="8" id="3Dn-vr-HbZ"/>
                             <constraint firstItem="HRC-Xb-PtG" firstAttribute="top" secondItem="hd7-2T-Gzd" secondAttribute="bottom" constant="26" id="3OO-lj-7VO"/>
-                            <constraint firstItem="p3P-jf-JjJ" firstAttribute="top" secondItem="fUZ-JB-xAu" secondAttribute="bottom" id="5d9-T0-b75"/>
-                            <constraint firstAttribute="trailing" secondItem="fUZ-JB-xAu" secondAttribute="trailing" id="6Di-Q4-Y3F"/>
+                            <constraint firstItem="xVk-7a-3ud" firstAttribute="top" secondItem="XiO-Ol-vYM" secondAttribute="bottom" constant="17" id="3vX-qO-xw7"/>
                             <constraint firstAttribute="trailing" secondItem="Lrp-gn-kog" secondAttribute="trailing" id="6it-Mq-m4n"/>
+                            <constraint firstItem="xVk-7a-3ud" firstAttribute="leading" secondItem="OsH-3P-5k4" secondAttribute="leading" id="758-fg-TYf"/>
+                            <constraint firstAttribute="trailing" secondItem="xVk-7a-3ud" secondAttribute="trailing" id="8gz-z1-b8i"/>
+                            <constraint firstItem="xVk-7a-3ud" firstAttribute="top" secondItem="ZBv-ek-iOK" secondAttribute="bottom" constant="8" id="AGw-8J-f50"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="leading" secondItem="hd7-2T-Gzd" secondAttribute="leading" id="Bkr-be-Z3Z"/>
-                            <constraint firstItem="fUZ-JB-xAu" firstAttribute="leading" secondItem="OsH-3P-5k4" secondAttribute="leading" id="DcG-6a-Kpb"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="leading" secondItem="HRC-Xb-PtG" secondAttribute="leading" id="F4X-X1-656"/>
                             <constraint firstItem="p3P-jf-JjJ" firstAttribute="top" secondItem="Lrp-gn-kog" secondAttribute="bottom" id="NIL-mf-5FC"/>
+                            <constraint firstItem="xVk-7a-3ud" firstAttribute="top" secondItem="uTv-gr-NG6" secondAttribute="bottom" constant="8" id="SKq-aF-GWB"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="leading" secondItem="OsH-3P-5k4" secondAttribute="leadingMargin" constant="4" id="SZ8-WI-uey"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="top" secondItem="Wna-X2-Gmo" secondAttribute="bottom" constant="14" id="VVB-LB-cvc"/>
-                            <constraint firstItem="fUZ-JB-xAu" firstAttribute="top" secondItem="XiO-Ol-vYM" secondAttribute="bottom" constant="17" id="W2s-X6-jD6"/>
                             <constraint firstAttribute="trailing" secondItem="XiO-Ol-vYM" secondAttribute="trailing" constant="16" id="eBh-LL-ebn"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="trailing" secondItem="hd7-2T-Gzd" secondAttribute="trailing" id="lUo-hI-t4h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7IY-dA-pCV" secondAttribute="trailing" constant="4" id="oSd-7v-fP2"/>
-                            <constraint firstItem="fUZ-JB-xAu" firstAttribute="top" secondItem="OBk-Er-n0G" secondAttribute="bottom" constant="8" id="pt2-lD-C59"/>
+                            <constraint firstItem="p3P-jf-JjJ" firstAttribute="top" secondItem="xVk-7a-3ud" secondAttribute="bottom" id="oin-Z0-XMn"/>
                             <constraint firstItem="uTv-gr-NG6" firstAttribute="leading" secondItem="OsH-3P-5k4" secondAttribute="leading" constant="20" id="puG-iM-0WT"/>
                             <constraint firstItem="XiO-Ol-vYM" firstAttribute="leading" secondItem="ZBv-ek-iOK" secondAttribute="trailing" constant="15" id="txv-Tr-k1o"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="trailing" secondItem="HRC-Xb-PtG" secondAttribute="trailing" id="wRn-U1-2Z1"/>
@@ -172,7 +169,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mAdBannerView" destination="fUZ-JB-xAu" id="1Rm-ML-Llw"/>
+                        <outlet property="bannerView" destination="xVk-7a-3ud" id="tKU-11-14r"/>
                         <outlet property="mConfigButton" destination="ZBv-ek-iOK" id="SY4-CS-NFR"/>
                         <outlet property="mEmailButton" destination="uTv-gr-NG6" id="cd3-uR-kT2"/>
                         <outlet property="mSendButton1" destination="7IY-dA-pCV" id="EjH-8s-BBd"/>
