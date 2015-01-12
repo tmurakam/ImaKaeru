@@ -137,7 +137,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="e7n-Hh-v35"/>
-                                    <constraint firstAttribute="width" constant="320" id="gJU-0l-GHS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -153,7 +152,9 @@
                             <constraint firstItem="xVk-7a-3ud" firstAttribute="top" secondItem="ZBv-ek-iOK" secondAttribute="bottom" constant="8" id="AGw-8J-f50"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="leading" secondItem="hd7-2T-Gzd" secondAttribute="leading" id="Bkr-be-Z3Z"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="leading" secondItem="HRC-Xb-PtG" secondAttribute="leading" id="F4X-X1-656"/>
+                            <constraint firstItem="xVk-7a-3ud" firstAttribute="leading" secondItem="OsH-3P-5k4" secondAttribute="leading" id="F8a-K2-EDV"/>
                             <constraint firstAttribute="centerX" secondItem="xVk-7a-3ud" secondAttribute="centerX" id="GLJ-Yh-KsZ"/>
+                            <constraint firstAttribute="trailing" secondItem="xVk-7a-3ud" secondAttribute="trailing" id="M5g-ch-Glx"/>
                             <constraint firstItem="p3P-jf-JjJ" firstAttribute="top" secondItem="Lrp-gn-kog" secondAttribute="bottom" id="NIL-mf-5FC"/>
                             <constraint firstItem="xVk-7a-3ud" firstAttribute="top" secondItem="uTv-gr-NG6" secondAttribute="bottom" constant="8" id="SKq-aF-GWB"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="leading" secondItem="OsH-3P-5k4" secondAttribute="leadingMargin" constant="4" id="SZ8-WI-uey"/>

@@ -178,6 +178,7 @@
     // 位置情報取得 / 送信開始
     if (mConfig.isSendLocation && ![mLocation hasLocation]) {
         // wait for location update...
+        NSLog(@"Start updating location...");
         self.state = StGetLocation;
         [mLocation startUpdating];
     } else {
@@ -191,6 +192,7 @@
     if (self.state == StSending) {
         return;
     }
+    NSLog(@"Start sending.");
     self.state = StSending;
 
     // 送信する
@@ -245,6 +247,7 @@
 
 - (void)location:(Location *)loc didUpdate:(CLLocation *)location
 {
+    NSLog(@"Location didUpdate");
     if (self.state == StGetLocation) {
         [self startSend];
     }
@@ -252,6 +255,7 @@
 
 - (void)location:(Location *)loc didFail:(NSError *)error
 {
+    NSLog(@"Location didFail");
     if (self.state == StGetLocation) {
         [self startSend];
     }
