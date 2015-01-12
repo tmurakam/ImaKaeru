@@ -12,11 +12,12 @@
 
 #import "GADBannerView.h"
 #import "GADRequest.h"
+#import "GADBannerViewDelegate.h"
 
 #define APP_URL _L(@"website_url")
 #define SHORTEN_APP_URL _L(@"shorten_website_url")
 
-@interface MainViewController()
+@interface MainViewController() <GADBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 @end
 
@@ -34,6 +35,8 @@
 {
     [super viewDidLoad];
 
+    NSLog(@"viewDidLoad");
+    
     mConfig = [Config instance];
     mState = StIdle;
 
@@ -55,8 +58,14 @@
     // AdMob
     self.bannerView.adUnitID = @"ca-app-pub-4621925249922081/2876373500";
     self.bannerView.rootViewController = self;
+    self.bannerView.delegate = self;
+    
+    // AdMob request
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[GAD_SIMULATOR_ID];
+    [self.bannerView loadRequest:request];
 
-    mLocation = [[Location alloc] init];
+    mLocation = [Location new];
     mLocation.delegate = self;
 }
 
@@ -404,6 +413,16 @@
     [self showError:msg];
 
     self.state = StIdle;
+}
+
+#pragma mark - GADBannerViewDelegate
+
+- (void)adViewDidReceiveAd:(GADBannerView *)adView {
+    NSLog(@"adViewDidReceiveAd");
+}
+
+- (void)adView:(GADBannerView *)adView didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"adViewDidFailToReceiveAdWithError: %@", [error localizedDescription]);
 }
 
 #pragma mark - ADBannerViewDelegate
