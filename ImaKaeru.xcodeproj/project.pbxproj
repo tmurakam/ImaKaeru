@@ -56,7 +56,7 @@
 		3E0112E214237ED50003B868 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3E0112E614237ED50003B868 /* ImaKaeru-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImaKaeru-Info.plist"; sourceTree = "<group>"; };
 		3E0112EC14237ED50003B868 /* ImaKaeru-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImaKaeru-Prefix.pch"; sourceTree = "<group>"; };
-		3E0112FB14237ED60003B868 /* ImaKaeruTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImaKaeruTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E0112FB14237ED60003B868 /* ImaKaeruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImaKaeruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E01130414237ED60003B868 /* ImaKaeruTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImaKaeruTests-Info.plist"; sourceTree = "<group>"; };
 		3E01130614237ED60003B868 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E01130814237ED60003B868 /* ImaKaeruTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImaKaeruTests.h; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				3E0112DA14237ED50003B868 /* ImaKaeru.app */,
-				3E0112FB14237ED60003B868 /* ImaKaeruTests.octest */,
+				3E0112FB14237ED60003B868 /* ImaKaeruTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 			);
 			name = ImaKaeruTests;
 			productName = ImaKaeruTests;
-			productReference = 3E0112FB14237ED60003B868 /* ImaKaeruTests.octest */;
+			productReference = 3E0112FB14237ED60003B868 /* ImaKaeruTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
