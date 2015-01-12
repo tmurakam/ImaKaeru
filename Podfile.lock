@@ -1,0 +1,17 @@
+PODS:
+  - AdMobMediationAdapterIAd (6.6.0):
+    - Google-Mobile-Ads-SDK
+  - CrashlyticsFramework (2.2.5.2)
+  - Google-Mobile-Ads-SDK (6.12.2)
+
+DEPENDENCIES:
+  - AdMobMediationAdapterIAd
+  - CrashlyticsFramework
+  - Google-Mobile-Ads-SDK
+
+SPEC CHECKSUMS:
+  AdMobMediationAdapterIAd: 72580d06d2a09d032416b5bd7a667e0abd4ce5f7
+  CrashlyticsFramework: 4e91082f3019bea7e718e1b67b0a3b56729dbc5d
+  Google-Mobile-Ads-SDK: 9761186eb5dc5e1493e71dcce2b525159f763d42
+
+COCOAPODS: 0.35.0

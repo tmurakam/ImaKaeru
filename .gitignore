@@ -1,5 +1,13 @@
-/ImaKaeru.xcodeproj/project.xcworkspace/
-/ImaKaeru.xcodeproj/xcuserdata/
 *~
+*.pch
+*.pbxuser
+*.mode1v3
+*.xcsettings
+*.xcuserstate
+*.xcuserdatad/
+*.xccheckout
+*.xcworkspacedata
+Pods/
+Gemfile.lock
 .idea/
 
