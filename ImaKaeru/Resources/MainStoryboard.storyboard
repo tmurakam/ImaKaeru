@@ -574,8 +574,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Wg-4m-lUd">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Wg-4m-lUd">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="hw8-R5-z3t"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem image="backward.png" style="plain" id="Fog-JM-Ob1">
                                         <connections>
@@ -602,8 +605,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jI-Za-3t0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jI-Za-3t0">
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="ZQE-ze-cNA" id="7gS-0Q-aze"/>
@@ -614,6 +617,15 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5Wg-4m-lUd" secondAttribute="trailing" id="Ect-we-4IV"/>
+                            <constraint firstItem="5Wg-4m-lUd" firstAttribute="leading" secondItem="QyU-dN-Yvq" secondAttribute="leading" id="FPK-sO-2AV"/>
+                            <constraint firstAttribute="trailing" secondItem="0jI-Za-3t0" secondAttribute="trailing" id="Miw-cG-YkQ"/>
+                            <constraint firstItem="5Wg-4m-lUd" firstAttribute="top" secondItem="0jI-Za-3t0" secondAttribute="bottom" id="Msp-H2-TwO"/>
+                            <constraint firstItem="0jI-Za-3t0" firstAttribute="leading" secondItem="QyU-dN-Yvq" secondAttribute="leading" id="X17-If-VcA"/>
+                            <constraint firstItem="0jI-Za-3t0" firstAttribute="top" secondItem="Ooj-Yp-I7I" secondAttribute="bottom" id="bPv-Sa-FaV"/>
+                            <constraint firstItem="GFJ-Mg-cic" firstAttribute="top" secondItem="5Wg-4m-lUd" secondAttribute="bottom" id="uRx-k3-tOU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Browser" id="T3E-g6-Usf"/>
                     <connections>
