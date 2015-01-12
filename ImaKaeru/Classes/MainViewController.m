@@ -313,13 +313,13 @@
         return NO;
     }
 
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *params = [NSMutableDictionary new];
     NSString *apiUrl;
 
     NSMutableString *msg;
     if (mConfig.isUseDirectMessage) {
         // DirectMessage
-        apiUrl = @"http://api.twitter.com/1.1/direct_messages/new.json";
+        apiUrl = @"https://api.twitter.com/1.1/direct_messages/new.json";
 
         msg = [NSMutableString stringWithString:mMessageToSend];
         if (mConfig.isSendLocation && [mLocation hasLocation]) {
@@ -334,7 +334,7 @@
         params[@"screen_name"] = mConfig.twitterAddress;
     } else {
         // mention
-        apiUrl = @"http://api.twitter.com/1.1/statuses/update.json";
+        apiUrl = @"https://api.twitter.com/1.1/statuses/update.json";
 
         msg = [NSMutableString stringWithFormat:@"@%@", mConfig.twitterAddress];
         [msg appendFormat:@" %@", mMessageToSend];
@@ -350,7 +350,7 @@
         }
     }
 
-    ACAccountStore *store = [[ACAccountStore alloc] init];
+    ACAccountStore *store = [ACAccountStore new];
     ACAccountType *accountType = [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
     [store requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
