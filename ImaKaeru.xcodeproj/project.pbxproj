@@ -34,6 +34,14 @@
 		3E88DD961A5C266300223FEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E88DD951A5C266300223FEA /* Images.xcassets */; };
 		3E88DD981A5C276200223FEA /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E88DD971A5C276200223FEA /* Launch Screen.xib */; };
 		3EB5919E143C96F600D4858E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB5919D143C96F600D4858E /* Accounts.framework */; };
+		3ECCEB4A1A640F1800F7DD84 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECCEB491A640F1800F7DD84 /* AdSupport.framework */; };
+		3ECCEB4C1A640F2400F7DD84 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECCEB4B1A640F2400F7DD84 /* AudioToolbox.framework */; };
+		3ECCEB4E1A640F3900F7DD84 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECCEB4D1A640F3900F7DD84 /* AVFoundation.framework */; };
+		3ECCEB501A640F4700F7DD84 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECCEB4F1A640F4700F7DD84 /* CoreFoundation.framework */; };
+		3ECCEB521A640F6900F7DD84 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECCEB511A640F6900F7DD84 /* CoreTelephony.framework */; };
+		3ECCEB541A640F7700F7DD84 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECCEB531A640F7700F7DD84 /* EventKit.framework */; };
+		3ECCEB561A640F8200F7DD84 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECCEB551A640F8200F7DD84 /* EventKitUI.framework */; };
+		3ECCEB581A640F9C00F7DD84 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECCEB571A640F9C00F7DD84 /* StoreKit.framework */; };
 		3EE691011424DAF100215A36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691001424DAF100215A36 /* libxml2.dylib */; };
 		3EE691371424E43100215A36 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691361424E43100215A36 /* Security.framework */; };
 		3EFF5DEF143FF5F400319C2E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF5DEE143FF5F400319C2E /* MainStoryboard.storyboard */; };
@@ -92,6 +100,14 @@
 		3E88DD951A5C266300223FEA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ImaKaeru/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		3E88DD971A5C276200223FEA /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		3EB5919D143C96F600D4858E /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		3ECCEB491A640F1800F7DD84 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		3ECCEB4B1A640F2400F7DD84 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3ECCEB4D1A640F3900F7DD84 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3ECCEB4F1A640F4700F7DD84 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		3ECCEB511A640F6900F7DD84 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3ECCEB531A640F7700F7DD84 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		3ECCEB551A640F8200F7DD84 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		3ECCEB571A640F9C00F7DD84 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3EE691001424DAF100215A36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EE691361424E43100215A36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3EFF5DEE143FF5F400319C2E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -103,18 +119,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E29CA3A1A5C36500061CFCA /* Social.framework in Frameworks */,
+				3ECCEB4A1A640F1800F7DD84 /* AdSupport.framework in Frameworks */,
+				3ECCEB4C1A640F2400F7DD84 /* AudioToolbox.framework in Frameworks */,
+				3ECCEB4E1A640F3900F7DD84 /* AVFoundation.framework in Frameworks */,
+				3ECCEB501A640F4700F7DD84 /* CoreFoundation.framework in Frameworks */,
+				3E0112E314237ED50003B868 /* CoreGraphics.framework in Frameworks */,
+				3ECCEB521A640F6900F7DD84 /* CoreTelephony.framework in Frameworks */,
+				3ECCEB541A640F7700F7DD84 /* EventKit.framework in Frameworks */,
+				3ECCEB561A640F8200F7DD84 /* EventKitUI.framework in Frameworks */,
+				3E011334142435990003B868 /* MessageUI.framework in Frameworks */,
+				3ECCEB581A640F9C00F7DD84 /* StoreKit.framework in Frameworks */,
 				3E56EC5F16AA5AFF0032A864 /* SystemConfiguration.framework in Frameworks */,
+				3E29CA3A1A5C36500061CFCA /* Social.framework in Frameworks */,
 				3E56EC5D16AA5AF60032A864 /* QuartzCore.framework in Frameworks */,
 				3E72FD8E143DADBF0095EF86 /* CoreLocation.framework in Frameworks */,
 				3EB5919E143C96F600D4858E /* Accounts.framework in Frameworks */,
 				3EE691371424E43100215A36 /* Security.framework in Frameworks */,
 				3EE691011424DAF100215A36 /* libxml2.dylib in Frameworks */,
-				3E011334142435990003B868 /* MessageUI.framework in Frameworks */,
 				3E01131714242CAD0003B868 /* iAd.framework in Frameworks */,
 				3E0112DF14237ED50003B868 /* UIKit.framework in Frameworks */,
 				3E0112E114237ED50003B868 /* Foundation.framework in Frameworks */,
-				3E0112E314237ED50003B868 /* CoreGraphics.framework in Frameworks */,
 				04926478AA4F2A8F02F14CC0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +179,14 @@
 		3E0112DD14237ED50003B868 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3ECCEB571A640F9C00F7DD84 /* StoreKit.framework */,
+				3ECCEB551A640F8200F7DD84 /* EventKitUI.framework */,
+				3ECCEB531A640F7700F7DD84 /* EventKit.framework */,
+				3ECCEB511A640F6900F7DD84 /* CoreTelephony.framework */,
+				3ECCEB4F1A640F4700F7DD84 /* CoreFoundation.framework */,
+				3ECCEB4D1A640F3900F7DD84 /* AVFoundation.framework */,
+				3ECCEB4B1A640F2400F7DD84 /* AudioToolbox.framework */,
+				3ECCEB491A640F1800F7DD84 /* AdSupport.framework */,
 				3E29CA391A5C36500061CFCA /* Social.framework */,
 				3E56EC5C16AA5AF60032A864 /* QuartzCore.framework */,
 				3E56EC5E16AA5AFF0032A864 /* SystemConfiguration.framework */,
@@ -395,7 +427,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 532ecad9ca165fccdfe2d04c731d6b7449375147 4a1b9ec5d0af491383edc13d851e0e4636e4845c4b8e468c5df8c445c1f917db";
+			shellScript = "./Pods/Crashlytics.framework/run 532ecad9ca165fccdfe2d04c731d6b7449375147 4a1b9ec5d0af491383edc13d851e0e4636e4845c4b8e468c5df8c445c1f917db";
 		};
 		5E159947535893F2323E3777 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
