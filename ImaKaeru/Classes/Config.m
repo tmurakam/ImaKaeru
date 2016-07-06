@@ -24,9 +24,9 @@
 @synthesize isUseEmail = mIsUseEmail;
 @synthesize emailAddress = mEmailAddress;
 
-@synthesize isUseTwitter = mIsUseTwitter;
-@synthesize isUseDirectMessage = mIsUseDirectMessage;
-@synthesize twitterAddress = mTwitterAddress;
+//@synthesize isUseTwitter = mIsUseTwitter;
+//@synthesize isUseDirectMessage = mIsUseDirectMessage;
+//@synthesize twitterAddress = mTwitterAddress;
 
 @synthesize isFirstStartup = mIsFirstStartup;
 @synthesize isVersionUp = mIsVersionUp;
@@ -81,8 +81,8 @@ static Config *theInstance = nil;
     mIsSendLocation = NO;
 
     mIsUseEmail = YES;
-    mIsUseTwitter = YES;
-    mIsUseDirectMessage = YES;
+    //mIsUseTwitter = YES;
+    //mIsUseDirectMessage = YES;
     
     [self save];
 }
@@ -100,9 +100,9 @@ static Config *theInstance = nil;
     mIsUseEmail = [defaults boolForKey:@"IsUseEmail"];
     mEmailAddress = [defaults stringForKey:@"EmailAddress"];
     
-    mIsUseTwitter = [defaults boolForKey:@"IsUseTwitter"];
-    mIsUseDirectMessage = [defaults boolForKey:@"IsUseDirectMessage"];
-    mTwitterAddress = [defaults stringForKey:@"TwitterAddress"];
+    //mIsUseTwitter = [defaults boolForKey:@"IsUseTwitter"];
+    //mIsUseDirectMessage = [defaults boolForKey:@"IsUseDirectMessage"];
+    //mTwitterAddress = [defaults stringForKey:@"TwitterAddress"];
 }
 
 - (void)save
@@ -118,9 +118,9 @@ static Config *theInstance = nil;
     [defaults setBool:mIsUseEmail forKey:@"IsUseEmail"];
     [defaults setObject:mEmailAddress forKey:@"EmailAddress"];
     
-    [defaults setBool:mIsUseTwitter forKey:@"IsUseTwitter"];
-    [defaults setBool:mIsUseDirectMessage forKey:@"IsUseDirectMessage"];
-    [defaults setObject:mTwitterAddress forKey:@"TwitterAddress"];
+    //[defaults setBool:mIsUseTwitter forKey:@"IsUseTwitter"];
+    //[defaults setBool:mIsUseDirectMessage forKey:@"IsUseDirectMessage"];
+    //[defaults setObject:mTwitterAddress forKey:@"TwitterAddress"];
 
     [defaults synchronize];
 }

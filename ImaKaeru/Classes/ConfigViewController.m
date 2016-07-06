@@ -53,8 +53,8 @@
     mLabelMessage2.text = [NSString stringWithFormat:@"%@2", _L(@"message")];
     mLabelMessage3.text = [NSString stringWithFormat:@"%@3", _L(@"message")];
     mLabelLocation.text = _L(@"send_location");
-    mLabelDirectMessage.text = _L(@"direct_message");
-    mLabelTwitterDestination.text = _L(@"destination");
+    //mLabelDirectMessage.text = _L(@"direct_message");
+    //mLabelTwitterDestination.text = _L(@"destination");
     
     [self loadConfig];
 }   
@@ -65,15 +65,15 @@
     mTextMessage2 = nil;
     mTextMessage3 = nil;
     mSwitchLocation = nil;
-    mSwitchDirectMessage = nil;
+    //mSwitchDirectMessage = nil;
     mTextEmail = nil;
-    mTextTwitterName = nil;
+    //mTextTwitterName = nil;
     mLabelMessage1 = nil;
     mLabelMessage2 = nil;
     mLabelMessage3 = nil;
     mLabelLocation = nil;
-    mLabelDirectMessage = nil;
-    mLabelTwitterDestination = nil;
+    //mLabelDirectMessage = nil;
+    //mLabelTwitterDestination = nil;
     mConfig = nil;
 
     [super viewDidUnload];
@@ -88,8 +88,8 @@
     
     mTextEmail.text = mConfig.emailAddress;
     
-    mSwitchDirectMessage.on = mConfig.isUseDirectMessage;
-    mTextTwitterName.text = mConfig.twitterAddress;
+    //mSwitchDirectMessage.on = mConfig.isUseDirectMessage;
+    //mTextTwitterName.text = mConfig.twitterAddress;
 }
 
 - (void)saveConfig
@@ -101,8 +101,8 @@
     
     mConfig.emailAddress = mTextEmail.text;
     
-    mConfig.isUseDirectMessage = mSwitchDirectMessage.on;
-    mConfig.twitterAddress = mTextTwitterName.text;
+    //mConfig.isUseDirectMessage = mSwitchDirectMessage.on;
+    //mConfig.twitterAddress = mTextTwitterName.text;
 
     [mConfig save];
 }

@@ -86,20 +86,6 @@
                                     <action selector="onToggleEmailButton:" destination="2fC-ga-u2B" eventType="touchUpInside" id="MPG-ma-DKu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBk-Er-n0G">
-                                <rect key="frame" x="88" y="474" width="60" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="gUK-0q-KO3"/>
-                                    <constraint firstAttribute="width" constant="60" id="k8R-nw-UUx"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="TwitterButtonOff">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="ButtonTwitterOn.png"/>
-                                <connections>
-                                    <action selector="onToggleTwitterButton:" destination="2fC-ga-u2B" eventType="touchUpInside" id="4GM-aO-wjY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBv-ek-iOK">
                                 <rect key="frame" x="206" y="474" width="61" height="36"/>
                                 <constraints>
@@ -143,7 +129,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hd7-2T-Gzd" firstAttribute="top" secondItem="7IY-dA-pCV" secondAttribute="bottom" constant="25" id="12i-KT-WkZ"/>
-                            <constraint firstItem="OBk-Er-n0G" firstAttribute="bottom" secondItem="uTv-gr-NG6" secondAttribute="bottom" id="24W-hz-B6X"/>
                             <constraint firstItem="Lrp-gn-kog" firstAttribute="leading" secondItem="OsH-3P-5k4" secondAttribute="leading" id="2EB-Lr-MH2"/>
                             <constraint firstItem="Lrp-gn-kog" firstAttribute="top" secondItem="OsH-3P-5k4" secondAttribute="top" id="3AW-SW-JJS"/>
                             <constraint firstItem="HRC-Xb-PtG" firstAttribute="top" secondItem="hd7-2T-Gzd" secondAttribute="bottom" constant="26" id="3OO-lj-7VO"/>
@@ -166,7 +151,6 @@
                             <constraint firstItem="uTv-gr-NG6" firstAttribute="leading" secondItem="OsH-3P-5k4" secondAttribute="leading" constant="20" id="puG-iM-0WT"/>
                             <constraint firstItem="XiO-Ol-vYM" firstAttribute="leading" secondItem="ZBv-ek-iOK" secondAttribute="trailing" constant="15" id="txv-Tr-k1o"/>
                             <constraint firstItem="7IY-dA-pCV" firstAttribute="trailing" secondItem="HRC-Xb-PtG" secondAttribute="trailing" id="wRn-U1-2Z1"/>
-                            <constraint firstItem="OBk-Er-n0G" firstAttribute="leading" secondItem="uTv-gr-NG6" secondAttribute="trailing" constant="8" id="zXc-Xq-AgU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -176,7 +160,6 @@
                         <outlet property="mSendButton1" destination="7IY-dA-pCV" id="EjH-8s-BBd"/>
                         <outlet property="mSendButton2" destination="hd7-2T-Gzd" id="HZi-kp-4bm"/>
                         <outlet property="mSendButton3" destination="HRC-Xb-PtG" id="zAH-KV-lZL"/>
-                        <outlet property="mTwitterButton" destination="OBk-Er-n0G" id="tIr-Gn-C6U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FqR-up-7lq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -320,55 +303,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Twitter" id="Z1G-hh-S9q">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="u36-iM-Cr8">
-                                        <rect key="frame" x="0.0" y="420" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u36-iM-Cr8" id="wnd-LT-4wU">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Direct message" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ndH-T0-YaJ">
-                                                    <rect key="frame" x="10" y="11" width="154" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfn-Qk-bO7">
-                                                    <rect key="frame" x="201" y="8" width="51" height="31"/>
-                                                </switch>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vYP-xy-Oq4">
-                                        <rect key="frame" x="0.0" y="464" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vYP-xy-Oq4" id="bvG-es-fX5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Twitter screen name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qpr-Zo-fUn">
-                                                    <rect key="frame" x="126" y="6" width="154" height="31"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="aOR-Xq-F1I" id="8SH-Qa-R3j"/>
-                                                    </connections>
-                                                </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Destination" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="SY7-6J-HN6">
-                                                    <rect key="frame" x="10" y="11" width="98" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="aOR-Xq-F1I" id="zBh-Dt-rfE"/>
@@ -383,19 +317,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mLabelDirectMessage" destination="ndH-T0-YaJ" id="S4q-YZ-Dew"/>
                         <outlet property="mLabelLocation" destination="GoF-6e-Vuq" id="TGS-Jw-Hl1"/>
                         <outlet property="mLabelMessage1" destination="ILF-hq-ANS" id="rG4-A9-IkS"/>
                         <outlet property="mLabelMessage2" destination="vpb-hH-kiY" id="lsM-c1-vTQ"/>
                         <outlet property="mLabelMessage3" destination="LXx-ve-EZX" id="mWp-w0-oPT"/>
-                        <outlet property="mLabelTwitterDestination" destination="SY7-6J-HN6" id="Rpc-xh-dMg"/>
-                        <outlet property="mSwitchDirectMessage" destination="Cfn-Qk-bO7" id="xYw-VP-2oW"/>
                         <outlet property="mSwitchLocation" destination="x3k-TI-ozh" id="Seh-Z4-727"/>
                         <outlet property="mTextEmail" destination="MDS-7i-2mJ" id="CW3-MT-nso"/>
                         <outlet property="mTextMessage1" destination="r65-KC-xKW" id="LQF-dd-f3j"/>
                         <outlet property="mTextMessage2" destination="cIt-tm-Fcw" id="dun-0s-EnC"/>
                         <outlet property="mTextMessage3" destination="rQB-6G-T3N" id="aAf-6A-ZCM"/>
-                        <outlet property="mTextTwitterName" destination="qpr-Zo-fUn" id="q62-zh-PbP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OsZ-He-51K" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -659,10 +589,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ButtonTwitterOn.png" width="120" height="72"/>
         <image name="EmailButtonOff" width="120" height="72"/>
         <image name="EmailButtonOn.png" width="120" height="72"/>
-        <image name="TwitterButtonOff" width="120" height="72"/>
         <image name="background" width="640" height="960"/>
         <image name="background_r" width="640" height="960"/>
         <image name="backward.png" width="20" height="20"/>

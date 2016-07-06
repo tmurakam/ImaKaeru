@@ -32,7 +32,7 @@ typedef enum {
     IBOutlet UIButton *mSendButton3;
     
     IBOutlet UIButton *mEmailButton;
-    IBOutlet UIButton *mTwitterButton;
+    //IBOutlet UIButton *mTwitterButton;
     
     IBOutlet UIButton *mConfigButton;
     
@@ -55,19 +55,19 @@ typedef enum {
 - (IBAction)onPushSendMessage:(id)sender;
 
 - (IBAction)onToggleEmailButton:(id)sender;
-- (IBAction)onToggleTwitterButton:(id)sender;
+//- (IBAction)onToggleTwitterButton:(id)sender;
 
 - (void)updateButtonStates;
 - (void)startSend;
 
 - (BOOL)sendEmail;
-- (BOOL)sendTwitter;
+//- (BOOL)sendTwitter;
 
 - (void)showMessage:(NSString *)message title:(NSString *)title;
 - (void)showError:(NSString *)message;
 
-- (void)tweetDone;
-- (void)tweetFailed:(NSString *)statusMessage;
+//- (void)tweetDone;
+//- (void)tweetFailed:(NSString *)statusMessage;
 
 //- (void)showBanner;
 //- (void)hideBanner;

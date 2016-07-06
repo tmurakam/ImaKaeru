@@ -130,7 +130,7 @@
     //[mConfigButton setTitle:_L(@"config") forState:UIControlStateNormal];
     
     BOOL sendEnabled = YES;
-    if (self.state != StIdle || (!mConfig.isUseEmail && !mConfig.isUseTwitter)) {
+    if (self.state != StIdle || (!mConfig.isUseEmail /*&& !mConfig.isUseTwitter*/)) {
         sendEnabled = NO;
     }
     mSendButton1.enabled = sendEnabled;
@@ -138,10 +138,10 @@
     mSendButton3.enabled = sendEnabled;
     
     mEmailButton.enabled = (self.state == StIdle);
-    mTwitterButton.enabled = (self.state == StIdle);
+    //mTwitterButton.enabled = (self.state == StIdle);
     
     mEmailButton.selected = mConfig.isUseEmail;
-    mTwitterButton.selected = mConfig.isUseTwitter;    
+    //mTwitterButton.selected = mConfig.isUseTwitter;
 }
 
 // メッセージ送信
@@ -150,7 +150,7 @@
     if (self.state != StIdle) return;
 
     // sanity check
-    if (!mConfig.isUseEmail && !mConfig.isUseTwitter) {
+    if (!mConfig.isUseEmail /*&& !mConfig.isUseTwitter*/) {
         [self showError:_L(@"error_no_dest")];
         return;
     }
@@ -158,10 +158,12 @@
         [self showError:_L(@"error_no_email_dest")];
         return;
     }
+    /*
     if (mConfig.isUseTwitter && (mConfig.twitterAddress == nil || [mConfig.twitterAddress length] == 0)) {
         [self showError:_L(@"error_no_twitter_dest")];
         return;
     }
+    */
     
     if (sender == mSendButton1) {
         mMessageToSend = mConfig.message1;
@@ -195,12 +197,14 @@
 
     // 送信する
     // Twitter とメール同時送信の場合は、Twitter送信が完了してからメール送信する
+    /*
     if (mConfig.isUseTwitter) {
         if (![self sendTwitter]) {
             self.state = StIdle; // error...
         }
     }
-    else if (mConfig.isUseEmail) {
+    else*/
+    if (mConfig.isUseEmail) {
         if (![self sendEmail]) {
             self.state = StIdle; // error...
         }
@@ -210,6 +214,7 @@
     }
 }
 
+/*
 - (IBAction)onToggleTwitterButton:(id)sender
 {
     UIButton *button = (UIButton *)sender;
@@ -219,6 +224,7 @@
     
     [self updateButtonStates];
 }
+*/
 
 - (IBAction)onToggleEmailButton:(id)sender
 {
@@ -304,6 +310,7 @@
 #pragma mark - Twitter
 
 // Twitter 送信
+/*
 - (BOOL)sendTwitter
 {
     if (mConfig.twitterAddress == nil || [mConfig.twitterAddress length] == 0) {
@@ -416,6 +423,7 @@
 
     self.state = StIdle;
 }
+*/
 
 #pragma mark - GADBannerViewDelegate
 
