@@ -10,7 +10,7 @@
 @interface Config ()
 - (void)firstStartup;
 - (void)load;
-- (NSString *)currentVersion;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *currentVersion;
 @end
 
 @implementation Config
@@ -41,7 +41,7 @@ static Config *theInstance = nil;
     return theInstance;
 }
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (!self) return nil;
@@ -127,7 +127,7 @@ static Config *theInstance = nil;
 
 - (NSString *)currentVersion
 {
-    NSString *ver = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
+    NSString *ver = [[NSBundle mainBundle].infoDictionary valueForKey:@"CFBundleShortVersionString"];
     return ver;
 }
 

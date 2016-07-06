@@ -17,11 +17,11 @@
 #import "Location.h"
 
 // ステート
-typedef enum {
+typedef NS_ENUM(unsigned int, State) {
     StIdle = 0,     // アイドル中
     StGetLocation,  // 送信前位置取得中
     StSending,      // 送信中
-} State;
+};
 
 @interface MainViewController : UIViewController <MFMailComposeViewControllerDelegate, LocationDelegate>
 {
@@ -60,7 +60,7 @@ typedef enum {
 - (void)updateButtonStates;
 - (void)startSend;
 
-- (BOOL)sendEmail;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL sendEmail;
 //- (BOOL)sendTwitter;
 
 - (void)showMessage:(NSString *)message title:(NSString *)title;

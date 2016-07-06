@@ -154,7 +154,7 @@
         [self showError:_L(@"error_no_dest")];
         return;
     }
-    else if (mConfig.isUseEmail && (mConfig.emailAddress == nil || [mConfig.emailAddress length] == 0)) {
+    else if (mConfig.isUseEmail && (mConfig.emailAddress == nil || (mConfig.emailAddress).length == 0)) {
         [self showError:_L(@"error_no_email_dest")];
         return;
     }
@@ -432,7 +432,7 @@
 }
 
 - (void)adView:(GADBannerView *)adView didFailToReceiveAdWithError:(GADRequestError *)error {
-    NSLog(@"adViewDidFailToReceiveAdWithError: %@", [error localizedDescription]);
+    NSLog(@"adViewDidFailToReceiveAdWithError: %@", error.localizedDescription);
 }
 
 #pragma mark - ADBannerViewDelegate

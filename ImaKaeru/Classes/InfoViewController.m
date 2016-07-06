@@ -11,7 +11,7 @@
 
 @implementation InfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -34,12 +34,12 @@
 {
     self.title = _L(@"info");
 
-    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSDictionary *info = [NSBundle mainBundle].infoDictionary;
     
     [mAppNameLabel setText:_L(@"app_name")];
      
     NSString *version = [info valueForKey:@"CFBundleShortVersionString"];
-    [mVersionLabel setText:[NSString stringWithFormat:@"Version %@", version]];
+    mVersionLabel.text = [NSString stringWithFormat:@"Version %@", version];
 }
 
 - (void)viewDidUnload
