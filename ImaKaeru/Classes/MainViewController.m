@@ -10,9 +10,7 @@
 #import "InfoViewController.h"
 #import "Common.h"
 
-#import "GADBannerView.h"
-#import "GADRequest.h"
-#import "GADBannerViewDelegate.h"
+@import GoogleMobileAds;
 
 #define APP_URL _L(@"website_url")
 #define SHORTEN_APP_URL _L(@"shorten_website_url")
@@ -62,7 +60,7 @@
     
     // AdMob request
     GADRequest *request = [GADRequest request];
-    request.testDevices = @[GAD_SIMULATOR_ID];
+    //request.testDevices = @[GAD_SIMULATOR_ID];
     [self.bannerView loadRequest:request];
 
     mLocation = [Location new];

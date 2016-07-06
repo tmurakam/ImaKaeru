@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04926478AA4F2A8F02F14CC0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B1954754BD2FB9030210BD /* libPods.a */; };
 		3E0112DF14237ED50003B868 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112DE14237ED50003B868 /* UIKit.framework */; };
 		3E0112E114237ED50003B868 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E014237ED50003B868 /* Foundation.framework */; };
 		3E0112E314237ED50003B868 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0112E214237ED50003B868 /* CoreGraphics.framework */; };
@@ -45,6 +44,8 @@
 		3EE691011424DAF100215A36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691001424DAF100215A36 /* libxml2.dylib */; };
 		3EE691371424E43100215A36 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE691361424E43100215A36 /* Security.framework */; };
 		3EFF5DEF143FF5F400319C2E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EFF5DEE143FF5F400319C2E /* MainStoryboard.storyboard */; };
+		8DC477267FBC550035548D03 /* libPods-ImaKaeruTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8028AC63AD07320F1545F4BF /* libPods-ImaKaeruTests.a */; };
+		FF9D7C91C8A9A20C06583DE6 /* libPods-ImaKaeru.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FB89D73CEEF2671556C024 /* libPods-ImaKaeru.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		020EC2A5CE64135E9296206E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		3C918A74072025D8A81856C4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3E0112DA14237ED50003B868 /* ImaKaeru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImaKaeru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0112DE14237ED50003B868 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3E0112E014237ED50003B868 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,7 +110,12 @@
 		3EE691001424DAF100215A36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3EE691361424E43100215A36 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		3EFF5DEE143FF5F400319C2E /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		E0B1954754BD2FB9030210BD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EB5A93377433996AA36C22 /* Pods-ImaKaeru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaKaeru.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImaKaeru/Pods-ImaKaeru.release.xcconfig"; sourceTree = "<group>"; };
+		8028AC63AD07320F1545F4BF /* libPods-ImaKaeruTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImaKaeruTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FB89D73CEEF2671556C024 /* libPods-ImaKaeru.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImaKaeru.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EB763AC0624ADBC924B94EA /* Pods-ImaKaeruTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaKaeruTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImaKaeruTests/Pods-ImaKaeruTests.release.xcconfig"; sourceTree = "<group>"; };
+		A0A812474FC467C6E5531FF8 /* Pods-ImaKaeruTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaKaeruTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImaKaeruTests/Pods-ImaKaeruTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DBD26E32AD2D5D1180C63D61 /* Pods-ImaKaeru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImaKaeru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImaKaeru/Pods-ImaKaeru.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +143,7 @@
 				3E01131714242CAD0003B868 /* iAd.framework in Frameworks */,
 				3E0112DF14237ED50003B868 /* UIKit.framework in Frameworks */,
 				3E0112E114237ED50003B868 /* Foundation.framework in Frameworks */,
-				04926478AA4F2A8F02F14CC0 /* libPods.a in Frameworks */,
+				FF9D7C91C8A9A20C06583DE6 /* libPods-ImaKaeru.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +153,7 @@
 			files = (
 				3E0112FE14237ED60003B868 /* UIKit.framework in Frameworks */,
 				3E0112FF14237ED60003B868 /* Foundation.framework in Frameworks */,
+				8DC477267FBC550035548D03 /* libPods-ImaKaeruTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +168,7 @@
 				3E56EC5516AA5A300032A864 /* Libraries */,
 				3E0112DD14237ED50003B868 /* Frameworks */,
 				3E0112DB14237ED50003B868 /* Products */,
-				F0B3BB3A8E4BDE6C779ECAD2 /* Pods */,
+				684DFEC7BF360935E4D3DA61 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,7 +204,8 @@
 				3E0112DE14237ED50003B868 /* UIKit.framework */,
 				3E0112E014237ED50003B868 /* Foundation.framework */,
 				3E0112E214237ED50003B868 /* CoreGraphics.framework */,
-				E0B1954754BD2FB9030210BD /* libPods.a */,
+				99FB89D73CEEF2671556C024 /* libPods-ImaKaeru.a */,
+				8028AC63AD07320F1545F4BF /* libPods-ImaKaeruTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -300,11 +306,13 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		F0B3BB3A8E4BDE6C779ECAD2 /* Pods */ = {
+		684DFEC7BF360935E4D3DA61 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3C918A74072025D8A81856C4 /* Pods.debug.xcconfig */,
-				020EC2A5CE64135E9296206E /* Pods.release.xcconfig */,
+				DBD26E32AD2D5D1180C63D61 /* Pods-ImaKaeru.debug.xcconfig */,
+				46EB5A93377433996AA36C22 /* Pods-ImaKaeru.release.xcconfig */,
+				A0A812474FC467C6E5531FF8 /* Pods-ImaKaeruTests.debug.xcconfig */,
+				9EB763AC0624ADBC924B94EA /* Pods-ImaKaeruTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -316,12 +324,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E01130D14237ED60003B868 /* Build configuration list for PBXNativeTarget "ImaKaeru" */;
 			buildPhases = (
-				5E159947535893F2323E3777 /* Check Pods Manifest.lock */,
+				4248DED310E3D351D42CBCC9 /* [CP] Check Pods Manifest.lock */,
 				3E0112D614237ED50003B868 /* Sources */,
 				3E0112D714237ED50003B868 /* Frameworks */,
 				3E0112D814237ED50003B868 /* Resources */,
 				3EDB6A1D1A5C314B0030DEB3 /* ShellScript */,
-				AF619C5A79F3C237CF72A773 /* Copy Pods Resources */,
+				CA8C8408119F625DB5C750F3 /* [CP] Embed Pods Frameworks */,
+				1348D2EAB9D1CAAB90B9BD62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,10 +345,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E01131014237ED60003B868 /* Build configuration list for PBXNativeTarget "ImaKaeruTests" */;
 			buildPhases = (
+				33CC9C298586C5C383E6F1C5 /* [CP] Check Pods Manifest.lock */,
 				3E0112F614237ED60003B868 /* Sources */,
 				3E0112F714237ED60003B868 /* Frameworks */,
 				3E0112F814237ED60003B868 /* Resources */,
 				3E0112F914237ED60003B868 /* ShellScript */,
+				9B94AB6E697795F5D504B08E /* [CP] Embed Pods Frameworks */,
+				9B50D154B9E65645A4C75029 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -403,6 +415,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1348D2EAB9D1CAAB90B9BD62 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaKaeru/Pods-ImaKaeru-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33CC9C298586C5C383E6F1C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		3E0112F914237ED60003B868 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,16 +469,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Pods/CrashlyticsFramework/Crashlytics.framework/run 532ecad9ca165fccdfe2d04c731d6b7449375147 4a1b9ec5d0af491383edc13d851e0e4636e4845c4b8e468c5df8c445c1f917db";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 532ecad9ca165fccdfe2d04c731d6b7449375147 4a1b9ec5d0af491383edc13d851e0e4636e4845c4b8e468c5df8c445c1f917db";
 		};
-		5E159947535893F2323E3777 /* Check Pods Manifest.lock */ = {
+		4248DED310E3D351D42CBCC9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,19 +486,49 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		AF619C5A79F3C237CF72A773 /* Copy Pods Resources */ = {
+		9B50D154B9E65645A4C75029 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaKaeruTests/Pods-ImaKaeruTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B94AB6E697795F5D504B08E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaKaeruTests/Pods-ImaKaeruTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA8C8408119F625DB5C750F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImaKaeru/Pods-ImaKaeru-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -529,6 +601,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -557,7 +630,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
@@ -568,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -589,7 +663,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1B3F4E1D-0D66-4A45-80A3-1184F85FAB5C";
 				SDKROOT = iphoneos;
@@ -600,7 +674,7 @@
 		};
 		3E01130E14237ED60003B868 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C918A74072025D8A81856C4 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = DBD26E32AD2D5D1180C63D61 /* Pods-ImaKaeru.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -619,7 +693,7 @@
 		};
 		3E01130F14237ED60003B868 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 020EC2A5CE64135E9296206E /* Pods.release.xcconfig */;
+			baseConfigurationReference = 46EB5A93377433996AA36C22 /* Pods-ImaKaeru.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -638,6 +712,7 @@
 		};
 		3E01131114237ED60003B868 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0A812474FC467C6E5531FF8 /* Pods-ImaKaeruTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImaKaeru.app/ImaKaeru";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -654,6 +729,7 @@
 		};
 		3E01131214237ED60003B868 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EB763AC0624ADBC924B94EA /* Pods-ImaKaeruTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImaKaeru.app/ImaKaeru";
 				FRAMEWORK_SEARCH_PATHS = (
