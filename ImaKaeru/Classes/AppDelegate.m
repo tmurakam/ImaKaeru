@@ -10,6 +10,8 @@
 #import "MainViewController.h"
 #import <Crashlytics/Crashlytics.h>
 
+@import Firebase;
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -19,6 +21,8 @@
 {
     // Crashlytics
     [Crashlytics startWithAPIKey:@"532ecad9ca165fccdfe2d04c731d6b7449375147"];
+    
+    [FIRApp configure];
     
     return YES;
 }

@@ -10,8 +10,10 @@ target 'ImaKaeru' do
   pod 'Fabric'
   pod 'Crashlytics'
 
-  pod 'Google-Mobile-Ads-SDK'
+  #pod 'Google-Mobile-Ads-SDK'
   #pod 'AdMobMediationAdapterIAd'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
 
   target 'ImaKaeruTests' do
     inherit! :search_paths
