@@ -48,4 +48,5 @@
 "shorten_website_url" = "http://bit.ly/imkaeru";
 
 "welcome" = "ようこそ";
-"welcome_message" = "いまカエルへようこそ! 最初に設定ボタンを押して、送信先のメールアドレスやTwitterアドレスを設定してください。";
+//"welcome_message" = "いまカエルへようこそ! 最初に設定ボタンを押して、送信先のメールアドレスやTwitterアドレスを設定してください。";
+"welcome_message" = "いまカエルへようこそ! 最初に設定ボタンを押して、送信先のメールアドレスを設定してください。";

@@ -7,11 +7,11 @@
 
 #import "InfoViewController.h"
 #import "Common.h"
-#import "WebViewController.h"
+//#import "WebViewController.h"
 
 @implementation InfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -34,12 +34,12 @@
 {
     self.title = _L(@"info");
 
-    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSDictionary *info = [NSBundle mainBundle].infoDictionary;
     
     [mAppNameLabel setText:_L(@"app_name")];
      
     NSString *version = [info valueForKey:@"CFBundleShortVersionString"];
-    [mVersionLabel setText:[NSString stringWithFormat:@"Version %@", version]];
+    mVersionLabel.text = [NSString stringWithFormat:@"Version %@", version];
 }
 
 - (void)viewDidUnload
@@ -65,6 +65,17 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
+- (IBAction)showHelp:(id)sender {
+    NSURL *url = [NSURL URLWithString:_L(@"help_url")];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (IBAction)showWebSite:(id)sender {
+    NSURL *url = [NSURL URLWithString:_L(@"website_url")];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *sid = [segue identifier];
@@ -80,5 +91,6 @@
     //    vc.urlString = _L(@"facebook_url");
     //}
 }
+*/
 
 @end

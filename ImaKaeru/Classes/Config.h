@@ -22,9 +22,9 @@
     BOOL mIsUseEmail;
     NSString *mEmailAddress;
     
-    BOOL mIsUseTwitter;
-    BOOL mIsUseDirectMessage;
-    NSString *mTwitterAddress;
+    //BOOL mIsUseTwitter;
+    //BOOL mIsUseDirectMessage;
+    //NSString *mTwitterAddress;
     
     BOOL mIsFirstStartup;
     BOOL mIsVersionUp;
@@ -39,9 +39,9 @@
 @property BOOL isUseEmail;
 @property(strong) NSString *emailAddress;
 
-@property BOOL isUseTwitter;
-@property BOOL isUseDirectMessage;
-@property(strong) NSString *twitterAddress;
+//@property BOOL isUseTwitter;
+//@property BOOL isUseDirectMessage;
+//@property(strong) NSString *twitterAddress;
 
 @property BOOL isFirstStartup;
 @property BOOL isVersionUp;

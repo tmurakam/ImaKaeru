@@ -27,7 +27,7 @@
 
 - (void)startUpdating;
 - (void)stopUpdating;
-- (BOOL)hasLocation;
-- (NSString *)getLocationUrl;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL hasLocation;
+@property (NS_NONATOMIC_IOSONLY, getter=getLocationUrl, readonly, copy) NSString *locationUrl;
 
 @end

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,16 +11,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="cgH-5C-Lwf">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wro-lP-tMv">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="cgH-5C-Lwf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1EQ-au-TnM"/>
-                <constraint firstItem="cgH-5C-Lwf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4z2-6c-saL"/>
-                <constraint firstAttribute="trailing" secondItem="cgH-5C-Lwf" secondAttribute="trailing" id="Sk7-Q0-e4f"/>
-                <constraint firstAttribute="bottom" secondItem="cgH-5C-Lwf" secondAttribute="bottom" id="tcs-vu-bBq"/>
+                <constraint firstAttribute="bottom" secondItem="Wro-lP-tMv" secondAttribute="bottom" id="4cf-8f-xSG"/>
+                <constraint firstItem="Wro-lP-tMv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JNq-1F-e9h"/>
+                <constraint firstAttribute="trailing" secondItem="Wro-lP-tMv" secondAttribute="trailing" id="R8M-Xq-2zA"/>
+                <constraint firstItem="Wro-lP-tMv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="o1P-VO-BiG"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -28,11 +28,6 @@
         </view>
     </objects>
     <resources>
-        <image name="LaunchImage" width="640" height="960"/>
+        <image name="LaunchImage.png" width="640" height="1136"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
