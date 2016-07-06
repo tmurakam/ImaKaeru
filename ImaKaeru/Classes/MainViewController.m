@@ -60,7 +60,7 @@
     
     // AdMob request
     GADRequest *request = [GADRequest request];
-    //request.testDevices = @[GAD_SIMULATOR_ID];
+    request.testDevices = @[kGADSimulatorID];
     [self.bannerView loadRequest:request];
 
     mLocation = [Location new];

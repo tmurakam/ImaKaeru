@@ -7,7 +7,7 @@
 
 #import "InfoViewController.h"
 #import "Common.h"
-#import "WebViewController.h"
+//#import "WebViewController.h"
 
 @implementation InfoViewController
 
@@ -65,6 +65,17 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
+- (IBAction)showHelp:(id)sender {
+    NSURL *url = [NSURL URLWithString:_L(@"help_url")];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (IBAction)showWebSite:(id)sender {
+    NSURL *url = [NSURL URLWithString:_L(@"website_url")];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *sid = [segue identifier];
@@ -80,5 +91,6 @@
     //    vc.urlString = _L(@"facebook_url");
     //}
 }
+*/
 
 @end

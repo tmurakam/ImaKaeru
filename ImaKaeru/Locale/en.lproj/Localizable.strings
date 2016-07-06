@@ -48,4 +48,5 @@
 "shorten_website_url" = "http://bit.ly/imkaerue";
 
 "welcome" = "Welcome";
-"welcome_message" = "Welcome to NowOnMyWay! First, tap config button to setup destination e-mail or twitter address.";
+//"welcome_message" = "Welcome to NowOnMyWay! First, tap config button to setup destination e-mail or twitter address.";
+"welcome_message" = "Welcome to NowOnMyWay! First, tap config button to setup destination e-mail address.";
