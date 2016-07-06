@@ -2,8 +2,10 @@
 
 	* ver 1.3
 	* iOS 8.0 以上
+	* 背景画像修正
 	* Twitter 送信機能削除
 	* Fabric 切り替え
+	* Firebase 導入
 
 2015-01-06 : Takuya Murakami
 
