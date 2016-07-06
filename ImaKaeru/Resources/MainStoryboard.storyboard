@@ -441,8 +441,8 @@
                                 <color key="textColor" red="0.1031362035" green="0.66605802759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="version x.x" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OeM-zs-BhZ">
-                                <rect key="frame" x="166" y="129" width="134" height="30"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="version x.x" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OeM-zs-BhZ">
+                                <rect key="frame" x="167" y="129" width="133" height="30"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="24"/>
                                 <color key="textColor" red="0.1031362035" green="0.66605802759999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -498,19 +498,19 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Art &amp; Design: Yasuko Murakami" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TAv-Tg-ULv">
-                                <rect key="frame" x="75" y="266" width="225" height="18"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Art &amp; Design: Yasuko Murakami" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TAv-Tg-ULv">
+                                <rect key="frame" x="77" y="266" width="223" height="18"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Program: Takuya Murakami" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oRx-3m-Ygq">
-                                <rect key="frame" x="104" y="287" width="196" height="18"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Program: Takuya Murakami" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oRx-3m-Ygq">
+                                <rect key="frame" x="106" y="287" width="194" height="18"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright © 2011-2015" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-Th-CCy">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Copyright © 2011-2016" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-Th-CCy">
                                 <rect key="frame" x="130" y="184" width="170" height="18"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -522,7 +522,6 @@
                             <constraint firstItem="pHn-uG-Mwt" firstAttribute="top" secondItem="Qlt-Az-GfV" secondAttribute="bottom" constant="8" id="2TE-gs-REK"/>
                             <constraint firstItem="OeM-zs-BhZ" firstAttribute="top" secondItem="9gC-Xb-3xu" secondAttribute="bottom" constant="6" id="2Zr-dc-eyp"/>
                             <constraint firstAttribute="trailing" secondItem="XhX-m7-bVo" secondAttribute="trailing" constant="20" id="4X9-NS-R1q"/>
-                            <constraint firstItem="pR1-le-Y6v" firstAttribute="trailing" secondItem="oRx-3m-Ygq" secondAttribute="trailing" id="4do-zi-9Hf"/>
                             <constraint firstAttribute="trailing" secondItem="ckJ-Xm-NV7" secondAttribute="trailing" id="6Ud-g6-Q4b"/>
                             <constraint firstItem="lah-hj-Obs" firstAttribute="top" secondItem="ckJ-Xm-NV7" secondAttribute="bottom" id="71p-zW-dUH"/>
                             <constraint firstItem="ckJ-Xm-NV7" firstAttribute="top" secondItem="EhK-jA-MsQ" secondAttribute="top" id="7cm-60-7EV"/>
@@ -533,12 +532,13 @@
                             <constraint firstItem="pR1-le-Y6v" firstAttribute="top" secondItem="Zoc-Th-CCy" secondAttribute="bottom" constant="3" id="Sb4-Bd-UuU"/>
                             <constraint firstItem="9gC-Xb-3xu" firstAttribute="leading" secondItem="EhK-jA-MsQ" secondAttribute="leading" constant="20" id="a8S-7i-gQu"/>
                             <constraint firstItem="TAv-Tg-ULv" firstAttribute="top" secondItem="3Nf-cr-i4x" secondAttribute="bottom" constant="3" id="aa7-zk-lBQ"/>
-                            <constraint firstItem="oRx-3m-Ygq" firstAttribute="top" secondItem="TAv-Tg-ULv" secondAttribute="bottom" constant="3" id="cGl-HL-GqN"/>
                             <constraint firstItem="pR1-le-Y6v" firstAttribute="trailing" secondItem="TAv-Tg-ULv" secondAttribute="trailing" id="cWy-nB-m93"/>
                             <constraint firstItem="XhX-m7-bVo" firstAttribute="top" secondItem="pHn-uG-Mwt" secondAttribute="bottom" constant="8" id="dYL-zK-KAa"/>
                             <constraint firstItem="9gC-Xb-3xu" firstAttribute="top" secondItem="PgK-hc-FPR" secondAttribute="bottom" constant="15" id="eHJ-ze-cfj"/>
                             <constraint firstItem="pR1-le-Y6v" firstAttribute="trailing" secondItem="9gC-Xb-3xu" secondAttribute="trailing" id="eqr-5j-a9e"/>
+                            <constraint firstItem="oRx-3m-Ygq" firstAttribute="trailing" secondItem="TAv-Tg-ULv" secondAttribute="trailing" id="irK-Xe-kWW"/>
                             <constraint firstItem="Zoc-Th-CCy" firstAttribute="top" secondItem="OeM-zs-BhZ" secondAttribute="bottom" constant="25" id="kl4-bF-YvV"/>
+                            <constraint firstItem="oRx-3m-Ygq" firstAttribute="top" secondItem="TAv-Tg-ULv" secondAttribute="bottom" constant="3" id="mZi-Hx-dYp"/>
                             <constraint firstAttribute="trailing" secondItem="9gC-Xb-3xu" secondAttribute="trailing" constant="20" id="oFP-gD-ceY"/>
                             <constraint firstItem="3Nf-cr-i4x" firstAttribute="top" secondItem="pR1-le-Y6v" secondAttribute="bottom" constant="22" id="ol8-5m-v9R"/>
                             <constraint firstItem="lah-hj-Obs" firstAttribute="top" secondItem="XhX-m7-bVo" secondAttribute="bottom" constant="20" id="pGN-PT-oBx"/>

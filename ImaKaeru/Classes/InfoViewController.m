@@ -55,7 +55,7 @@
 }
 
 - (IBAction)doneAction:(id)sender {
-    [self.navigationController dismissModalViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 // WebView からだと facebook にログインしていない状態なので、

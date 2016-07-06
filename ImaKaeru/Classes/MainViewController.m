@@ -290,14 +290,14 @@
     //[body appendFormat:@"Sent from %@\n%@", _L(@"app_name"), APP_URL];
     [vc setMessageBody:body isHTML:NO];
     
-    [self presentModalViewController:vc animated:YES];
+    [self presentViewController:vc animated:YES completion:nil];
 
     return YES;
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    [controller dismissModalViewControllerAnimated:YES];
+    [controller dismissViewControllerAnimated:YES completion:nil];
     self.state = StIdle;
 }
 
