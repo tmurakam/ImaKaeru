@@ -8,6 +8,8 @@
 #import "AppDelegate.h"
 
 #import "MainViewController.h"
+
+#import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
 @import Firebase;
@@ -19,9 +21,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Crashlytics
-    [Crashlytics startWithAPIKey:@"532ecad9ca165fccdfe2d04c731d6b7449375147"];
+    // Fabric/Crashlytics
+    [Fabric with:@[[Crashlytics class]]];
     
+    // Firebase
     [FIRApp configure];
     
     return YES;

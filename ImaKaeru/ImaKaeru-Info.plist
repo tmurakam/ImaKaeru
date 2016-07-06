@@ -43,5 +43,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>532ecad9ca165fccdfe2d04c731d6b7449375147</string>
+    </dict>
 </dict>
 </plist>
